@@ -1,4 +1,6 @@
-﻿Imports System.Security.Cryptography
+﻿Imports System.Drawing.Design
+Imports System.Security.Cryptography
+Imports System.Text
 
 Public Class Start
     Private Function GetRandomNumber(minValue As Integer, maxValue As Integer) As Integer
@@ -23,7 +25,6 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D4Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -41,7 +42,6 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D6Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -59,7 +59,6 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D8Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -77,7 +76,6 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D10Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -95,7 +93,6 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D12Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -107,7 +104,6 @@ Public Class Start
             Dim d100Roll As Integer = GetRandomNumber(1, 100)
             historybox.AppendText("Roll " & i.ToString() & ":      " & d100Roll.ToString() & Environment.NewLine)
         Next
-        D100Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -139,9 +135,25 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D20Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
+    End Sub
+
+    Private Sub ResetCountersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetCountersToolStripMenuItem.Click
+        D3Count.Value = 1
+        D4Count.Value = 1
+        D5Count.Value = 1
+        D6Count.Value = 1
+        D7Count.Value = 1
+        D8Count.Value = 1
+        D10Count.Value = 1
+        D12Count.Value = 1
+        D14Count.Value = 1
+        D16Count.Value = 1
+        D20Count.Value = 1
+        D24Count.Value = 1
+        D30Count.Value = 1
+        D100Count.Value = 1
     End Sub
 
     Private Sub ClearHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearHistoryToolStripMenuItem.Click
@@ -171,7 +183,6 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D3Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -189,7 +200,6 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D5Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -207,7 +217,6 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D7Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -225,7 +234,6 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D14Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -243,7 +251,6 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D16Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -261,7 +268,6 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D24Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
@@ -279,10 +285,77 @@ Public Class Start
             historybox.AppendText("_________________________" & Environment.NewLine)
             historybox.AppendText("Total:      " & total.ToString() & Environment.NewLine)
         End If
-        D30Count.Value = 1
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
     End Sub
+
+    Private Sub MagicGenerate_Click(sender As Object, e As EventArgs) Handles MagicGenerate.Click
+        Dim challengeRating As Integer = MagicCRSelect.SelectedIndex
+
+        'Gen treasure
+        Dim treasure As List(Of Object) = GenerateTreasure(challengeRating)
+
+        'Display
+        Dim message As New StringBuilder()
+        For i As Integer = 0 To treasure.Count - 1
+            If TypeOf treasure(i) Is Item Then
+                Dim item = CType(treasure(i), Item)
+                message.AppendLine((i + 1).ToString() & ". " & item.Name & " (Rarity: " & item.Rarity & ")")
+            ElseIf TypeOf treasure(i) Is Currency Then
+                Dim currency = CType(treasure(i), Currency)
+                message.AppendLine((i + 1).ToString() & ". " & currency.Amount & " " & currency.Type)
+            End If
+        Next
+        historybox.AppendText(message.ToString())
+    End Sub
+
+    Private Function GenerateTreasure(challengeRating As Integer) As List(Of Object)
+        Dim rand As New Random()
+
+        Dim treasure As New List(Of Object)
+        For i As Integer = 1 To 10
+            '15% chance of magic item.
+            If rand.NextDouble() < 0.1 Then
+                Dim index As Integer = rand.Next(MagicItemDatabase.Items.Count)
+
+                Dim item = MagicItemDatabase.Items(index)
+
+                'Account for CR
+                If (challengeRating < 15 And item.Rarity = "Legendary") Or
+                   (challengeRating < 10 And item.Rarity = "Very Rare") Or
+                   (challengeRating < 5 And item.Rarity = "Rare") Or
+                   (challengeRating < 1 And item.Rarity = "Uncommon") Then
+                    'Roll again
+                    index = rand.Next(MagicItemDatabase.Items.Count)
+                    item = MagicItemDatabase.Items(index)
+                End If
+
+                treasure.Add(item)
+            End If
+
+            'Generate shmoney
+            Dim gp As Integer = rand.Next(challengeRating, challengeRating * 10)
+            Dim sp As Integer = rand.Next(challengeRating * 10, challengeRating * 100)
+            Dim cp As Integer = rand.Next(challengeRating * 100, challengeRating * 1000)
+
+            'Convert
+            sp += cp \ 100
+            cp = cp Mod 100
+            gp += sp \ 100
+            sp = sp Mod 100
+
+            Dim currencyType As Integer = rand.Next(3)
+            If currencyType = 0 Then
+                treasure.Add(New Currency With {.Type = "GP", .Amount = gp})
+            ElseIf currencyType = 1 Then
+                treasure.Add(New Currency With {.Type = "SP", .Amount = sp})
+            Else
+                treasure.Add(New Currency With {.Type = "CP", .Amount = cp})
+            End If
+        Next
+
+        Return treasure
+    End Function
 End Class
 
 Public Class Item
@@ -303,7 +376,12 @@ Public Class Item
     End Sub
 End Class
 
-Public Module ItemDatabase
+Public Class Currency
+    Public Property Type As String
+    Public Property Amount As Integer
+End Class
+
+Public Module MagicItemDatabase
     Public ReadOnly Items As New List(Of Item) From {
         New Item("Armor of Gleaming", "Armor", "Common", "", "Medium or Heavy | This armor never gets dirty.", "xge 136"), 'MAGIC ITEMS START
         New Item("Cast-Off Armor", "Armor", "Common", "", "Light, Medium or Heavy | Cast-off armor was armor that was magically enchanted to become exceedingly quick for its wearer to doff. Cast-off armor could be completely removed within only a few seconds, regardless of type.", "xge 136"),

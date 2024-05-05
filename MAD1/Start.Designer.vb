@@ -27,6 +27,7 @@ Partial Class Start
         FileToolStripMenuItem = New ToolStripMenuItem()
         ExitToolStripMenuItem = New ToolStripMenuItem()
         EditToolStripMenuItem = New ToolStripMenuItem()
+        ResetCountersToolStripMenuItem = New ToolStripMenuItem()
         ClearHistoryToolStripMenuItem = New ToolStripMenuItem()
         HelpToolStripMenuItem = New ToolStripMenuItem()
         AboutToolStripMenuItem = New ToolStripMenuItem()
@@ -61,8 +62,13 @@ Partial Class Start
         D5Button = New Button()
         D3Count = New NumericUpDown()
         D3Button = New Button()
+        TabPage3 = New TabPage()
+        ItemGroup = New GroupBox()
+        MagicCRLabel = New Label()
+        MagicCRSelect = New ComboBox()
         Panel = New Panel()
         historybox = New RichTextBox()
+        MagicGenerate = New Button()
         Menu.SuspendLayout()
         Tabs.SuspendLayout()
         TabPage1.SuspendLayout()
@@ -81,6 +87,8 @@ Partial Class Start
         CType(D7Count, ComponentModel.ISupportInitialize).BeginInit()
         CType(D5Count, ComponentModel.ISupportInitialize).BeginInit()
         CType(D3Count, ComponentModel.ISupportInitialize).BeginInit()
+        TabPage3.SuspendLayout()
+        ItemGroup.SuspendLayout()
         Panel.SuspendLayout()
         SuspendLayout()
         ' 
@@ -108,15 +116,21 @@ Partial Class Start
         ' 
         ' EditToolStripMenuItem
         ' 
-        EditToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ClearHistoryToolStripMenuItem})
+        EditToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ResetCountersToolStripMenuItem, ClearHistoryToolStripMenuItem})
         EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         EditToolStripMenuItem.Size = New Size(39, 20)
         EditToolStripMenuItem.Text = "Edit"
         ' 
+        ' ResetCountersToolStripMenuItem
+        ' 
+        ResetCountersToolStripMenuItem.Name = "ResetCountersToolStripMenuItem"
+        ResetCountersToolStripMenuItem.Size = New Size(153, 22)
+        ResetCountersToolStripMenuItem.Text = "Reset Counters"
+        ' 
         ' ClearHistoryToolStripMenuItem
         ' 
         ClearHistoryToolStripMenuItem.Name = "ClearHistoryToolStripMenuItem"
-        ClearHistoryToolStripMenuItem.Size = New Size(142, 22)
+        ClearHistoryToolStripMenuItem.Size = New Size(153, 22)
         ClearHistoryToolStripMenuItem.Text = "Clear History"
         ' 
         ' HelpToolStripMenuItem
@@ -136,6 +150,7 @@ Partial Class Start
         ' 
         Tabs.Controls.Add(TabPage1)
         Tabs.Controls.Add(TabPage2)
+        Tabs.Controls.Add(TabPage3)
         Tabs.Location = New Point(3, 3)
         Tabs.Name = "Tabs"
         Tabs.SelectedIndex = 0
@@ -442,6 +457,48 @@ Partial Class Start
         D3Button.Text = "D3"
         D3Button.UseVisualStyleBackColor = True
         ' 
+        ' TabPage3
+        ' 
+        TabPage3.Controls.Add(ItemGroup)
+        TabPage3.Location = New Point(4, 24)
+        TabPage3.Name = "TabPage3"
+        TabPage3.Size = New Size(413, 246)
+        TabPage3.TabIndex = 2
+        TabPage3.Text = "Treasure"
+        TabPage3.UseVisualStyleBackColor = True
+        ' 
+        ' ItemGroup
+        ' 
+        ItemGroup.Controls.Add(MagicGenerate)
+        ItemGroup.Controls.Add(MagicCRLabel)
+        ItemGroup.Controls.Add(MagicCRSelect)
+        ItemGroup.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        ItemGroup.Location = New Point(3, 3)
+        ItemGroup.Name = "ItemGroup"
+        ItemGroup.Size = New Size(407, 111)
+        ItemGroup.TabIndex = 0
+        ItemGroup.TabStop = False
+        ItemGroup.Text = "Magic Items"
+        ' 
+        ' MagicCRLabel
+        ' 
+        MagicCRLabel.AutoSize = True
+        MagicCRLabel.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        MagicCRLabel.Location = New Point(6, 19)
+        MagicCRLabel.Name = "MagicCRLabel"
+        MagicCRLabel.Size = New Size(103, 15)
+        MagicCRLabel.TabIndex = 1
+        MagicCRLabel.Text = "Challenge Rating:"
+        ' 
+        ' MagicCRSelect
+        ' 
+        MagicCRSelect.FormattingEnabled = True
+        MagicCRSelect.Items.AddRange(New Object() {"CR 0", "CR 1", "CR 2", "CR 3", "CR 4", "CR 5", "CR 6", "CR 7", "CR 8", "CR 9", "CR 10", "CR 11", "CR 12", "CR 13", "CR 15", "CR 16", "CR 17", "CR 18", "CR 19", "CR 20+"})
+        MagicCRSelect.Location = New Point(112, 16)
+        MagicCRSelect.Name = "MagicCRSelect"
+        MagicCRSelect.Size = New Size(76, 23)
+        MagicCRSelect.TabIndex = 0
+        ' 
         ' Panel
         ' 
         Panel.BorderStyle = BorderStyle.Fixed3D
@@ -461,6 +518,15 @@ Partial Class Start
         historybox.Size = New Size(421, 432)
         historybox.TabIndex = 2
         historybox.Text = ""
+        ' 
+        ' MagicGenerate
+        ' 
+        MagicGenerate.Location = New Point(315, 75)
+        MagicGenerate.Name = "MagicGenerate"
+        MagicGenerate.Size = New Size(86, 30)
+        MagicGenerate.TabIndex = 2
+        MagicGenerate.Text = "Generate"
+        MagicGenerate.UseVisualStyleBackColor = True
         ' 
         ' Start
         ' 
@@ -494,6 +560,9 @@ Partial Class Start
         CType(D7Count, ComponentModel.ISupportInitialize).EndInit()
         CType(D5Count, ComponentModel.ISupportInitialize).EndInit()
         CType(D3Count, ComponentModel.ISupportInitialize).EndInit()
+        TabPage3.ResumeLayout(False)
+        ItemGroup.ResumeLayout(False)
+        ItemGroup.PerformLayout()
         Panel.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
@@ -539,5 +608,11 @@ Partial Class Start
     Friend WithEvents D5Button As Button
     Friend WithEvents D3Count As NumericUpDown
     Friend WithEvents D3Button As Button
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents ResetCountersToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ItemGroup As GroupBox
+    Friend WithEvents MagicCRLabel As Label
+    Friend WithEvents MagicCRSelect As ComboBox
+    Friend WithEvents MagicGenerate As Button
 
 End Class
