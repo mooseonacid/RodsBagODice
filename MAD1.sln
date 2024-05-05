@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Rod's Bag O' Dice", "MAD1\Rod's Bag O' Dice.vbproj", "{2910B261-DD74-40D2-A2AC-CC4BB34A89D8}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RBODSetup", "RBODSetup\RBODSetup.vdproj", "{173905B3-2611-4378-9B5B-4D76B83AAD80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2910B261-DD74-40D2-A2AC-CC4BB34A89D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2910B261-DD74-40D2-A2AC-CC4BB34A89D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2910B261-DD74-40D2-A2AC-CC4BB34A89D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2910B261-DD74-40D2-A2AC-CC4BB34A89D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{173905B3-2611-4378-9B5B-4D76B83AAD80}.Debug|Any CPU.ActiveCfg = Debug
+		{173905B3-2611-4378-9B5B-4D76B83AAD80}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29CD8D30-C9A4-432E-8009-AEAB22B66C22}
+	EndGlobalSection
+EndGlobal
