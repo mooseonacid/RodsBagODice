@@ -169,6 +169,11 @@ Public Class Start
         aboutForm.ShowDialog()
     End Sub
 
+    Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
+        Dim indexForm As New Index()
+        indexForm.ShowDialog()
+    End Sub
+
     'DCC Dice
     Private Sub D3Button_Click(sender As Object, e As EventArgs) Handles D3Button.Click
         Dim numRolls As Integer = D3Count.Value
@@ -290,35 +295,74 @@ Public Class Start
     End Sub
 
     Private Sub MagicGenerate_Click(sender As Object, e As EventArgs) Handles MagicGenerate.Click
-        Dim challengeRating As Integer = MagicCRSelect.SelectedIndex
+        Dim challengeRating As Integer = MagicCRSelect.SelectedIndex + 1
 
         'Gen treasure
-        Dim treasure As List(Of Object) = GenerateTreasure(challengeRating)
+        Dim treasure As List(Of (Item As Item, Currency As Currency, JunkItem As List(Of Item))) = GenerateTreasure(challengeRating)
 
         'Display
-        Dim message As New StringBuilder()
+        historybox.AppendText("===== TREASURE =====" & Environment.NewLine)
         For i As Integer = 0 To treasure.Count - 1
-            If TypeOf treasure(i) Is Item Then
-                Dim item = CType(treasure(i), Item)
-                message.AppendLine((i + 1).ToString() & ". " & item.Name & " (Rarity: " & item.Rarity & ")")
-            ElseIf TypeOf treasure(i) Is Currency Then
-                Dim currency = CType(treasure(i), Currency)
-                message.AppendLine((i + 1).ToString() & ". " & currency.Amount & " " & currency.Type)
+            Dim magicItemResult As String = ""
+            Dim currencyResult As String = ""
+            Dim junkItemResult As New List(Of String)
+
+            If treasure(i).Item IsNot Nothing Then
+                Dim item = treasure(i).Item
+                magicItemResult = (item.Name)
             End If
+            If treasure(i).Currency IsNot Nothing Then
+                Dim currency = treasure(i).Currency
+                currencyResult = (currency.Amount & " " & currency.Type)
+            End If
+            For Each junkItem In treasure(i).JunkItem
+                If junkItem IsNot Nothing Then
+                    junkItemResult.Add(junkItem.Name)
+                End If
+            Next
+            historybox.AppendText((i + 1).ToString() & ". ")
+
+            If treasure(i).Item IsNot Nothing Then
+                Dim color As Color
+                Select Case treasure(i).Item.Rarity
+                    Case "Common"
+                        color = Color.Black
+                    Case "Uncommon"
+                        color = Color.Green
+                    Case "Rare"
+                        color = Color.Blue
+                    Case "Very Rare"
+                        color = Color.Purple
+                    Case "Legendary"
+                        color = Color.Orange
+                End Select
+                historybox.SelectionStart = historybox.TextLength
+                historybox.SelectionLength = 0
+                historybox.SelectionColor = color
+                historybox.AppendText(magicItemResult)
+                historybox.SelectionColor = historybox.ForeColor
+                historybox.AppendText(", ")
+            End If
+            historybox.AppendText(currencyResult & ", " & String.Join(", ", junkItemResult) & Environment.NewLine)
+            historybox.AppendText(Environment.NewLine)
         Next
-        historybox.AppendText(message.ToString())
+        historybox.ScrollToCaret()
     End Sub
 
-    Private Function GenerateTreasure(challengeRating As Integer) As List(Of Object)
+    Private Function GenerateTreasure(challengeRating As Integer) As List(Of (Item As Item, Currency As Currency, JunkItem As List(Of Item)))
         Dim rand As New Random()
 
-        Dim treasure As New List(Of Object)
+        Dim treasure As New List(Of (Item As Item, Currency As Currency, JunkItem As List(Of Item)))
         For i As Integer = 1 To 10
-            '15% chance of magic item.
+            Dim item As Item = Nothing
+            Dim currency As Currency = Nothing
+            Dim junkItem As New List(Of Item)
+
+            '10% chance of magic item.
             If rand.NextDouble() < 0.1 Then
                 Dim index As Integer = rand.Next(MagicItemDatabase.Items.Count)
 
-                Dim item = MagicItemDatabase.Items(index)
+                item = MagicItemDatabase.Items(index)
 
                 'Account for CR
                 If (challengeRating < 15 And item.Rarity = "Legendary") Or
@@ -329,14 +373,20 @@ Public Class Start
                     index = rand.Next(MagicItemDatabase.Items.Count)
                     item = MagicItemDatabase.Items(index)
                 End If
+            End If
 
-                treasure.Add(item)
+            'junk item
+            Dim junkIndex As Integer = rand.Next(JunkItemDatabase.Items.Count)
+            junkItem.Add(JunkItemDatabase.Items(junkIndex))
+            If rand.NextDouble() < 0.5 Then
+                junkIndex = rand.Next(JunkItemDatabase.Items.Count)
+                junkItem.Add(JunkItemDatabase.Items(junkIndex))
             End If
 
             'Generate shmoney
-            Dim gp As Integer = rand.Next(challengeRating, challengeRating * 10)
-            Dim sp As Integer = rand.Next(challengeRating * 10, challengeRating * 100)
-            Dim cp As Integer = rand.Next(challengeRating * 100, challengeRating * 1000)
+            Dim gp As Integer = rand.Next(challengeRating + 1, challengeRating * 10 + 1)
+            Dim sp As Integer = rand.Next(challengeRating * 10 + 1, challengeRating * 100 + 1)
+            Dim cp As Integer = rand.Next(challengeRating * 100 + 1, challengeRating * 1000 + 1)
 
             'Convert
             sp += cp \ 100
@@ -346,12 +396,14 @@ Public Class Start
 
             Dim currencyType As Integer = rand.Next(3)
             If currencyType = 0 Then
-                treasure.Add(New Currency With {.Type = "GP", .Amount = gp})
+                currency = New Currency With {.Type = "GP", .Amount = gp}
             ElseIf currencyType = 1 Then
-                treasure.Add(New Currency With {.Type = "SP", .Amount = sp})
+                currency = New Currency With {.Type = "SP", .Amount = sp}
             Else
-                treasure.Add(New Currency With {.Type = "CP", .Amount = cp})
+                currency = New Currency With {.Type = "CP", .Amount = cp}
             End If
+
+            treasure.Add((item, currency, junkItem))
         Next
 
         Return treasure
@@ -485,7 +537,7 @@ Public Module MagicItemDatabase
         New Item("Wand of the War Mage, +2", "Wand", "Rare", "Requires Attunement | Spellcaster", "While holding this wand, you gain a bonus to spell attack rolls determined by the wand's rarity. In addition, you ignore half cover when making a spell attack.", "dmg 212"),
         New Item("Wand of Polymorph", "Wand", "Very Rare", "Requires Attunement | Spellcaster", "This wand has 7 charges. While holding it, you can use an action to expend 1 of its charges to cast the polymorph spell (save DC 15) from it. The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.", "dmg 211"),
         New Item("Wand of the War Mage, +3", "Wand", "Very Rare", "Requires Attunement | Spellcaster", "While holding this wand, you gain a bonus to spell attack rolls determined by the wand's rarity. In addition, you ignore half cover when making a spell attack.", "dmg 212"),
-        New Item("Moon-Touched Sword", "Weapon", "Common", "ATTUNE", "Any Sword | In darkness, the unsheathed blade of this sword sheds moonlight, creating bright light in a 15-foot radius and dim light for an additional 15 feet.", "xge 138"),
+        New Item("Moon-Touched Sword", "Weapon", "Common", "", "Any Sword | In darkness, the unsheathed blade of this sword sheds moonlight, creating bright light in a 15-foot radius and dim light for an additional 15 feet.", "xge 138"),
         New Item("Unbreakable Arrow", "Weapon", "Common", "", "Arrow | This arrow can't be broken, except when it is within an Antimagic Field.", "xge 139"),
         New Item("Walloping Ammunition", "Weapon", "Common", "", "Any Ammunition | This ammunition packs a wallop. A creature hit by the ammunition must succeed on a DC 10 Strength saving throw or be knocked prone.", "xge 139"),
         New Item("Ammunition, +1", "Weapon", "Uncommon", "", "Any Ammunition | You have a bonus to attack and damage rolls made with this piece of magic ammunition. The bonus is determined by the rarity of the ammunition. Once it hits a target, the ammunition is no longer magical.", "dmg 150"),
@@ -605,5 +657,132 @@ Public Module MagicItemDatabase
         New Item("Talisman of Pure Good", "Wondrous Item", "Legendary", "Requires Attunement | Good Alignment", "This talisman is a mighty symbol of goodness. A creature that is neither good nor evil in alignment takes 6d6 radiant damage upon touching the talisman. An evil creature takes 8d6 radiant damage upon touching the talisman. Either sort of creature takes the damage again each time it ends its turn holding or carrying the talisman. If you are a good cleric or paladin, you can use the talisman as a holy symbol, and you gain a +2 bonus to spell attack rolls while you wear or hold it. The talisman has 7 charges. If you are wearing or holding it, you can use an action to expend 1 charge from it and choose one creature you can see on the ground within 120 feet of you. If the target is of evil alignment, a flaming fissure opens under it. The target must succeed on a DC 20 Dexterity saving throw or fall into the fissure and be destroyed, leaving no remains. The fissure then closes, leaving no trace of its existence. When you expend the last charge, the talisman disperses into motes of golden light and is destroyed.", "dmg 207"),
         New Item("Universal Solvent", "Wondrous Item", "Legendary", "", "This tube holds milky liquid with a strong alcohol smell. You can use an action to pour the contents of the tube onto a surface within reach. The liquid instantly dissolves up to 1 square foot of adhesive it touches, including sovereign glue.", "dmg 209"),
         New Item("Well of Many Worlds", "Wondrous Item", "Legendary", "", "This fine black cloth, soft as silk, is folded up to the dimensions of a handkerchief. It unfolds into a circular sheet 6 feet in diameter. You can use an action to unfold and place the well of many worlds on a solid surface, whereupon it creates a two-way portal to another world or plane of existence. Each time the item opens a portal, the GM decides where it leads. You can use an action to close an open portal by taking hold of the edges of the cloth and folding it up. Once the well of many worlds has opened a portal, it can't do so again for 1d8 hours.", "dmg 213")
+    }
+End Module
+
+Public Module JunkItemDatabase
+    Public ReadOnly Items As New List(Of Item) From {
+        New Item("a tiny figurine of a god of ice", "Junk", "Common", "", "", ""),
+        New Item("a document of identification", "Junk", "Common", "", "", ""),
+        New Item("dried berries", "Junk", "Common", "", "", ""),
+        New Item("some garlic", "Junk", "Common", "", "", ""),
+        New Item("a brass ring", "Junk", "Common", "", "", ""),
+        New Item("written directions to the Gauntlet of Aphotic Souls", "Junk", "Common", "", "", ""),
+        New Item("a smoking pipe", "Junk", "Common", "", "", ""),
+        New Item("a wedge of cheese", "Junk", "Common", "", "", ""),
+        New Item("a pair of cloth gloves", "Junk", "Common", "", "", ""),
+        New Item("a shopping list", "Junk", "Common", "", "", ""),
+        New Item("fragments of a shattered sword", "Junk", "Common", "", "", ""),
+        New Item("a pair of candle clocks", "Junk", "Common", "", "", ""),
+        New Item("a pendant of stained glass", "Junk", "Common", "", "", ""),
+        New Item("some hardtack", "Junk", "Common", "", "", ""),
+        New Item("nine unusual coins", "Junk", "Common", "", "", ""),
+        New Item("a blood-stained cloth", "Junk", "Common", "", "", ""),
+        New Item("a holy amulet", "Junk", "Common", "", "", ""),
+        New Item("a ring of iron keys", "Junk", "Common", "", "", ""),
+        New Item("a deck of tarot cards", "Junk", "Common", "", "", ""),
+        New Item("a pouch of medicinal herbs", "Junk", "Common", "", "", ""),
+        New Item("a list of people", "Junk", "Common", "", "", ""),
+        New Item("a block of soap", "Junk", "Common", "", "", ""),
+        New Item("the deed to a ruined tower", "Junk", "Common", "", "", ""),
+        New Item("a vial of scented oil", "Junk", "Common", "", "", ""),
+        New Item("several ribbons", "Junk", "Common", "", "", ""),
+        New Item("a platinum coin wrapped in a crude map", "Junk", "Common", "", "", ""),
+        New Item("some lacy undergarments", "Junk", "Common", "", "", ""),
+        New Item("a set of fine brushes", "Junk", "Common", "", "", ""),
+        New Item("a letter of correspondence", "Junk", "Common", "", "", ""),
+        New Item("a steel key", "Junk", "Common", "", "", ""),
+        New Item("a brass bell", "Junk", "Common", "", "", ""),
+        New Item("a whetstone", "Junk", "Common", "", "", ""),
+        New Item("a magnifying glass", "Junk", "Common", "", "", ""),
+        New Item("a shopping list", "Junk", "Common", "", "", ""),
+        New Item("a preserved basilisk eye", "Junk", "Common", "", "", ""),
+        New Item("an invitation", "Junk", "Common", "", "", ""),
+        New Item("a glass sphere", "Junk", "Common", "", "", ""),
+        New Item("an onion", "Junk", "Common", "", "", ""),
+        New Item("a pouch of pipeweed", "Junk", "Common", "", "", ""),
+        New Item("a small pouch of chalk", "Junk", "Common", "", "", ""),
+        New Item("a flask of ale", "Junk", "Common", "", "", ""),
+        New Item("eleven unusual coins", "Junk", "Common", "", "", ""),
+        New Item("some stale bread", "Junk", "Common", "", "", ""),
+        New Item("some scraps of bad poetry", "Junk", "Common", "", "", ""),
+        New Item("a flask of water", "Junk", "Common", "", "", ""),
+        New Item("a spool of thread", "Junk", "Common", "", "", ""),
+        New Item("a pouch of seeds", "Junk", "Common", "", "", ""),
+        New Item("a pouch of glass marbles", "Junk", "Common", "", "", ""),
+        New Item("a small hammer and chisel", "Junk", "Common", "", "", ""),
+        New Item("a carved bone whistle", "Junk", "Common", "", "", ""),
+        New Item("a broken key", "Junk", "Common", "", "", ""),
+        New Item("some sand", "Junk", "Common", "", "", ""),
+        New Item("a rabbit's foot", "Junk", "Common", "", "", ""),
+        New Item("a bundle of seven twigs", "Junk", "Common", "", "", ""),
+        New Item("an empty flask", "Junk", "Common", "", "", ""),
+        New Item("several mushrooms", "Junk", "Common", "", "", ""),
+        New Item("an apple", "Junk", "Common", "", "", ""),
+        New Item("a pouch of salt", "Junk", "Common", "", "", ""),
+        New Item("a map of a nearby castle", "Junk", "Uncommon", "", "", ""),
+        New Item("a drafting compass", "Junk", "Uncommon", "", "", ""),
+        New Item("a vial of lightning", "Junk", "Uncommon", "", "", ""),
+        New Item("a vial of quicksilver", "Junk", "Uncommon", "", "", ""),
+        New Item("a pouch of viridian powder", "Junk", "Uncommon", "", "", ""),
+        New Item("a vial of perfume", "Junk", "Uncommon", "", "", ""),
+        New Item("a contract for services", "Junk", "Uncommon", "", "", ""),
+        New Item("a page torn from a spellbook", "Junk", "Uncommon", "", "", ""),
+        New Item("a map of the local area", "Junk", "Uncommon", "", "", ""),
+        New Item("a sling and 10 bullets", "Junk", "Uncommon", "", "", ""),
+        New Item("the deed to a small property", "Junk", "Uncommon", "", "", ""),
+        New Item("a two-headed copper coin", "Junk", "Uncommon", "", "", ""),
+        New Item("a pouch of multi-colored chalk", "Junk", "Uncommon", "", "", ""),
+        New Item("a mysterious clockwork device", "Junk", "Uncommon", "", "", ""),
+        New Item("spectacles", "Junk", "Uncommon", "", "", ""),
+        New Item("a set of runestones wrapped in cloth", "Junk", "Uncommon", "", "", ""),
+        New Item("an ominous warning", "Junk", "Uncommon", "", "", ""),
+        New Item("a set of merchant's weights", "Junk", "Uncommon", "", "", ""),
+        New Item("a pouch of topaz powder", "Junk", "Uncommon", "", "", ""),
+        New Item("a lock of golden hair", "Junk", "Uncommon", "", "", ""),
+        New Item("a small iron ingot", "Junk", "Uncommon", "", "", ""),
+        New Item("a pewter key", "Junk", "Uncommon", "", "", ""),
+        New Item("a steel key", "Junk", "Uncommon", "", "", ""),
+        New Item("a bottle of honey", "Junk", "Uncommon", "", "", ""),
+        New Item("a dragon's tooth", "Junk", "Uncommon", "", "", ""),
+        New Item("a pair of dice engraved with runes", "Junk", "Uncommon", "", "", ""),
+        New Item("a vial of ashes", "Junk", "Uncommon", "", "", ""),
+        New Item("an iridescent scale", "Junk", "Uncommon", "", "", ""),
+        New Item("a vial of ink", "Junk", "Uncommon", "", "", ""),
+        New Item("a signet ring", "Junk", "Uncommon", "", "", ""),
+        New Item("a mysterious clockwork device", "Junk", "Uncommon", "", "", ""),
+        New Item("a lock", "Junk", "Uncommon", "", "", ""),
+        New Item("a blob of wax", "Junk", "Uncommon", "", "", ""),
+        New Item("an empty vial", "Junk", "Uncommon", "", "", ""),
+        New Item("a trilobite fossil", "Junk", "Uncommon", "", "", ""),
+        New Item("a necklace of animal teeth", "Junk", "Uncommon", "", "", ""),
+        New Item("a small ingot of electrum", "Junk", "Uncommon", "", "", ""),
+        New Item("a tattered map of the Tomb of Demonic Chaos", "Junk", "Uncommon", "", "", ""),
+        New Item("a lead amulet", "Junk", "Uncommon", "", "", ""),
+        New Item("a tiny figurine of a rat", "Junk", "Uncommon", "", "", ""),
+        New Item("a patch of chainmail", "Junk", "Uncommon", "", "", ""),
+        New Item("a pouch of candies", "Junk", "Uncommon", "", "", ""),
+        New Item("a patch of rabbit fur", "Junk", "Uncommon", "", "", ""),
+        New Item("a journal of heresies", "Junk", "Uncommon", "", "", ""),
+        New Item("a crystal of sulphur", "Junk", "Uncommon", "", "", ""),
+        New Item("a lock of gray hair", "Junk", "Uncommon", "", "", ""),
+        New Item("a pouch of bronze powder", "Junk", "Uncommon", "", "", ""),
+        New Item("a handkerchief", "Junk", "Uncommon", "", "", ""),
+        New Item("a pouch of pixie dust", "Junk", "Rare", "", "", ""),
+        New Item("a small meteorite", "Junk", "Rare", "", "", ""),
+        New Item("a goblin key (can lock any door)", "Junk", "Rare", "", "", ""),
+        New Item("an ivory game piece", "Junk", "Rare", "", "", ""),
+        New Item("written directions to the Vaults of Sabaalu", "Junk", "Rare", "", "", ""),
+        New Item("a tiny figurine of a male gnome", "Junk", "Rare", "", "", ""),
+        New Item("a tiny figurine of an octopus", "Junk", "Rare", "", "", ""),
+        New Item("a small lodestone", "Junk", "Rare", "", "", ""),
+        New Item("a cloth game board and wooden tokens", "Junk", "Rare", "", "", ""),
+        New Item("a vial of blood", "Junk", "Rare", "", "", ""),
+        New Item("a lock of emerald hair", "Junk", "Rare", "", "", ""),
+        New Item("a tiny figurine of a god of darkness", "Junk", "Rare", "", "", ""),
+        New Item("a copper key", "Junk", "Rare", "", "", ""),
+        New Item("a flask of wine", "Junk", "Rare", "", "", ""),
+        New Item("an Explosive Rune", "Junk", "Rare", "", "", ""),
+        New Item("a gold key", "Junk", "Rare", "", "", "")
     }
 End Module

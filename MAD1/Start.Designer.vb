@@ -30,6 +30,7 @@ Partial Class Start
         ResetCountersToolStripMenuItem = New ToolStripMenuItem()
         ClearHistoryToolStripMenuItem = New ToolStripMenuItem()
         HelpToolStripMenuItem = New ToolStripMenuItem()
+        IndexToolStripMenuItem = New ToolStripMenuItem()
         AboutToolStripMenuItem = New ToolStripMenuItem()
         Tabs = New TabControl()
         TabPage1 = New TabPage()
@@ -64,11 +65,12 @@ Partial Class Start
         D3Button = New Button()
         TabPage3 = New TabPage()
         ItemGroup = New GroupBox()
+        GPOnlyCheck = New CheckBox()
+        MagicGenerate = New Button()
         MagicCRLabel = New Label()
         MagicCRSelect = New ComboBox()
         Panel = New Panel()
         historybox = New RichTextBox()
-        MagicGenerate = New Button()
         Menu.SuspendLayout()
         Tabs.SuspendLayout()
         TabPage1.SuspendLayout()
@@ -135,10 +137,16 @@ Partial Class Start
         ' 
         ' HelpToolStripMenuItem
         ' 
-        HelpToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AboutToolStripMenuItem})
+        HelpToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {IndexToolStripMenuItem, AboutToolStripMenuItem})
         HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         HelpToolStripMenuItem.Size = New Size(44, 20)
         HelpToolStripMenuItem.Text = "Help"
+        ' 
+        ' IndexToolStripMenuItem
+        ' 
+        IndexToolStripMenuItem.Name = "IndexToolStripMenuItem"
+        IndexToolStripMenuItem.Size = New Size(107, 22)
+        IndexToolStripMenuItem.Text = "Index"
         ' 
         ' AboutToolStripMenuItem
         ' 
@@ -469,16 +477,36 @@ Partial Class Start
         ' 
         ' ItemGroup
         ' 
+        ItemGroup.Controls.Add(GPOnlyCheck)
         ItemGroup.Controls.Add(MagicGenerate)
         ItemGroup.Controls.Add(MagicCRLabel)
         ItemGroup.Controls.Add(MagicCRSelect)
         ItemGroup.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
         ItemGroup.Location = New Point(3, 3)
         ItemGroup.Name = "ItemGroup"
-        ItemGroup.Size = New Size(407, 111)
+        ItemGroup.Size = New Size(179, 124)
         ItemGroup.TabIndex = 0
         ItemGroup.TabStop = False
-        ItemGroup.Text = "Magic Items"
+        ItemGroup.Text = "Individual Treasure"
+        ' 
+        ' GPOnlyCheck
+        ' 
+        GPOnlyCheck.AutoSize = True
+        GPOnlyCheck.Location = New Point(6, 50)
+        GPOnlyCheck.Name = "GPOnlyCheck"
+        GPOnlyCheck.Size = New Size(69, 19)
+        GPOnlyCheck.TabIndex = 3
+        GPOnlyCheck.Text = "GP Only"
+        GPOnlyCheck.UseVisualStyleBackColor = True
+        ' 
+        ' MagicGenerate
+        ' 
+        MagicGenerate.Location = New Point(87, 88)
+        MagicGenerate.Name = "MagicGenerate"
+        MagicGenerate.Size = New Size(86, 30)
+        MagicGenerate.TabIndex = 2
+        MagicGenerate.Text = "Generate"
+        MagicGenerate.UseVisualStyleBackColor = True
         ' 
         ' MagicCRLabel
         ' 
@@ -494,10 +522,11 @@ Partial Class Start
         ' 
         MagicCRSelect.FormattingEnabled = True
         MagicCRSelect.Items.AddRange(New Object() {"CR 0", "CR 1", "CR 2", "CR 3", "CR 4", "CR 5", "CR 6", "CR 7", "CR 8", "CR 9", "CR 10", "CR 11", "CR 12", "CR 13", "CR 15", "CR 16", "CR 17", "CR 18", "CR 19", "CR 20+"})
-        MagicCRSelect.Location = New Point(112, 16)
+        MagicCRSelect.Location = New Point(115, 16)
         MagicCRSelect.Name = "MagicCRSelect"
-        MagicCRSelect.Size = New Size(76, 23)
+        MagicCRSelect.Size = New Size(58, 23)
         MagicCRSelect.TabIndex = 0
+        MagicCRSelect.Text = "CR 0"
         ' 
         ' Panel
         ' 
@@ -506,7 +535,7 @@ Partial Class Start
         Panel.Controls.Add(Tabs)
         Panel.Location = New Point(12, 27)
         Panel.Name = "Panel"
-        Panel.Size = New Size(431, 722)
+        Panel.Size = New Size(431, 761)
         Panel.TabIndex = 2
         ' 
         ' historybox
@@ -515,24 +544,15 @@ Partial Class Start
         historybox.Location = New Point(3, 283)
         historybox.Name = "historybox"
         historybox.ReadOnly = True
-        historybox.Size = New Size(421, 432)
+        historybox.Size = New Size(421, 471)
         historybox.TabIndex = 2
         historybox.Text = ""
-        ' 
-        ' MagicGenerate
-        ' 
-        MagicGenerate.Location = New Point(315, 75)
-        MagicGenerate.Name = "MagicGenerate"
-        MagicGenerate.Size = New Size(86, 30)
-        MagicGenerate.TabIndex = 2
-        MagicGenerate.Text = "Generate"
-        MagicGenerate.UseVisualStyleBackColor = True
         ' 
         ' Start
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(455, 761)
+        ClientSize = New Size(455, 800)
         Controls.Add(Panel)
         Controls.Add(Menu)
         FormBorderStyle = FormBorderStyle.FixedSingle
@@ -614,5 +634,7 @@ Partial Class Start
     Friend WithEvents MagicCRLabel As Label
     Friend WithEvents MagicCRSelect As ComboBox
     Friend WithEvents MagicGenerate As Button
+    Friend WithEvents GPOnlyCheck As CheckBox
+    Friend WithEvents IndexToolStripMenuItem As ToolStripMenuItem
 
 End Class
