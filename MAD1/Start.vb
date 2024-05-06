@@ -358,51 +358,64 @@ Public Class Start
             Dim currency As Currency = Nothing
             Dim junkItem As New List(Of Item)
 
-            '10% chance of magic item.
-            If rand.NextDouble() < 0.1 Then
-                Dim index As Integer = rand.Next(MagicItemDatabase.Items.Count)
+            If IndividualIncludeItemsCheck.Checked Then
+                '10% chance of magic item.
+                If rand.NextDouble() < 0.1 Then
+                    Dim index As Integer = rand.Next(MagicItemDatabase.Items.Count)
 
-                item = MagicItemDatabase.Items(index)
+                    item = MagicItemDatabase.Items(index)
 
-                'Account for CR
-                If (challengeRating < 15 And item.Rarity = "Legendary") Or
+                    'Account for CR
+                    If (challengeRating < 15 And item.Rarity = "Legendary") Or
                    (challengeRating < 10 And item.Rarity = "Very Rare") Or
                    (challengeRating < 5 And item.Rarity = "Rare") Or
                    (challengeRating < 1 And item.Rarity = "Uncommon") Then
-                    'Roll again
-                    index = rand.Next(MagicItemDatabase.Items.Count)
-                    item = MagicItemDatabase.Items(index)
+                        'Roll again
+                        index = rand.Next(MagicItemDatabase.Items.Count)
+                        item = MagicItemDatabase.Items(index)
+                    End If
+                End If
+
+                'junk item
+                Dim junkIndex As Integer = rand.Next(JunkItemDatabase.Items.Count)
+                junkItem.Add(JunkItemDatabase.Items(junkIndex))
+                If rand.NextDouble() < 0.5 Then
+                    junkIndex = rand.Next(JunkItemDatabase.Items.Count)
+                    junkItem.Add(JunkItemDatabase.Items(junkIndex))
                 End If
             End If
 
-            'junk item
-            Dim junkIndex As Integer = rand.Next(JunkItemDatabase.Items.Count)
-            junkItem.Add(JunkItemDatabase.Items(junkIndex))
-            If rand.NextDouble() < 0.5 Then
-                junkIndex = rand.Next(JunkItemDatabase.Items.Count)
-                junkItem.Add(JunkItemDatabase.Items(junkIndex))
-            End If
-
             'Generate shmoney
-            Dim gp As Integer = rand.Next(challengeRating + 1, challengeRating * 10 + 1)
-            Dim sp As Integer = rand.Next(challengeRating * 10 + 1, challengeRating * 100 + 1)
-            Dim cp As Integer = rand.Next(challengeRating * 100 + 1, challengeRating * 1000 + 1)
+            Dim minGp As Integer = challengeRating * 10
+            Dim maxGp As Integer = Math.Max(minGp, 10 + Math.Sqrt(challengeRating) * 50)
+            Dim gp As Integer = rand.Next(minGp, maxGp)
+
+            Dim minSp As Integer = challengeRating * 100
+            Dim maxSp As Integer = Math.Max(minSp, 100 + Math.Sqrt(challengeRating) * 500)
+            Dim sp As Integer = rand.Next(minSp, maxSp)
+
+            Dim minCp As Integer = challengeRating * 1000
+            Dim maxCp As Integer = Math.Max(minCp, 1000 + Math.Sqrt(challengeRating) * 5000)
+            Dim cp As Integer = rand.Next(minCp, maxCp)
 
             'Convert
-            sp += cp \ 100
-            cp = cp Mod 100
-            gp += sp \ 100
-            sp = sp Mod 100
+            'sp += cp \ 100
+            'cp = cp Mod 100
+            'gp += sp \ 100
+            'sp = sp Mod 100
 
-            Dim currencyType As Integer = rand.Next(3)
-            If currencyType = 0 Then
-                currency = New Currency With {.Type = "GP", .Amount = gp}
-            ElseIf currencyType = 1 Then
-                currency = New Currency With {.Type = "SP", .Amount = sp}
+            If Not GPOnlyCheck.Checked Then
+                Dim currencyType As Integer = rand.Next(3)
+                If currencyType = 0 Then
+                    currency = New Currency With {.Type = "GP", .Amount = gp}
+                ElseIf currencyType = 1 Then
+                    currency = New Currency With {.Type = "SP", .Amount = sp}
+                Else
+                    currency = New Currency With {.Type = "CP", .Amount = cp}
+                End If
             Else
-                currency = New Currency With {.Type = "CP", .Amount = cp}
+                currency = New Currency With {.Type = "GP", .Amount = gp}
             End If
-
             treasure.Add((item, currency, junkItem))
         Next
 

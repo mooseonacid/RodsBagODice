@@ -71,6 +71,7 @@ Partial Class Start
         MagicCRSelect = New ComboBox()
         Panel = New Panel()
         historybox = New RichTextBox()
+        IndividualIncludeItemsCheck = New CheckBox()
         Menu.SuspendLayout()
         Tabs.SuspendLayout()
         TabPage1.SuspendLayout()
@@ -477,6 +478,7 @@ Partial Class Start
         ' 
         ' ItemGroup
         ' 
+        ItemGroup.Controls.Add(IndividualIncludeItemsCheck)
         ItemGroup.Controls.Add(GPOnlyCheck)
         ItemGroup.Controls.Add(MagicGenerate)
         ItemGroup.Controls.Add(MagicCRLabel)
@@ -492,7 +494,7 @@ Partial Class Start
         ' GPOnlyCheck
         ' 
         GPOnlyCheck.AutoSize = True
-        GPOnlyCheck.Location = New Point(6, 50)
+        GPOnlyCheck.Location = New Point(6, 62)
         GPOnlyCheck.Name = "GPOnlyCheck"
         GPOnlyCheck.Size = New Size(69, 19)
         GPOnlyCheck.TabIndex = 3
@@ -547,6 +549,18 @@ Partial Class Start
         historybox.Size = New Size(421, 471)
         historybox.TabIndex = 2
         historybox.Text = ""
+        ' 
+        ' IndividualIncludeItemsCheck
+        ' 
+        IndividualIncludeItemsCheck.AutoSize = True
+        IndividualIncludeItemsCheck.Checked = True
+        IndividualIncludeItemsCheck.CheckState = CheckState.Checked
+        IndividualIncludeItemsCheck.Location = New Point(6, 37)
+        IndividualIncludeItemsCheck.Name = "IndividualIncludeItemsCheck"
+        IndividualIncludeItemsCheck.Size = New Size(97, 19)
+        IndividualIncludeItemsCheck.TabIndex = 4
+        IndividualIncludeItemsCheck.Text = "Include Items"
+        IndividualIncludeItemsCheck.UseVisualStyleBackColor = True
         ' 
         ' Start
         ' 
@@ -636,5 +650,6 @@ Partial Class Start
     Friend WithEvents MagicGenerate As Button
     Friend WithEvents GPOnlyCheck As CheckBox
     Friend WithEvents IndexToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents IndividualIncludeItemsCheck As CheckBox
 
 End Class

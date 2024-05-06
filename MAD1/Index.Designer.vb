@@ -23,13 +23,14 @@ Partial Class Index
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Index))
         IndexPanel = New Panel()
         TabControl1 = New TabControl()
         IndexTabPage1 = New TabPage()
+        MagicSearchBox = New TextBox()
+        MagicSearchLabel = New Label()
         MagicItemsDataGrid = New DataGridView()
         MagicItemDatabaseBindingSource = New BindingSource(components)
-        MagicSearchLabel = New Label()
-        MagicSearchBox = New TextBox()
         IndexPanel.SuspendLayout()
         TabControl1.SuspendLayout()
         IndexTabPage1.SuspendLayout()
@@ -68,6 +69,23 @@ Partial Class Index
         IndexTabPage1.Text = "Magic Items"
         IndexTabPage1.UseVisualStyleBackColor = True
         ' 
+        ' MagicSearchBox
+        ' 
+        MagicSearchBox.Location = New Point(57, 9)
+        MagicSearchBox.Name = "MagicSearchBox"
+        MagicSearchBox.Size = New Size(298, 23)
+        MagicSearchBox.TabIndex = 2
+        ' 
+        ' MagicSearchLabel
+        ' 
+        MagicSearchLabel.AutoSize = True
+        MagicSearchLabel.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        MagicSearchLabel.Location = New Point(6, 15)
+        MagicSearchLabel.Name = "MagicSearchLabel"
+        MagicSearchLabel.Size = New Size(54, 17)
+        MagicSearchLabel.TabIndex = 1
+        MagicSearchLabel.Text = "Search: "
+        ' 
         ' MagicItemsDataGrid
         ' 
         MagicItemsDataGrid.AllowUserToAddRows = False
@@ -85,30 +103,15 @@ Partial Class Index
         ' 
         MagicItemDatabaseBindingSource.DataSource = GetType(MagicItemDatabase)
         ' 
-        ' MagicSearchLabel
-        ' 
-        MagicSearchLabel.AutoSize = True
-        MagicSearchLabel.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        MagicSearchLabel.Location = New Point(6, 15)
-        MagicSearchLabel.Name = "MagicSearchLabel"
-        MagicSearchLabel.Size = New Size(54, 17)
-        MagicSearchLabel.TabIndex = 1
-        MagicSearchLabel.Text = "Search: "
-        ' 
-        ' MagicSearchBox
-        ' 
-        MagicSearchBox.Location = New Point(57, 9)
-        MagicSearchBox.Name = "MagicSearchBox"
-        MagicSearchBox.Size = New Size(298, 23)
-        MagicSearchBox.TabIndex = 2
-        ' 
         ' Index
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(884, 611)
         Controls.Add(IndexPanel)
-        FormBorderStyle = FormBorderStyle.FixedToolWindow
+        FormBorderStyle = FormBorderStyle.FixedSingle
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
+        MaximizeBox = False
         Name = "Index"
         Text = "Index"
         IndexPanel.ResumeLayout(False)
