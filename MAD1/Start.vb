@@ -12,6 +12,7 @@ Public Class Start
         End Using
     End Function
 
+    'Standard dice
     Private Sub D4Button_Click(sender As Object, e As EventArgs) Handles D4Button.Click
         Dim numRolls As Integer = D4Count.Value
         Dim total As Integer = 0
@@ -139,6 +140,7 @@ Public Class Start
         historybox.ScrollToCaret()
     End Sub
 
+    'Menu bar stuff
     Private Sub ResetCountersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetCountersToolStripMenuItem.Click
         D3Count.Value = 1
         D4Count.Value = 1
@@ -294,6 +296,7 @@ Public Class Start
         historybox.ScrollToCaret()
     End Sub
 
+    'Loot stuff
     Private Sub MagicGenerate_Click(sender As Object, e As EventArgs) Handles MagicGenerate.Click
         Dim challengeRating As Integer = MagicCRSelect.SelectedIndex + 1
 
@@ -344,7 +347,9 @@ Public Class Start
                 historybox.AppendText(", ")
             End If
             historybox.AppendText(currencyResult & ", " & String.Join(", ", junkItemResult) & Environment.NewLine)
-            historybox.AppendText(Environment.NewLine)
+            If i < treasure.Count - 1 Then
+                historybox.AppendText(Environment.NewLine)
+            End If
         Next
         historybox.ScrollToCaret()
     End Sub
@@ -358,22 +363,11 @@ Public Class Start
             Dim currency As Currency = Nothing
             Dim junkItem As New List(Of Item)
 
+            'items
             If IndividualIncludeItemsCheck.Checked Then
-                '10% chance of magic item.
+                '10% chance for magic item
                 If rand.NextDouble() < 0.1 Then
-                    Dim index As Integer = rand.Next(MagicItemDatabase.Items.Count)
-
-                    item = MagicItemDatabase.Items(index)
-
-                    'Account for CR
-                    If (challengeRating < 15 And item.Rarity = "Legendary") Or
-                   (challengeRating < 10 And item.Rarity = "Very Rare") Or
-                   (challengeRating < 5 And item.Rarity = "Rare") Or
-                   (challengeRating < 1 And item.Rarity = "Uncommon") Then
-                        'Roll again
-                        index = rand.Next(MagicItemDatabase.Items.Count)
-                        item = MagicItemDatabase.Items(index)
-                    End If
+                    item = GetRandomItem(challengeRating)
                 End If
 
                 'junk item
@@ -398,7 +392,7 @@ Public Class Start
             Dim maxCp As Integer = Math.Max(minCp, 1000 + Math.Sqrt(challengeRating) * 5000)
             Dim cp As Integer = rand.Next(minCp, maxCp)
 
-            'Convert
+            'Convert shmoney
             'sp += cp \ 100
             'cp = cp Mod 100
             'gp += sp \ 100
@@ -420,6 +414,51 @@ Public Class Start
         Next
 
         Return treasure
+    End Function
+
+    'Rarity weight test
+    Private Function GetRandomItem(challengeRating As Integer) As Item
+        Dim rand As New Random()
+
+        Dim items As New List(Of (Item As Item, Rarity As Integer))
+        For Each item In MagicItemDatabase.Items
+            Dim rarity As Integer
+            Select Case item.Rarity
+                Case "Common"
+                    rarity = 1
+                Case "Uncommon"
+                    rarity = 2
+                Case "Rare"
+                    rarity = 3
+                Case "Very Rare"
+                    rarity = 4
+                Case "Legendary"
+                    rarity = 5
+                Case Else
+                    rarity = 1
+            End Select
+            'CR ceiling for item rarity
+            If (rarity <= Math.Ceiling(challengeRating / 4.0)) Then
+                items.Add((item, rarity))
+            End If
+        Next
+
+        'calc weight
+        Dim totalWeight As Integer = items.Sum(Function(x) x.Rarity * challengeRating)
+
+        'random value between 0 and total weight
+        Dim randomValue As Integer = rand.Next(totalWeight)
+
+        'Find item based on random value
+        For Each item In items
+            If randomValue < item.Rarity * challengeRating Then
+                Return item.Item
+            End If
+            randomValue -= item.Rarity * challengeRating
+        Next
+
+        'If nothing is found (should not happen)
+        Return Nothing
     End Function
 End Class
 
