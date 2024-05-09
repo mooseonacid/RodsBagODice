@@ -274,7 +274,7 @@ Public Class Start
         Dim treasure As List(Of (Item As Item, Currency As Currency, JunkItem As List(Of Item))) = GenerateTreasure(challengeRating)
 
         'Display
-        historybox.AppendText("===== TREASURE =====" & Environment.NewLine)
+        historybox.AppendText("===== INDIVIDUAL TREASURE =====" & Environment.NewLine)
         For i As Integer = 0 To treasure.Count - 1
             Dim magicItemResult As String = ""
             Dim currencyResult As String = ""
@@ -576,6 +576,57 @@ Public Class Start
             End Try
         End If
     End Sub
+
+    'name gen button
+    Private Sub nameGenerateButton_Click(sender As Object, e As EventArgs) Handles NameGenerateButton.Click
+        If NameRaceComboBox.SelectedItem IsNot Nothing Then
+            Dim race As String = NameRaceComboBox.SelectedItem.ToString()
+            Dim isMasc As Boolean = NameMascRadio.Checked
+            Dim includeSurname As Boolean = NameSurCheck.Checked
+
+            historybox.AppendText("===== RANDOM NAME | " & race & " =====" & Environment.NewLine)
+            For i As Integer = 1 To 10
+                Dim name As String = RandomNameGenerator.GenerateName(race, isMasc, includeSurname)
+
+                historybox.AppendText(i & ". " & name & Environment.NewLine)
+                If i < 10 Then
+                    historybox.AppendText(Environment.NewLine)
+                End If
+            Next
+            historybox.ScrollToCaret()
+        End If
+    End Sub
+End Class
+
+Public Class RandomNameGenerator
+    Private Shared random As New Random()
+
+    'name stuff
+    Private Shared humanFirstNamesM As String() = {"Raymond", "Arnold", "Richard", "Bertram", "Clerebold", "Theodoric", "Perar", "Gerard", "Dustin", "Gerald", "Drogo", "Charles", "Geoffrey", "Hubert", "Hugh", "Randal", "Antert", "Alex", "Rolan", "Patrick", "Tim", "Norman", "Ernest", "Nicholas", "Bernard", "Solomon"}
+    Private Shared humanFirstNamesF As String() = {"Bailey", "Annie"}
+    Private Shared humanSurname As String() = {"Jacobs", "Morrie", "Hart", "Leemancon", "Dumph", "Kitchur", "Byron", "Anderton", "Winchester", "Hamilton", "Hadlee", "Nibley", "Blyth", "Watson", "Malomary", "Blackwood", "Cornish", "Hadley", "Clinton", "Clayton", "Halsey", "Harper", "Tyndall", "Marley", "Hayes", "Cooper", "Langley", "Morley", "Clare"}
+
+    Public Shared Function GenerateName(race As String, isMasc As Boolean, includeSurname As Boolean) As String
+        Dim names As String()
+        Dim surnames As String()
+
+        Select Case race.ToLower()
+            Case "human"
+                names = If(isMasc, humanFirstNamesM, humanFirstNamesF)
+                surnames = humanSurname
+            Case Else
+                Throw New ArgumentException("Invalid race: " & race)
+        End Select
+
+        Dim name As String = names(random.Next(names.Length))
+
+        If includeSurname Then
+            Dim surname As String = surnames(random.Next(surnames.Length))
+            name &= " " & surname
+        End If
+
+        Return name
+    End Function
 End Class
 
 Public Class Item

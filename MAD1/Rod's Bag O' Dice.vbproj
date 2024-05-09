@@ -9,7 +9,7 @@
     <ImportedNamespaces>System.Data=False,System.Drawing=False,System.Windows.Forms=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,MAD1=True</ImportedNamespaces>
     <Description>Rod's Bag O' Dice</Description>
     <Copyright>UB&amp;CO 2024</Copyright>
-    <FileVersion>2.0.1</FileVersion>
+    <FileVersion>2.0.5</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

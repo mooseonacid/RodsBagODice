@@ -70,6 +70,14 @@ Partial Class Start
         MagicGenerate = New Button()
         MagicCRLabel = New Label()
         MagicCRSelect = New ComboBox()
+        TabPage5 = New TabPage()
+        NPCNameGenGroup = New GroupBox()
+        NameFemRadio = New RadioButton()
+        NameMascRadio = New RadioButton()
+        NameSurCheck = New CheckBox()
+        NameRaceComboBox = New ComboBox()
+        NameRaceLabel = New Label()
+        NameGenerateButton = New Button()
         TabPage4 = New TabPage()
         Panel = New Panel()
         Panel1 = New Panel()
@@ -103,6 +111,8 @@ Partial Class Start
         CType(D3Count, ComponentModel.ISupportInitialize).BeginInit()
         TabPage3.SuspendLayout()
         ItemGroup.SuspendLayout()
+        TabPage5.SuspendLayout()
+        NPCNameGenGroup.SuspendLayout()
         Panel.SuspendLayout()
         Panel1.SuspendLayout()
         CType(NotesFontSize, ComponentModel.ISupportInitialize).BeginInit()
@@ -174,6 +184,7 @@ Partial Class Start
         Tabs.Controls.Add(TabPage1)
         Tabs.Controls.Add(TabPage2)
         Tabs.Controls.Add(TabPage3)
+        Tabs.Controls.Add(TabPage5)
         Tabs.Controls.Add(TabPage4)
         Tabs.Location = New Point(3, 3)
         Tabs.Name = "Tabs"
@@ -557,6 +568,93 @@ Partial Class Start
         MagicCRSelect.TabIndex = 0
         MagicCRSelect.Text = "CR 0"
         ' 
+        ' TabPage5
+        ' 
+        TabPage5.Controls.Add(NPCNameGenGroup)
+        TabPage5.Location = New Point(4, 24)
+        TabPage5.Name = "TabPage5"
+        TabPage5.Size = New Size(413, 248)
+        TabPage5.TabIndex = 4
+        TabPage5.Text = "NPC"
+        TabPage5.UseVisualStyleBackColor = True
+        ' 
+        ' NPCNameGenGroup
+        ' 
+        NPCNameGenGroup.Controls.Add(NameFemRadio)
+        NPCNameGenGroup.Controls.Add(NameMascRadio)
+        NPCNameGenGroup.Controls.Add(NameSurCheck)
+        NPCNameGenGroup.Controls.Add(NameRaceComboBox)
+        NPCNameGenGroup.Controls.Add(NameRaceLabel)
+        NPCNameGenGroup.Controls.Add(NameGenerateButton)
+        NPCNameGenGroup.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        NPCNameGenGroup.Location = New Point(3, 3)
+        NPCNameGenGroup.Name = "NPCNameGenGroup"
+        NPCNameGenGroup.Size = New Size(179, 118)
+        NPCNameGenGroup.TabIndex = 1
+        NPCNameGenGroup.TabStop = False
+        NPCNameGenGroup.Text = "Name Generator"
+        ' 
+        ' NameFemRadio
+        ' 
+        NameFemRadio.AutoSize = True
+        NameFemRadio.Location = New Point(91, 47)
+        NameFemRadio.Name = "NameFemRadio"
+        NameFemRadio.Size = New Size(74, 19)
+        NameFemRadio.TabIndex = 10
+        NameFemRadio.Text = "Feminine"
+        NameFemRadio.UseVisualStyleBackColor = True
+        ' 
+        ' NameMascRadio
+        ' 
+        NameMascRadio.AutoSize = True
+        NameMascRadio.Checked = True
+        NameMascRadio.Location = New Point(6, 47)
+        NameMascRadio.Name = "NameMascRadio"
+        NameMascRadio.Size = New Size(79, 19)
+        NameMascRadio.TabIndex = 9
+        NameMascRadio.TabStop = True
+        NameMascRadio.Text = "Masculine"
+        NameMascRadio.UseVisualStyleBackColor = True
+        ' 
+        ' NameSurCheck
+        ' 
+        NameSurCheck.AutoSize = True
+        NameSurCheck.Location = New Point(6, 73)
+        NameSurCheck.Name = "NameSurCheck"
+        NameSurCheck.Size = New Size(73, 19)
+        NameSurCheck.TabIndex = 8
+        NameSurCheck.Text = "Surname"
+        NameSurCheck.UseVisualStyleBackColor = True
+        ' 
+        ' NameRaceComboBox
+        ' 
+        NameRaceComboBox.DropDownStyle = ComboBoxStyle.DropDownList
+        NameRaceComboBox.FormattingEnabled = True
+        NameRaceComboBox.Items.AddRange(New Object() {"Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Tiefling"})
+        NameRaceComboBox.Location = New Point(49, 16)
+        NameRaceComboBox.Name = "NameRaceComboBox"
+        NameRaceComboBox.Size = New Size(121, 23)
+        NameRaceComboBox.TabIndex = 5
+        ' 
+        ' NameRaceLabel
+        ' 
+        NameRaceLabel.AutoSize = True
+        NameRaceLabel.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        NameRaceLabel.Location = New Point(6, 19)
+        NameRaceLabel.Name = "NameRaceLabel"
+        NameRaceLabel.Size = New Size(37, 15)
+        NameRaceLabel.TabIndex = 4
+        NameRaceLabel.Text = "Race:"
+        ' 
+        ' NameGenerateButton
+        ' 
+        NameGenerateButton.Location = New Point(87, 82)
+        NameGenerateButton.Name = "NameGenerateButton"
+        NameGenerateButton.Size = New Size(86, 30)
+        NameGenerateButton.TabIndex = 3
+        NameGenerateButton.Text = "Generate"
+        NameGenerateButton.UseVisualStyleBackColor = True
+        ' 
         ' TabPage4
         ' 
         TabPage4.Location = New Point(4, 24)
@@ -699,7 +797,7 @@ Partial Class Start
         MainMenuStrip = Menu
         MaximizeBox = False
         Name = "Start"
-        Text = "Rod's Bag O' Dice | V2-Alpha 1"
+        Text = "Rod's Bag O' Dice | V2-Alpha 2"
         Menu.ResumeLayout(False)
         Menu.PerformLayout()
         Tabs.ResumeLayout(False)
@@ -722,6 +820,9 @@ Partial Class Start
         TabPage3.ResumeLayout(False)
         ItemGroup.ResumeLayout(False)
         ItemGroup.PerformLayout()
+        TabPage5.ResumeLayout(False)
+        NPCNameGenGroup.ResumeLayout(False)
+        NPCNameGenGroup.PerformLayout()
         Panel.ResumeLayout(False)
         Panel1.ResumeLayout(False)
         CType(NotesFontSize, ComponentModel.ISupportInitialize).EndInit()
@@ -790,5 +891,13 @@ Partial Class Start
     Friend WithEvents NotesUnderline As Button
     Friend WithEvents NotesFont As ComboBox
     Friend WithEvents NotesFontSize As NumericUpDown
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents NPCNameGenGroup As GroupBox
+    Friend WithEvents NameGenerateButton As Button
+    Friend WithEvents NameSurCheck As CheckBox
+    Friend WithEvents NameRaceComboBox As ComboBox
+    Friend WithEvents NameRaceLabel As Label
+    Friend WithEvents NameFemRadio As RadioButton
+    Friend WithEvents NameMascRadio As RadioButton
 
 End Class
