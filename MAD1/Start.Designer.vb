@@ -65,13 +65,24 @@ Partial Class Start
         D3Button = New Button()
         TabPage3 = New TabPage()
         ItemGroup = New GroupBox()
+        IndividualIncludeItemsCheck = New CheckBox()
         GPOnlyCheck = New CheckBox()
         MagicGenerate = New Button()
         MagicCRLabel = New Label()
         MagicCRSelect = New ComboBox()
+        TabPage4 = New TabPage()
         Panel = New Panel()
+        Panel1 = New Panel()
+        NotesFontSize = New NumericUpDown()
+        NotesFont = New ComboBox()
+        NotesUnderline = New Button()
+        NotesItalic = New Button()
+        NoteBold = New Button()
+        Panel2 = New Panel()
         historybox = New RichTextBox()
-        IndividualIncludeItemsCheck = New CheckBox()
+        notesbox = New RichTextBox()
+        NotesLoadButton = New Button()
+        NotesSaveButton = New Button()
         Menu.SuspendLayout()
         Tabs.SuspendLayout()
         TabPage1.SuspendLayout()
@@ -93,6 +104,9 @@ Partial Class Start
         TabPage3.SuspendLayout()
         ItemGroup.SuspendLayout()
         Panel.SuspendLayout()
+        Panel1.SuspendLayout()
+        CType(NotesFontSize, ComponentModel.ISupportInitialize).BeginInit()
+        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' Menu
@@ -160,10 +174,11 @@ Partial Class Start
         Tabs.Controls.Add(TabPage1)
         Tabs.Controls.Add(TabPage2)
         Tabs.Controls.Add(TabPage3)
+        Tabs.Controls.Add(TabPage4)
         Tabs.Location = New Point(3, 3)
         Tabs.Name = "Tabs"
         Tabs.SelectedIndex = 0
-        Tabs.Size = New Size(421, 274)
+        Tabs.Size = New Size(421, 276)
         Tabs.TabIndex = 1
         ' 
         ' TabPage1
@@ -185,7 +200,7 @@ Partial Class Start
         TabPage1.Location = New Point(4, 24)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(413, 246)
+        TabPage1.Size = New Size(413, 248)
         TabPage1.TabIndex = 0
         TabPage1.Text = "5E D20"
         TabPage1.UseVisualStyleBackColor = True
@@ -335,9 +350,9 @@ Partial Class Start
         TabPage2.Location = New Point(4, 24)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(413, 246)
+        TabPage2.Size = New Size(413, 248)
         TabPage2.TabIndex = 1
-        TabPage2.Text = "DCC"
+        TabPage2.Text = "DCC D30"
         TabPage2.UseVisualStyleBackColor = True
         ' 
         ' D30Count
@@ -471,7 +486,7 @@ Partial Class Start
         TabPage3.Controls.Add(ItemGroup)
         TabPage3.Location = New Point(4, 24)
         TabPage3.Name = "TabPage3"
-        TabPage3.Size = New Size(413, 246)
+        TabPage3.Size = New Size(413, 248)
         TabPage3.TabIndex = 2
         TabPage3.Text = "Treasure"
         TabPage3.UseVisualStyleBackColor = True
@@ -490,6 +505,18 @@ Partial Class Start
         ItemGroup.TabIndex = 0
         ItemGroup.TabStop = False
         ItemGroup.Text = "Individual Treasure"
+        ' 
+        ' IndividualIncludeItemsCheck
+        ' 
+        IndividualIncludeItemsCheck.AutoSize = True
+        IndividualIncludeItemsCheck.Checked = True
+        IndividualIncludeItemsCheck.CheckState = CheckState.Checked
+        IndividualIncludeItemsCheck.Location = New Point(6, 37)
+        IndividualIncludeItemsCheck.Name = "IndividualIncludeItemsCheck"
+        IndividualIncludeItemsCheck.Size = New Size(97, 19)
+        IndividualIncludeItemsCheck.TabIndex = 4
+        IndividualIncludeItemsCheck.Text = "Include Items"
+        IndividualIncludeItemsCheck.UseVisualStyleBackColor = True
         ' 
         ' GPOnlyCheck
         ' 
@@ -530,37 +557,135 @@ Partial Class Start
         MagicCRSelect.TabIndex = 0
         MagicCRSelect.Text = "CR 0"
         ' 
+        ' TabPage4
+        ' 
+        TabPage4.Location = New Point(4, 24)
+        TabPage4.Name = "TabPage4"
+        TabPage4.Size = New Size(413, 248)
+        TabPage4.TabIndex = 3
+        TabPage4.Text = "Notes"
+        TabPage4.UseVisualStyleBackColor = True
+        ' 
         ' Panel
         ' 
         Panel.BorderStyle = BorderStyle.Fixed3D
-        Panel.Controls.Add(historybox)
         Panel.Controls.Add(Tabs)
+        Panel.Controls.Add(Panel1)
         Panel.Location = New Point(12, 27)
         Panel.Name = "Panel"
         Panel.Size = New Size(431, 761)
         Panel.TabIndex = 2
         ' 
+        ' Panel1
+        ' 
+        Panel1.Controls.Add(NotesFontSize)
+        Panel1.Controls.Add(NotesFont)
+        Panel1.Controls.Add(NotesUnderline)
+        Panel1.Controls.Add(NotesItalic)
+        Panel1.Controls.Add(NoteBold)
+        Panel1.Controls.Add(Panel2)
+        Panel1.Controls.Add(NotesLoadButton)
+        Panel1.Controls.Add(NotesSaveButton)
+        Panel1.Location = New Point(-2, 35)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(431, 724)
+        Panel1.TabIndex = 3
+        ' 
+        ' NotesFontSize
+        ' 
+        NotesFontSize.Location = New Point(368, 9)
+        NotesFontSize.Maximum = New Decimal(New Integer() {72, 0, 0, 0})
+        NotesFontSize.Minimum = New Decimal(New Integer() {8, 0, 0, 0})
+        NotesFontSize.Name = "NotesFontSize"
+        NotesFontSize.Size = New Size(43, 23)
+        NotesFontSize.TabIndex = 11
+        NotesFontSize.Value = New Decimal(New Integer() {8, 0, 0, 0})
+        ' 
+        ' NotesFont
+        ' 
+        NotesFont.FormattingEnabled = True
+        NotesFont.Location = New Point(251, 9)
+        NotesFont.Name = "NotesFont"
+        NotesFont.Size = New Size(111, 23)
+        NotesFont.TabIndex = 10
+        ' 
+        ' NotesUnderline
+        ' 
+        NotesUnderline.Font = New Font("Times New Roman", 9.75F, FontStyle.Underline, GraphicsUnit.Point)
+        NotesUnderline.Location = New Point(215, 7)
+        NotesUnderline.Name = "NotesUnderline"
+        NotesUnderline.Size = New Size(30, 25)
+        NotesUnderline.TabIndex = 9
+        NotesUnderline.Text = "U"
+        NotesUnderline.UseVisualStyleBackColor = True
+        ' 
+        ' NotesItalic
+        ' 
+        NotesItalic.Font = New Font("Times New Roman", 9.75F, FontStyle.Italic, GraphicsUnit.Point)
+        NotesItalic.Location = New Point(179, 7)
+        NotesItalic.Name = "NotesItalic"
+        NotesItalic.Size = New Size(30, 25)
+        NotesItalic.TabIndex = 8
+        NotesItalic.Text = "I"
+        NotesItalic.UseVisualStyleBackColor = True
+        ' 
+        ' NoteBold
+        ' 
+        NoteBold.Font = New Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        NoteBold.Location = New Point(143, 7)
+        NoteBold.Name = "NoteBold"
+        NoteBold.Size = New Size(30, 25)
+        NoteBold.TabIndex = 7
+        NoteBold.Text = "B"
+        NoteBold.UseVisualStyleBackColor = True
+        ' 
+        ' Panel2
+        ' 
+        Panel2.Controls.Add(historybox)
+        Panel2.Controls.Add(notesbox)
+        Panel2.Location = New Point(3, 36)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(425, 685)
+        Panel2.TabIndex = 6
+        ' 
         ' historybox
         ' 
         historybox.Font = New Font("Lucida Bright", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        historybox.Location = New Point(3, 283)
+        historybox.Location = New Point(2, 210)
         historybox.Name = "historybox"
         historybox.ReadOnly = True
-        historybox.Size = New Size(421, 471)
+        historybox.Size = New Size(421, 475)
         historybox.TabIndex = 2
         historybox.Text = ""
         ' 
-        ' IndividualIncludeItemsCheck
+        ' notesbox
         ' 
-        IndividualIncludeItemsCheck.AutoSize = True
-        IndividualIncludeItemsCheck.Checked = True
-        IndividualIncludeItemsCheck.CheckState = CheckState.Checked
-        IndividualIncludeItemsCheck.Location = New Point(6, 37)
-        IndividualIncludeItemsCheck.Name = "IndividualIncludeItemsCheck"
-        IndividualIncludeItemsCheck.Size = New Size(97, 19)
-        IndividualIncludeItemsCheck.TabIndex = 4
-        IndividualIncludeItemsCheck.Text = "Include Items"
-        IndividualIncludeItemsCheck.UseVisualStyleBackColor = True
+        notesbox.Enabled = False
+        notesbox.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        notesbox.Location = New Point(2, 3)
+        notesbox.Name = "notesbox"
+        notesbox.Size = New Size(421, 680)
+        notesbox.TabIndex = 3
+        notesbox.Text = ""
+        notesbox.Visible = False
+        ' 
+        ' NotesLoadButton
+        ' 
+        NotesLoadButton.Location = New Point(76, 3)
+        NotesLoadButton.Name = "NotesLoadButton"
+        NotesLoadButton.Size = New Size(61, 29)
+        NotesLoadButton.TabIndex = 5
+        NotesLoadButton.Text = "Load"
+        NotesLoadButton.UseVisualStyleBackColor = True
+        ' 
+        ' NotesSaveButton
+        ' 
+        NotesSaveButton.Location = New Point(9, 3)
+        NotesSaveButton.Name = "NotesSaveButton"
+        NotesSaveButton.Size = New Size(61, 29)
+        NotesSaveButton.TabIndex = 4
+        NotesSaveButton.Text = "Save"
+        NotesSaveButton.UseVisualStyleBackColor = True
         ' 
         ' Start
         ' 
@@ -598,6 +723,9 @@ Partial Class Start
         ItemGroup.ResumeLayout(False)
         ItemGroup.PerformLayout()
         Panel.ResumeLayout(False)
+        Panel1.ResumeLayout(False)
+        CType(NotesFontSize, ComponentModel.ISupportInitialize).EndInit()
+        Panel2.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -651,5 +779,16 @@ Partial Class Start
     Friend WithEvents GPOnlyCheck As CheckBox
     Friend WithEvents IndexToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents IndividualIncludeItemsCheck As CheckBox
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents NotesSaveButton As Button
+    Friend WithEvents NotesLoadButton As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents notesbox As RichTextBox
+    Friend WithEvents NotesItalic As Button
+    Friend WithEvents NoteBold As Button
+    Friend WithEvents NotesUnderline As Button
+    Friend WithEvents NotesFont As ComboBox
+    Friend WithEvents NotesFontSize As NumericUpDown
 
 End Class

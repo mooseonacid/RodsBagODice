@@ -3,6 +3,12 @@ Imports System.Security.Cryptography
 Imports System.Text
 
 Public Class Start
+    Private Sub Start_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        NotesFont.Items.AddRange(FontFamily.Families.Select(Function(f) f.Name).ToArray())
+        NotesFont.SelectedItem = notesbox.Font.FontFamily.Name
+        NotesFontSize.Value = Convert.ToDecimal(notesbox.Font.Size)
+    End Sub
+
     Private Function GetRandomNumber(minValue As Integer, maxValue As Integer) As Integer
         Using rng As RandomNumberGenerator = RandomNumberGenerator.Create()
             Dim data As Byte() = New Byte(3) {}
@@ -138,42 +144,6 @@ Public Class Start
         End If
         historybox.AppendText(Environment.NewLine)
         historybox.ScrollToCaret()
-    End Sub
-
-    'Menu bar stuff
-    Private Sub ResetCountersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetCountersToolStripMenuItem.Click
-        D3Count.Value = 1
-        D4Count.Value = 1
-        D5Count.Value = 1
-        D6Count.Value = 1
-        D7Count.Value = 1
-        D8Count.Value = 1
-        D10Count.Value = 1
-        D12Count.Value = 1
-        D14Count.Value = 1
-        D16Count.Value = 1
-        D20Count.Value = 1
-        D24Count.Value = 1
-        D30Count.Value = 1
-        D100Count.Value = 1
-    End Sub
-
-    Private Sub ClearHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearHistoryToolStripMenuItem.Click
-        historybox.Text = ""
-    End Sub
-
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        Application.Exit()
-    End Sub
-
-    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        Dim aboutForm As New About()
-        aboutForm.ShowDialog()
-    End Sub
-
-    Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
-        Dim indexForm As New Index()
-        indexForm.ShowDialog()
     End Sub
 
     'DCC Dice
@@ -416,7 +386,7 @@ Public Class Start
         Return treasure
     End Function
 
-    'Rarity weight test
+    'Gets random magic item based on CR
     Private Function GetRandomItem(challengeRating As Integer) As Item
         Dim rand As New Random()
 
@@ -460,6 +430,152 @@ Public Class Start
         'If nothing is found (should not happen)
         Return Nothing
     End Function
+
+    'Menu bar stuff
+    Private Sub ResetCountersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetCountersToolStripMenuItem.Click
+        D3Count.Value = 1
+        D4Count.Value = 1
+        D5Count.Value = 1
+        D6Count.Value = 1
+        D7Count.Value = 1
+        D8Count.Value = 1
+        D10Count.Value = 1
+        D12Count.Value = 1
+        D14Count.Value = 1
+        D16Count.Value = 1
+        D20Count.Value = 1
+        D24Count.Value = 1
+        D30Count.Value = 1
+        D100Count.Value = 1
+    End Sub
+
+    Private Sub ClearHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearHistoryToolStripMenuItem.Click
+        historybox.Text = ""
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        Dim aboutForm As New About()
+        aboutForm.ShowDialog()
+    End Sub
+
+    Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
+        Dim indexForm As New Index()
+        indexForm.ShowDialog()
+    End Sub
+
+    'handle notes gui switch
+    Private Sub Tabs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Tabs.SelectedIndexChanged
+        If Tabs.SelectedTab.Name = "TabPage4" Then
+            Tabs.Size = New Size(421, 26)
+            historybox.Enabled = False
+            historybox.Visible = False
+            notesbox.Enabled = True
+            notesbox.Visible = True
+
+        Else
+            Tabs.Size = New Size(421, 276)
+            notesbox.Enabled = False
+            notesbox.Visible = False
+            historybox.Enabled = True
+            historybox.Visible = True
+        End If
+    End Sub
+
+    Private Sub boldButton_Click(sender As Object, e As EventArgs) Handles NoteBold.Click
+        ToggleFontStyle(FontStyle.Bold, NoteBold)
+    End Sub
+
+    Private Sub italicButton_Click(sender As Object, e As EventArgs) Handles NotesItalic.Click
+        ToggleFontStyle(FontStyle.Italic, NotesItalic)
+    End Sub
+
+    Private Sub underlineButton_Click(sender As Object, e As EventArgs) Handles NotesUnderline.Click
+        ToggleFontStyle(FontStyle.Underline, NotesUnderline)
+    End Sub
+
+    'store previous font to handle error \ useless I think
+    Dim previousFontFamilyName As String = String.Empty
+
+    'font select
+    Private Sub notesFont_SelectedIndexChanged(sender As Object, e As EventArgs) Handles NotesFont.SelectedIndexChanged
+        If notesbox.SelectionFont IsNot Nothing Then
+            Try
+                Dim currentFont As Font = notesbox.SelectionFont
+                notesbox.SelectionFont = New Font(NotesFont.SelectedItem.ToString(), currentFont.Size, currentFont.Style)
+                previousFontFamilyName = NotesFont.SelectedItem.ToString()
+            Catch ex As Exception
+                NotesFont.SelectedItem = previousFontFamilyName
+            End Try
+        End If
+    End Sub
+
+    'font size
+    Private Sub notesFontSize_ValueChanged(sender As Object, e As EventArgs) Handles NotesFontSize.ValueChanged
+        If notesbox.SelectionFont IsNot Nothing Then
+            Dim newSize As Single = Convert.ToSingle(NotesFontSize.Value)
+            Dim currentFont As Font = notesbox.SelectionFont
+            notesbox.SelectionFont = New Font(currentFont.FontFamily, newSize, currentFont.Style)
+        End If
+    End Sub
+
+    'update font and size when moving cursor.
+    Private Sub notesbox_SelectionChanged(sender As Object, e As EventArgs) Handles notesbox.SelectionChanged
+        If notesbox.SelectionFont IsNot Nothing Then
+            NotesFontSize.Value = Convert.ToDecimal(notesbox.SelectionFont.Size)
+            NotesFont.SelectedItem = notesbox.SelectionFont.FontFamily.Name
+        End If
+    End Sub
+
+    'handle format buttons
+    Private Sub ToggleFontStyle(style As FontStyle, button As Button)
+        If notesbox.SelectionFont IsNot Nothing Then
+            Dim currentFont As Font = notesbox.SelectionFont
+            Dim newFontStyle As FontStyle
+
+            If (currentFont.Style And style) = style Then
+                newFontStyle = currentFont.Style And Not style
+                button.BackColor = SystemColors.Control
+            Else
+                newFontStyle = currentFont.Style Or style
+                button.BackColor = Color.LightBlue
+            End If
+
+            notesbox.SelectionFont = New Font(currentFont.FontFamily, currentFont.Size, newFontStyle)
+        End If
+    End Sub
+
+    'save/load
+    Private Sub notesSaveButton_Click(sender As Object, e As EventArgs) Handles NotesSaveButton.Click
+        Dim saveFileDialog As New SaveFileDialog()
+        saveFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*"
+        saveFileDialog.DefaultExt = "rtf"
+        saveFileDialog.AddExtension = True
+
+        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+            Try
+                notesbox.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.RichText)
+            Catch ex As Exception
+                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+
+    Private Sub notesLoadButton_Click(sender As Object, e As EventArgs) Handles NotesLoadButton.Click
+        Dim openFileDialog As New OpenFileDialog()
+        openFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*"
+
+        If openFileDialog.ShowDialog() = DialogResult.OK Then
+            Try
+                notesbox.LoadFile(openFileDialog.FileName, RichTextBoxStreamType.RichText)
+            Catch ex As Exception
+                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
 End Class
 
 Public Class Item
@@ -483,6 +599,26 @@ End Class
 Public Class Currency
     Public Property Type As String
     Public Property Amount As Integer
+End Class
+
+Public Class Creature
+    Public Property Name As String
+    Public Property Size As String
+    Public Property Type As String
+    Public Property Alignment As String
+    Public Property Challenge As Double
+    Public Property XP As Integer
+    Public Property Source As String
+
+    Public Sub New(name As String, size As String, type As String, alignment As String, challenge As Double, xp As Integer, source As String)
+        Me.Name = name
+        Me.Size = size
+        Me.Type = type
+        Me.Alignment = alignment
+        Me.Challenge = challenge
+        Me.XP = xp
+        Me.Source = source
+    End Sub
 End Class
 
 Public Module MagicItemDatabase
@@ -837,4 +973,322 @@ Public Module JunkItemDatabase
         New Item("an Explosive Rune", "Junk", "Rare", "", "", ""),
         New Item("a gold key", "Junk", "Rare", "", "", "")
     }
+End Module
+
+Public Module CreatureDatabase
+    Public ReadOnly Creatures As New List(Of Creature) From {
+        New Creature("Frog", "Tiny", "Beast", "Unaligned", 0, 0, "mm322"),
+        New Creature("Sea Horse", "Tiny", "Beast", "Unaligned", 0, 0, "mm337"),
+        New Creature("Awakened Shrub", "Small", "Plant", "Unaligned", 0, 10, "mm317"),
+        New Creature("Baboon", "Small", "Beast", "Unaligned", 0, 10, "mm318"),
+        New Creature("Badger", "Tiny", "Beast", "Unaligned", 0, 10, "mm318"),
+        New Creature("Bat", "Tiny", "Beast", "Unaligned", 0, 10, "mm318"),
+        New Creature("Cat", "Tiny", "Beast", "Unaligned", 0, 10, "mm 320"),
+        New Creature("Commoner", "Medium", "Humanoid", "Any", 0, 10, "mm 344"),
+        New Creature("Crab", "Tiny", "Beast", "Unaligned", 0, 10, "mm 320"),
+        New Creature("Cranium Rat", "Tiny", "Beast", "LE", 0, 10, "motm 83, vgm 133"),
+        New Creature("Crawling Claw", "Tiny", "Undead", "NE", 0, 10, "mm 44"),
+        New Creature("Deer", "Medium", "Beast", "Unaligned", 0, 10, "mm 321"),
+        New Creature("Eagle", "Small", "Beast", "Unaligned", 0, 10, "mm 322"),
+        New Creature("Giant Fire Beetle", "Small", "Beast", "Unaligned", 0, 10, "mm 325"),
+        New Creature("Goat", "Medium", "Beast", "Unaligned", 0, 10, "mm 330"),
+        New Creature("Hawk", "Tiny", "Beast", "Unaligned", 0, 10, "mm 330"),
+        New Creature("Homunculus", "Tiny", "Construct", "N", 0, 10, "mm 188"),
+        New Creature("Hyena", "Medium", "Beast", "Unaligned", 0, 10, "mm 331"),
+        New Creature("Jackal", "Small", "Beast", "Unaligned", 0, 10, "mm 331"),
+        New Creature("Lemure", "Medium", "Fiend (devil)", "LE", 0, 10, "mm 76"),
+        New Creature("Lizard", "Tiny", "Beast", "Unaligned", 0, 10, "mm 332"),
+        New Creature("Myconid Sprout", "Small", "Plant", "LN", 0, 10, "mm 230"),
+        New Creature("Octopus", "Small", "Beast", "Unaligned", 0, 10, "mm 333"),
+        New Creature("Owl", "Tiny", "Beast", "Unaligned", 0, 10, "mm 333"),
+        New Creature("Quipper", "Tiny", "Beast", "Unaligned", 0, 10, "mm 335"),
+        New Creature("Rat", "Tiny", "Beast", "Unaligned", 0, 10, "mm 335"),
+        New Creature("Raven", "Tiny", "Beast", "Unaligned", 0, 10, "mm 335"),
+        New Creature("Scorpion", "Tiny", "Beast", "Unaligned", 0, 10, "mm 337"),
+        New Creature("Shrieker", "Medium", "Beast", "Unaligned", 0, 10, "mm 138"),
+        New Creature("Spider", "Tiny", "Beast", "Unaligned", 0, 10, "mm 337"),
+        New Creature("Vulture", "Medium", "Beast", "Unaligned", 0, 10, "mm 339"),
+        New Creature("Weasel", "Tiny", "Beast", "Unaligned", 0, 10, "mm 340"),
+        New Creature("Bandit", "Medium", "Humanoid", "Any non-lawful", 0.125, 25, "mm 343"),
+        New Creature("Blood Hawk", "Small", "Beast", "Unaligned", 0.125, 25, "mm 319"),
+        New Creature("Boggle", "Small", "Fey", "CN", 0.125, 25, "motm 65, vgm 128"),
+        New Creature("Camel", "Large", "Beast", "Unaligned", 0.125, 25, "mm 320"),
+        New Creature("Cultist", "Medium", "Humanoid", "Any non-good", 0.125, 25, "mm 345"),
+        New Creature("Dolphin", "Medium", "Beast", "Unaligned", 0.125, 25, "motm 97, vgm 208"),
+        New Creature("Flumph", "Small", "Aberration", "LG", 0.125, 25, "mm 135"),
+        New Creature("Flying Snake", "Tiny", "Beast", "Unaligned", 0.125, 25, "mm 322"),
+        New Creature("Giant Crab", "Medium", "Beast", "Unaligned", 0.125, 25, "mm 324"),
+        New Creature("Giant Rat", "Small", "Beast", "Unaligned", 0.125, 25, "mm 327"),
+        New Creature("Giant Weasel", "Medium", "Beast", "Unaligned", 0.125, 25, "mm 329"),
+        New Creature("Guard", "Medium", "Humanoid", "Any", 0.125, 25, "mm 347"),
+        New Creature("Kobold", "Small", "Humanoid (kobold)", "LE", 0.125, 25, "mm 195"),
+        New Creature("Manes", "Small", "Fiend (demon)", "CE", 0.125, 25, "mm 60"),
+        New Creature("Mastiff", "Medium", "Beast", "Unaligned", 0.125, 25, "mm 332"),
+        New Creature("Merfolk", "Medium", "Humanoid (merfolk)", "N", 0.125, 25, "mm 218"),
+        New Creature("Monodrone", "Medium", "Construct", "LN", 0.125, 25, "mm 224"),
+        New Creature("Mule", "Medium", "Beast", "Unaligned", 0.125, 25, "mm 333"),
+        New Creature("Neogi Hatchling", "Tiny", "Aberration", "LE", 0.125, 25, "motm 191, vgm 179"),
+        New Creature("Noble", "Medium", "Humanoid", "Any", 0.125, 25, "mm 348"),
+        New Creature("Poisonous Snake", "Tiny", "Beast", "Unaligned", 0.125, 25, "mm 334"),
+        New Creature("Pony", "Medium", "Beast", "Unaligned", 0.125, 25, "mm 335"),
+        New Creature("Slaad Tadpole", "Tiny", "Aberration", "CN", 0.125, 25, "mm 276"),
+        New Creature("Stirge", "Tiny", "Beast", "Unaligned", 0.125, 25, "mm 284"),
+        New Creature("Tribal Warrior", "Medium", "Humanoid", "Any", 0.125, 25, "mm 350"),
+        New Creature("Twig Blight", "Small", "Plant", "NE", 0.125, 25, "mm 32"),
+        New Creature("Xvart", "Small", "Humanoid (xvart)", "CE", 0.125, 25, "motm 267, vgm 200"),
+        New Creature("Young Kruthik", "Small", "Monstrosity", "Unaligned", 0.125, 25, "motm 168, mtf 211"),
+        New Creature("Aarakocra", "Medium", "Humanoid (aarakocra)", "NG", 0.25, 50, "mm 12"),
+        New Creature("Abyssal Wretch", "Medium", "Fiend (demon)", "CE", 0.25, 50, "mtf 136"),
+        New Creature("Acolyte", "Medium", "Humanoid", "Any", 0.25, 50, "mm 342"),
+        New Creature("Apprentice Wizard", "Medium", "Humanoid", "Any", 0.25, 50, "motm 259, vgm 209"),
+        New Creature("Axe Beak", "Large", "Beast", "Unaligned", 0.25, 50, "mm 317"),
+        New Creature("Blink Dog", "Medium", "Fey", "LG", 0.25, 50, "mm 318"),
+        New Creature("Boar", "Medium", "Beast", "Unaligned", 0.25, 50, "mm 319"),
+        New Creature("Bullywug", "Medium", "Humanoid (bullywug)", "NE", 0.25, 50, "mm 35"),
+        New Creature("Constrictor Snake", "Large", "Beast", "Unaligned", 0.25, 50, "mm 320"),
+        New Creature("Cow", "Large", "Beast", "Unaligned", 0.25, 50, "vgm 207"),
+        New Creature("Deep Rothe", "Medium", "Beast", "Unaligned", 0.25, 50, "motm 71, vgm 207"),
+        New Creature("Derro", "Small", "Humanoid (derro)", "CE", 0.25, 50, "motm 91, mtf 158"),
+        New Creature("Dimetrodon", "Medium", "Beast", "Unaligned", 0.25, 50, "motm 95, vgm 139"),
+        New Creature("Draft Horse", "Large", "Beast", "Unaligned", 0.25, 50, "mm 321"),
+        New Creature("Dretch", "Small", "Fiend (demon)", "CE", 0.25, 50, "mm 57"),
+        New Creature("Drow", "Medium", "Humanoid (elf)", "NE", 0.25, 50, "mm 128"),
+        New Creature("Duodrone", "Medium", "Construct", "LN", 0.25, 50, "mm 225"),
+        New Creature("Elk", "Large", "Beast", "Unaligned", 0.25, 50, "mm 322"),
+        New Creature("Flying Sword", "Small", "Construct", "Unaligned", 0.25, 50, "mm 20"),
+        New Creature("Giant Badger", "Medium", "Beast", "Unaligned", 0.25, 50, "mm 323"),
+        New Creature("Giant Bat", "Large", "Beast", "Unaligned", 0.25, 50, "mm 323"),
+        New Creature("Giant Centipede", "Small", "Beast", "Unaligned", 0.25, 50, "mm 323"),
+        New Creature("Giant Frog", "Medium", "Beast", "Unaligned", 0.25, 50, "mm 325"),
+        New Creature("Giant Lizard", "Large", "Beast", "Unaligned", 0.25, 50, "mm 326"),
+        New Creature("Giant Owl", "Large", "Beast", "N", 0.25, 50, "mm 327"),
+        New Creature("Giant Poisonous Snake", "Medium", "Beast", "Unaligned", 0.25, 50, "mm 327"),
+        New Creature("Giant Wolf Spider", "Medium", "Beast", "Unaligned", 0.25, 50, "mm 330"),
+        New Creature("Gnoll Witherling", "Medium", "Undead", "CE", 0.25, 50, "motm 145, vgm 155"),
+        New Creature("Goblin", "Small", "Humanoid (goblinoid)", "NE", 0.25, 50, "mm 166"),
+        New Creature("Grimlock", "Medium", "Humanoid (grimlock)", "NE", 0.25, 50, "mm 175"),
+        New Creature("Grung", "Small", "Humanoid (grung)", "LE", 0.25, 50, "motm 149, vgm 156"),
+        New Creature("Hadrosaurus", "Large", "Beast", "Unaligned", 0.25, 50, "motm 96, vgm 140"),
+        New Creature("Kenku", "Medium", "Humanoid (kenku)", "CN", 0.25, 50, "mm 194"),
+        New Creature("Kobold Inventor", "Small", "Humanoid (kobold)", "LE", 0.25, 50, "motm 164, vgm 166"),
+        New Creature("Kuo-toa", "Medium", "Humanoid (kuo-toa)", "NE", 0.25, 50, "mm 199"),
+        New Creature("Male Steeder", "Medium", "Monstrosity", "Unaligned", 0.25, 50, "motm 231, mtf 238"),
+        New Creature("Mud Mephit", "Small", "Elemental", "NE", 0.25, 50, "mm 216"),
+        New Creature("Needle Blight", "Medium", "Plant", "NE", 0.25, 50, "mm 32"),
+        New Creature("Oblex Spawn", "Tiny", "Ooze", "LE", 0.25, 50, "motm 197, mtf 217"),
+        New Creature("Ox", "Large", "Beast", "Unaligned", 0.25, 50, "motm 72, vgm 207"),
+        New Creature("Panther", "Medium", "Beast", "Unaligned", 0.25, 50, "mm 333"),
+        New Creature("Pixie", "Tiny", "Fey", "NG", 0.25, 50, "mm 253"),
+        New Creature("Pseudodragon", "Tiny", "Dragon", "NG", 0.25, 50, "mm 254"),
+        New Creature("Pteranodon", "Medium", "Beast", "Unaligned", 0.25, 50, "mm 80"),
+        New Creature("Riding Horse", "Large", "Beast", "Unaligned", 0.25, 50, "mm 336"),
+        New Creature("Rothe", "Large", "Beast", "Unaligned", 0.25, 50, "vgm 207"),
+        New Creature("Skeleton", "Medium", "Undead", "LE", 0.25, 50, "mm 272"),
+        New Creature("Smoke Mephit", "Small", "Elemental", "NE", 0.25, 50, "mm 217"),
+        New Creature("Sprite", "Tiny", "Fey", "NG", 0.25, 50, "mm 283"),
+        New Creature("Star Spawn Grue", "Small", "Aberration", "NE", 0.25, 50, "motm 227, mtf 234"),
+        New Creature("Steam Mephit", "Small", "Elemental", "NE", 0.25, 50, "mm 217"),
+        New Creature("Stench Kow", "Large", "Beast", "Unaligned", 0.25, 50, "motm 72, vgm 207"),
+        New Creature("Swarm of Bats", "Medium", "Beast", "Unaligned", 0.25, 50, "mm 337"),
+        New Creature("Swarm of Rats", "Medium", "Beast", "Unaligned", 0.25, 50, "mm 339"),
+        New Creature("Swarm of Ravens", "Medium", "Beast", "Unaligned", 0.25, 50, "mm 339"),
+        New Creature("Tortle", "Medium", "Humanoid (tortle)", "LG", 0.25, 50, "motm 244, mtf 242"),
+        New Creature("Troglodyte", "Medium", "Humanoid (troglodyte)", "CE", 0.25, 50, "mm 290"),
+        New Creature("Vegepygmy", "Small", "Plant", "N", 0.25, 50, "motm 252, vgm 196"),
+        New Creature("Velociraptor", "Tiny", "Beast", "Unaligned", 0.25, 50, "motm 96, vgm 140"),
+        New Creature("Violet Fungus", "Medium", "Plant", "Unaligned", 0.25, 50, "mm 138"),
+        New Creature("Winged Kobold", "Small", "Humanoid (kobold)", "LE", 0.25, 50, "mm 195"),
+        New Creature("Wolf", "Medium", "Beast", "Unaligned", 0.25, 50, "mm 341"),
+        New Creature("Wretched Sorrowsworn", "Small", "Monstrosity", "NE", 0.25, 50, "motm 224, mtf 233"),
+        New Creature("Zombie", "Medium", "Undead", "NE", 0.25, 50, "mm 316"),
+        New Creature("Ape", "Medium", "Beast", "Unaligned", 0.5, 100, "mm 317"),
+        New Creature("Black Bear", "Medium", "Beast", "Unaligned", 0.5, 100, "mm 318"),
+        New Creature("Chitine", "Small", "Monstrosity", "CE", 0.5, 100, "motm 75, vgm 131"),
+        New Creature("Cockatrice", "Small", "Monstrosity", "Unaligned", 0.5, 100, "mm 42"),
+        New Creature("Crocodile", "Large", "Beast", "Unaligned", 0.5, 100, "mm 320"),
+        New Creature("Darkling", "Small", "Fey", "CN", 0.5, 100, "motm 84, vgm 134"),
+        New Creature("Darkmantle", "Small", "Monstrosity", "Unaligned", 0.5, 100, "mm 46"),
+        New Creature("Dust Mephit", "Small", "Elemental", "NE", 0.5, 100, "mm 215"),
+        New Creature("Firenewt Warrior", "Medium", "Humanoid (firenewt)", "NE", 0.5, 100, "motm 125, vgm 142"),
+        New Creature("Gas Spore", "Large", "Plant", "Unaligned", 0.5, 100, "mm 138"),
+        New Creature("Gazer", "Tiny", "Aberration", "NE", 0.5, 100, "motm 134, vgm 126"),
+        New Creature("Giant Goat", "Large", "Beast", "Unaligned", 0.5, 100, "mm 326"),
+        New Creature("Giant Sea Horse", "Large", "Beast", "Unaligned", 0.5, 100, "mm 328"),
+        New Creature("Giant Wasp", "Medium", "Beast", "Unaligned", 0.5, 100, "mm 329"),
+        New Creature("Gnoll", "Medium", "Humanoid (gnoll)", "CE", 0.5, 100, "mm 163"),
+        New Creature("Gnoll Hunter", "Medium", "Humanoid (gnoll)", "CE", 0.5, 100, "motm 144, vgm 154"),
+        New Creature("Gray Ooze", "Medium", "Ooze", "Unaligned", 0.5, 100, "mm 243"),
+        New Creature("Hobgoblin", "Medium", "Humanoid (goblinoid)", "LE", 0.5, 100, "mm 186"),
+        New Creature("Ice Mephit", "Small", "Elemental", "NE", 0.5, 100, "mm 215"),
+        New Creature("Jackalwere", "Medium", "Humanoid (shapechanger)", "CE", 0.5, 100, "mm 193"),
+        New Creature("Lizardfolk", "Medium", "Humanoid (lizardfolk)", "N", 0.5, 100, "mm 204"),
+        New Creature("Magma Mephit", "Small", "Elemental", "NE", 0.5, 100, "mm 216"),
+        New Creature("Magmin", "Small", "Elemental", "CN", 0.5, 100, "mm 212"),
+        New Creature("Myconid Adult", "Medium", "Plant", "LN", 0.5, 100, "mm 232"),
+        New Creature("Nupperibo", "Medium", "Fiend (devil)", "LE", 0.5, 100, "motm 196, mtf 168"),
+        New Creature("Orc", "Medium", "Humanoid (orc)", "CE", 0.5, 100, "mm 246"),
+        New Creature("Orc Nurtured One of Yurtrus", "Medium", "Humanoid (orc)", "CE", 0.5, 100, "vgm 184"),
+        New Creature("Piercer", "Medium", "Monstrosity", "Unaligned", 0.5, 100, "mm 252"),
+        New Creature("Reef Shark", "Medium", "Beast", "Unaligned", 0.5, 100, "mm 336"),
+        New Creature("Rust Monster", "Medium", "Monstrosity", "Unaligned", 0.5, 100, "mm 262"),
+        New Creature("Sahuagin", "Medium", "Humanoid (sahuagin)", "LE", 0.5, 100, "mm 263"),
+        New Creature("Satyr", "Medium", "Fey", "CN", 0.5, 100, "mm 267"),
+        New Creature("Scout", "Medium", "Humanoid", "Any", 0.5, 100, "mm 349"),
+        New Creature("Shadow", "Medium", "Undead", "CE", 0.5, 100, "mm 269"),
+        New Creature("Skulk", "Medium", "Humanoid", "CN", 0.5, 100, "motm 219, mtf 227"),
+        New Creature("Svirfneblin", "Small", "Humanoid (gnome)", "NG", 0.5, 100, "mm 164"),
+        New Creature("Swarm of Insects", "Medium", "Beast", "Unaligned", 0.5, 100, "mm 338"),
+        New Creature("Swarm of Rot Grubs", "Medium", "Beast", "Unaligned", 0.5, 100, "motm 237, vgm 208"),
+        New Creature("Thug", "Medium", "Humanoid", "Any", 0.5, 100, "mm 350"),
+        New Creature("Tridrone", "Medium", "Construct", "LN", 0.5, 100, "mm 225"),
+        New Creature("Vine Blight", "Medium", "Plant", "NE", 0.5, 100, "mm 32"),
+        New Creature("Warhorse", "Large", "Beast", "Unaligned", 0.5, 100, "mm 340"),
+        New Creature("Warhorse Skeleton", "Large", "Undead", "LE", 0.5, 100, "mm 273"),
+        New Creature("Worg", "Large", "Monstrosity", "NE", 0.5, 100, "mm 341"),
+        New Creature("Animated Armor", "Medium", "Construct", "Unaligned", 1, 200, "mm 19"),
+        New Creature("Brass Dragon Wyrmling", "Medium", "Dragon", "CG", 1, 200, "mm 106"),
+        New Creature("Bronze Scout", "Medium", "Construct", "Unaligned", 1, 200, "motm 79, mtf 125"),
+        New Creature("Brown Bear", "Large", "Beast", "Unaligned", 1, 200, "mm 319"),
+        New Creature("Bugbear", "Medium", "Humanoid (goblinoid)", "CE", 1, 200, "mm 33"),
+        New Creature("Choker", "Small", "Aberration", "CE", 1, 200, "motm 76, mtf 123"),
+        New Creature("Copper Dragon Wyrmling", "Medium", "Dragon", "CG", 1, 200, "mm 112"),
+        New Creature("Death Dog", "Medium", "Monstrosity", "NE", 1, 200, "mm 321"),
+        New Creature("Deinonychus", "Medium", "Beast", "Unaligned", 1, 200, "motm 95, vgm 139"),
+        New Creature("Dire Wolf", "Large", "Beast", "Unaligned", 1, 200, "mm 321"),
+        New Creature("Dryad", "Medium", "Fey", "N", 1, 200, "mm 121"),
+        New Creature("Duergar", "Medium", "Humanoid (dwarf)", "LE", 1, 200, "mm 122"),
+        New Creature("Duergar Soulblade", "Medium", "Humanoid (dwarf)", "LE", 1, 200, "motm 109, mtf 190"),
+        New Creature("Female Steeder", "Large", "Monstrosity", "Unaligned", 1, 200, "motm 231, mtf 238"),
+        New Creature("Fire Snake", "Medium", "Elemental", "NE", 1, 200, "mm 265"),
+        New Creature("Firenewt Warlock of Imix", "Medium", "Humanoid (firenewt)", "NE", 1, 200, "motm 125, vgm 143"),
+        New Creature("Ghoul", "Medium", "Undead", "CE", 1, 200, "mm 148"),
+        New Creature("Giant Eagle", "Large", "Beast", "NG", 1, 200, "mm 324"),
+        New Creature("Giant Hyena", "Large", "Beast", "Unaligned", 1, 200, "mm 326"),
+        New Creature("Giant Octopus", "Large", "Beast", "Unaligned", 1, 200, "mm 326"),
+        New Creature("Giant Spider", "Large", "Beast", "Unaligned", 1, 200, "mm 328"),
+        New Creature("Giant Strider", "Large", "Monstrosity", "NE", 1, 200, "motm 137, vgm 143"),
+        New Creature("Giant Toad", "Large", "Beast", "Unaligned", 1, 200, "mm 329"),
+        New Creature("Giant Vulture", "Large", "Beast", "NE", 1, 200, "mm 329"),
+        New Creature("Gnoll Flesh Gnawer", "Medium", "Humanoid (gnoll)", "CE", 1, 200, "motm 144, vgm 154"),
+        New Creature("Goblin Boss", "Small", "Humanoid (goblinoid)", "NE", 1, 200, "mm 166"),
+        New Creature("Grung Wildling", "Small", "Humanoid (grung)", "LE", 1, 200, "motm 150, vgm 157"),
+        New Creature("Half-ogre", "Large", "Giant", "Any chaotic", 1, 200, "mm 238"),
+        New Creature("Harpy", "Medium", "Monstrosity", "CE", 1, 200, "mm 181"),
+        New Creature("Hippogriff", "Large", "Monstrosity", "Unaligned", 1, 200, "mm 184"),
+        New Creature("Imp", "Tiny", "Fiend (devil,shapechanger)", "LE", 1, 200, "mm 76"),
+        New Creature("Kobold Dragonshield", "Small", "Humanoid (kobold)", "LE", 1, 200, "motm 163, vgm 165"),
+        New Creature("Kobold Scale Sorcerer", "Small", "Humanoid (kobold)", "LE", 1, 200, "motm 165, vgm 167"),
+        New Creature("Kuo-toa Whip", "Medium", "Humanoid (kuo-toa)", "NE", 1, 200, "mm 200"),
+        New Creature("Lion", "Large", "Beast", "Unaligned", 1, 200, "mm 331"),
+        New Creature("Maw Demon", "Medium", "Fiend (demon)", "CE", 1, 200, "motm 176, vgm 137"),
+        New Creature("Meazel", "Medium", "Humanoid (meazel)", "NE", 1, 200, "motm 177, mtf 214"),
+        New Creature("Nilbog", "Small", "Humanoid (goblinoid)", "CE", 1, 200, "motm 195, vgm 182"),
+        New Creature("Quadrone", "Medium", "Construct", "LN", 1, 200, "mm 226"),
+        New Creature("Quaggoth Spore Servant", "Medium", "Plant", "Unaligned", 1, 200, "mm 230"),
+        New Creature("Quasit", "Tiny", "Fiend (demon,shapechanger)", "CE", 1, 200, "mm 63"),
+        New Creature("Quickling", "Tiny", "Fey", "CE", 1, 200, "motm 207. vgm 187"),
+        New Creature("Scarecrow", "Medium", "Construct", "CE", 1, 200, "mm 268"),
+        New Creature("Sea Spawn", "Medium", "Humanoid", "NE", 1, 200, "motm 211, vgm 189"),
+        New Creature("Specter", "Medium", "Undead", "CE", 1, 200, "mm 279"),
+        New Creature("Spy", "Medium", "Humanoid", "Any", 1, 200, "mm 349"),
+        New Creature("Stone Cursed", "Medium", "Construct", "LE", 1, 200, "motm 233, mtf 240"),
+        New Creature("Swarm of Quippers", "Medium", "Beast", "Unaligned", 1, 200, "mm 338"),
+        New Creature("Thorny Vgepygmy", "Medium", "Plant", "N", 1, 200, "motm 253, vgm 197"),
+        New Creature("Thri-kreen", "Medium", "Humanoid (thri-kreen)", "CN", 1, 200, "mm 288"),
+        New Creature("Tiger", "Large", "Beast", "Unaligned", 1, 200, "mm 339"),
+        New Creature("Vargouille", "Tiny", "Fiend", "CE", 1, 200, "motm 251, vgm 195"),
+        New Creature("Xvart Warlock of Raxivort", "Small", "Humanoid (xvart)", "CE", 1, 200, "motm 267, vgm 200"),
+        New Creature("Young Faerie Dragon", "Tiny", "Dragon", "CG", 1, 200, "mm 133"),
+        New Creature("Yuan-ti Pureblood", "Medium", "Humanoid (yuan-ti)", "NE", 1, 200, "mm 310"),
+        New Creature("Adult Faerie Dragon", "Tiny", "Dragon", "CG", 2, 450, "mm 133"),
+        New Creature("Adult Kruthik", "Medium", "Monstrosity", "Unaligned", 2, 450, "motm 169, mtf 212"),
+        New Creature("Allosaurus", "Large", "Beast", "Unaligned", 2, 450, "mm 79"),
+        New Creature("Ankheg", "Large", "Monstrosity", "Unaligned", 2, 450, "mm 21"),
+        New Creature("Aurochs", "Large", "Beast", "Unaligned", 2, 450, "motm 71, vgm 207"),
+        New Creature("Awakened Tree", "Huge", "Plant", "Unaligned", 2, 450, "mm 317"),
+        New Creature("Azer", "Medium", "Elementl", "LN", 2, 450, "mm 22"),
+        New Creature("Bandit Captain", "Medium", "Humanoid", "Any non-lawful", 2, 450, "mm 344"),
+        New Creature("Bard", "Medium", "Humanoid", "Any", 2, 450, "motm 59, vgm 211"),
+        New Creature("Berbalang", "Medium", "Aberration", "NE", 2, 450, "motm 61, mtf 120"),
+        New Creature("Berserker", "Medium", "Humanoid", "Any chaotic", 2, 450, "mm 344"),
+        New Creature("Black Dragon Wyrmling", "Medium", "Dragon", "CE", 2, 450, "mm 88"),
+        New Creature("Bronze Dragon Wyrmling", "Medium", "Dragon", "LG", 2, 450, "mm 109"),
+        New Creature("Carrion Crawler", "Large", "Monstrosity", "Unaligned", 2, 450, "mm 37"),
+        New Creature("Cave Bear", "Large", "Beast", "Unaligned", 2, 450, "mm 334"),
+        New Creature("Centaur", "Large", "Monstrosity", "NG", 2, 450, "mm 38"),
+        New Creature("Cult Fanatic", "Medium", "Humanoid", "Any", 2, 450, "mm 345"),
+        New Creature("Darkling Elder", "Medium", "Fey", "CN", 2, 450, "motm 84, vgm 134"),
+        New Creature("Druid", "Medium", "Humanoid", "Any", 2, 450, "mm 346"),
+        New Creature("Duergar Hammerer", "Medium", "Construct", "LE", 2, 450, "motm 112, mtf 188"),
+        New Creature("Duergar Kavalrachni", "Medium", "Humanoid (dwarf)", "LE", 2, 450, "motm 107, mtf 189"),
+        New Creature("Duergar Mind Master", "Medium", "Humanoid (dwarf)", "LE", 2, 450, "motm 108, mtf 189"),
+        New Creature("Duergar Stone Guard", "Medium", "Humanoid (dwarf)", "LE", 2, 450, "motm 110, mtf 191"),
+        New Creature("Duergar Xarrorn", "Medium", "Humanoid (dwarf)", "LE", 2, 450, "motm 111, mtf 193"),
+        New Creature("Ettercap", "Medium", "Monstrosity", "NE", 2, 450, "mm 131"),
+        New Creature("Gargoyle", "Medium", "Elemental", "CE", 2, 450, "mm 140"),
+        New Creature("Gelatinous Cube", "Large", "Ooze", "Unaligned", 2, 450, "mm 242"),
+        New Creature("Ghast", "Medium", "Undead", "CE", 2, 450, "mm 148"),
+        New Creature("Giant Boar", "Large", "Beast", "Unaligned", 2, 450, "mm 323"),
+        New Creature("Giant Constrictor Snake", "Huge", "Beast", "Unaligned", 2, 450, "mm 324"),
+        New Creature("Giant Elk", "Huge", "Beast", "Unaligned", 2, 450, "mm 325"),
+        New Creature("Gibbering Mouther", "Medium", "Aberration", "N", 2, 450, "mm 157"),
+        New Creature("Githzerai Monk", "Medium", "Humanoid (gith)", "LN", 2, 450, "mm 161"),
+        New Creature("Gnoll Pack Lord", "Medium", "Humanoid (gnoll)", "CE", 2, 450, "mm 163"),
+        New Creature("Green Dragon Wyrmling", "Medium", "Dragon", "LE", 2, 450, "mm 95"),
+        New Creature("Grick", "Medium", "Monstrosity", "N", 2, 450, "mm 173"),
+        New Creature("Griffon", "Large", "Monstrosity", "Unaligned", 2, 450, "mm 174"),
+        New Creature("Grung Elite Warrior", "Small", "Humanoid (grung)", "LE", 2, 450, "motm 150, vgm 157"),
+        New Creature("Guard Drake", "Medium", "Dragon", "Unaligned", 2, 450, "motm 151, vgm 158"),
+        New Creature("Hobgoblin Iron Shadow", "Medium", "Humanoid (goblinoid)", "LE", 2, 450, "motm 154, vgm 162"),
+        New Creature("Hunter Shark", "Large", "Beast", "Unaligned", 2, 450, "mm 330"),
+        New Creature("Intellect Devourer", "Tiny", "Aberration", "LE", 2, 450, "mm 191"),
+        New Creature("Lizardfolk Shaman", "Medium", "Humanoid (lizardfolk)", "N", 2, 450, "mm 205"),
+        New Creature("Meenlock", "Small", "Fey", "NE", 2, 450, "motm 178, vgm 170"),
+        New Creature("Merrow", "Large", "Monstrosity", "CE", 2, 450, "mm 219"),
+        New Creature("Mimic", "Medium", "Monstrosity (shapechanger)", "N", 2, 450, "mm 220"),
+        New Creature("Minotaur Skeleton", "Large", "Undead", "LE", 2, 450, "mm 273"),
+        New Creature("Myconid Sovereign", "Large", "Plant", "LN", 2, 450, "mm 232"),
+        New Creature("Nothic", "Medium", "Aberration", "NE", 2, 450, "mm 236"),
+        New Creature("Ochre Jelly", "Large", "Ooze", "Unaligned", 2, 450, "mm 243"),
+        New Creature("Ogre", "Large", "Giant", "CE", 2, 450, "mm 237"),
+        New Creature("Ogre Bolt Launcher", "Large", "Giant", "CE", 2, 450, "motm 200, mtf 220"),
+        New Creature("Ogre Howdah", "Large", "Giant", "CE", 2, 450, "motm 201, mtf 221"),
+        New Creature("Ogre Zombie", "Large", "Undead", "NE", 2, 450, "mm 316"),
+        New Creature("Orc Claw of Luthic", "Medium", "Humanoid (orc)", "CE", 2, 450, "vgm 183"),
+        New Creature("Orc Eye of Gruumsh", "Medium", "Humanoid (orc)", "CE", 2, 450, "mm 247"),
+        New Creature("Orc Hand of Yurtrus", "Medium", "Humanoid (orc)", "CE", 2, 450, "vgm 184"),
+        New Creature("Orog", "Medium", "Humanoid (orc)", "CE", 2, 450, "mm 247"),
+        New Creature("Pegasus", "Large", "Celestial", "CG", 2, 450, "mm 250"),
+        New Creature("Pentadrone", "Large", "Construct", "LN", 2, 450, "mm 226"),
+        New Creature("Peryton", "Medium", "Monstrosity", "CE", 2, 450, "mm 251"),
+        New Creature("Plesiosaurus", "Large", "Beast", "Unaligned", 2, 450, "mm 80"),
+        New Creature("Polar Bear", "Large", "Beast", "Unaligned", 2, 450, "mm 334"),
+        New Creature("Priest", "Medium", "Humanoid", "Any", 2, 450, "mm 348"),
+        New Creature("Quaggoth", "Medium", "Humanoid (quaggoth)", "CN", 2, 450, "mm 256"),
+        New Creature("Quetzalcoatlus", "Huge", "Beast", "Unaligned", 2, 450, "motm 96, vgm 140"),
+        New Creature("Rhinoceros", "Large", "Beast", "Unaligned", 2, 450, "mm 336"),
+        New Creature("Rug of Smothering", "Large", "Construct", "Unaligned", 2, 450, "mm 20"),
+        New Creature("Rutterkin", "Medium", "Fiend (demon)", "CE", 2, 450, "motm 210, mtf 136"),
+        New Creature("Saber-toothed Tiger", "Large", "Beast", "Unaligned", 2, 450, "mm 336"),
+        New Creature("Sahuagin Priestess", "Medium", "Humanoid (sahuagin)", "LE", 2, 450, "mm 264"),
+        New Creature("Sea Hag", "Medium", "Fey", "CE", 2, 450, "mm 179"),
+        New Creature("Shadow Mastiff", "Medium", "Monstrosity", "NE", 2, 450, "motm 215, vgm 190"),
+        New Creature("Silver Dragon Wyrmling", "Medium", "Dragon", "LG", 2, 450, "mm 118"),
+        New Creature("Specter (poltergeist)", "Medium", "Undead", "CE", 2, 450, "mm 279"),
+        New Creature("Spined Devil", "Small", "Fiend (devil)", "LE", 2, 450, "mm 78"),
+        New Creature("Swarm of Poisonous Snakes", "Medium", "Beast", "Unaligned", 2, 450, "mm 338"),
+        New Creature("Tortle Druid", "Medium", "Humanoid (tortle)", "LN", 2, 450, "motm 244, mtf 242"),
+        New Creature("Vegepygmy Chief", "Small", "Plant", "N", 2, 450, "motm 253, vgm 197"),
+        New Creature("Wererat", "Medium", "Humanoid (human,shapechanger)", "LE", 2, 450, "mm 209"),
+        New Creature("White Dragon Wyrmling", "Medium", "Dragon", "CE", 2, 450, "mm 102"),
+        New Creature("Will-o-wisp", "Tiny", "Undead", "CE", 2, 450, "mm 301"),
+        New Creature("Yuan-ti Broodguard", "Medium", "Humanoid (yuan-ti)", "NE", 2, 450, "motm 273, vgm 203"),
+        New Creature("Ankylosaurus", "Huge", "Beast", "Unaligned", 3, 700, "mm 79"),
+        New Creature("Archer", "Medium", "Humanoid", "Any", 2, 450, "motm 49, vgm 210"),
+        New Creature("Basilisk", "Medium", "Monstrosity", "Unaligned", 3, 700, "mm 24"),
+        New Creature("Bearded Devil", "Medium", "Fiend (devil)", "LE", 3, 700, "mm 70"),
+        New Creature("Blue Dragon Wyrmling", "Medium", "Dragon", "LE", 3, 700, "mm 91"),
+        New Creature("", "", "", "", 3, 700, ""),
+        New Creature("", "", "", "", 0, 0, "")
+        }
 End Module

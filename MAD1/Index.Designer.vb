@@ -30,11 +30,17 @@ Partial Class Index
         MagicSearchBox = New TextBox()
         MagicSearchLabel = New Label()
         MagicItemsDataGrid = New DataGridView()
+        IndexTabPage2 = New TabPage()
+        CreatureSearchBox = New TextBox()
+        CreatureSearchLabel = New Label()
+        CreatureDataGridView = New DataGridView()
         MagicItemDatabaseBindingSource = New BindingSource(components)
         IndexPanel.SuspendLayout()
         TabControl1.SuspendLayout()
         IndexTabPage1.SuspendLayout()
         CType(MagicItemsDataGrid, ComponentModel.ISupportInitialize).BeginInit()
+        IndexTabPage2.SuspendLayout()
+        CType(CreatureDataGridView, ComponentModel.ISupportInitialize).BeginInit()
         CType(MagicItemDatabaseBindingSource, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -50,6 +56,7 @@ Partial Class Index
         ' TabControl1
         ' 
         TabControl1.Controls.Add(IndexTabPage1)
+        TabControl1.Controls.Add(IndexTabPage2)
         TabControl1.Location = New Point(3, 3)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
@@ -99,6 +106,44 @@ Partial Class Index
         MagicItemsDataGrid.Size = New Size(850, 526)
         MagicItemsDataGrid.TabIndex = 0
         ' 
+        ' IndexTabPage2
+        ' 
+        IndexTabPage2.Controls.Add(CreatureSearchBox)
+        IndexTabPage2.Controls.Add(CreatureSearchLabel)
+        IndexTabPage2.Controls.Add(CreatureDataGridView)
+        IndexTabPage2.Location = New Point(4, 24)
+        IndexTabPage2.Name = "IndexTabPage2"
+        IndexTabPage2.Size = New Size(862, 570)
+        IndexTabPage2.TabIndex = 1
+        IndexTabPage2.Text = "Creatures"
+        IndexTabPage2.UseVisualStyleBackColor = True
+        ' 
+        ' CreatureSearchBox
+        ' 
+        CreatureSearchBox.Location = New Point(53, 15)
+        CreatureSearchBox.Name = "CreatureSearchBox"
+        CreatureSearchBox.Size = New Size(298, 23)
+        CreatureSearchBox.TabIndex = 3
+        ' 
+        ' CreatureSearchLabel
+        ' 
+        CreatureSearchLabel.AutoSize = True
+        CreatureSearchLabel.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        CreatureSearchLabel.Location = New Point(3, 21)
+        CreatureSearchLabel.Name = "CreatureSearchLabel"
+        CreatureSearchLabel.Size = New Size(54, 17)
+        CreatureSearchLabel.TabIndex = 2
+        CreatureSearchLabel.Text = "Search: "
+        ' 
+        ' CreatureDataGridView
+        ' 
+        CreatureDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        CreatureDataGridView.Location = New Point(3, 41)
+        CreatureDataGridView.Name = "CreatureDataGridView"
+        CreatureDataGridView.RowTemplate.Height = 25
+        CreatureDataGridView.Size = New Size(856, 526)
+        CreatureDataGridView.TabIndex = 0
+        ' 
         ' MagicItemDatabaseBindingSource
         ' 
         MagicItemDatabaseBindingSource.DataSource = GetType(MagicItemDatabase)
@@ -119,6 +164,9 @@ Partial Class Index
         IndexTabPage1.ResumeLayout(False)
         IndexTabPage1.PerformLayout()
         CType(MagicItemsDataGrid, ComponentModel.ISupportInitialize).EndInit()
+        IndexTabPage2.ResumeLayout(False)
+        IndexTabPage2.PerformLayout()
+        CType(CreatureDataGridView, ComponentModel.ISupportInitialize).EndInit()
         CType(MagicItemDatabaseBindingSource, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
@@ -130,4 +178,8 @@ Partial Class Index
     Friend WithEvents MagicItemsDataGrid As DataGridView
     Friend WithEvents MagicSearchLabel As Label
     Friend WithEvents MagicSearchBox As TextBox
+    Friend WithEvents IndexTabPage2 As TabPage
+    Friend WithEvents CreatureDataGridView As DataGridView
+    Friend WithEvents CreatureSearchBox As TextBox
+    Friend WithEvents CreatureSearchLabel As Label
 End Class
