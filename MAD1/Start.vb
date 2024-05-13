@@ -464,7 +464,7 @@ Public Class Start
 
     Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
         Dim indexForm As New Index()
-        indexForm.ShowDialog()
+        indexForm.Show()
     End Sub
 
     'handle notes gui switch
@@ -602,17 +602,76 @@ Public Class RandomNameGenerator
     Private Shared random As New Random()
 
     'name stuff
-    Private Shared humanFirstNamesM As String() = {"Raymond", "Arnold", "Richard", "Bertram", "Clerebold", "Theodoric", "Perar", "Gerard", "Dustin", "Gerald", "Drogo", "Charles", "Geoffrey", "Hubert", "Hugh", "Randal", "Antert", "Alex", "Rolan", "Patrick", "Tim", "Norman", "Ernest", "Nicholas", "Bernard", "Solomon"}
-    Private Shared humanFirstNamesF As String() = {"Bailey", "Annie"}
-    Private Shared humanSurname As String() = {"Jacobs", "Morrie", "Hart", "Leemancon", "Dumph", "Kitchur", "Byron", "Anderton", "Winchester", "Hamilton", "Hadlee", "Nibley", "Blyth", "Watson", "Malomary", "Blackwood", "Cornish", "Hadley", "Clinton", "Clayton", "Halsey", "Harper", "Tyndall", "Marley", "Hayes", "Cooper", "Langley", "Morley", "Clare"}
+    Private Shared dragonbornFirstNamesM As String() = {"Baradad", "Shamash", "Gorbundus", "Greethen", "Azzakh", "Hirethon", "Maagog", "Rivaan", "Ghesh", "Valorean", "Patrin", "Dadalan", "Bidreked", "Quarethon", "Mozikth", "Tarhun", "Rhogar", "Nykkan", "Dazzazn", "Salasar", "Barash", "Kiirith", "Ildrex", "Heskan", "Pandjed", "Gorbundus", "Kerkad", "Pijjirik", "Sethrekar", "Tarhun"}
+    Private Shared dragonbornFirstNamesF As String() = {"Jezean", "Korinn", "Kadana", "Antrara", "Uadanix", "Mijit", "Uadjit", "Pyxrin", "Pogranix", "Findex", "Daar", "Gesrethe", "Kadana", "Nuthra", "Megren", "Raiann", "Zykroff", "Sora", "Akra", "Eggren", "Chassath", "Harann", "Rulothrin", "Hillanot", "Gilkass", "Burana", "Dentra", "Vezera", "Bura", "Saphara"}
+    Private Shared dragonbordSurname As String() = {"Sumnarghthrysh", "Wivvyrholdalphiax", "Clethtinthiallor", "Ophinshtalajiir", "Umbyrphrael", "Kimbatuul", "Mohradyllion", "Gygazzylyshrift", "Linxakasendalor", "Lharzbolde", "Esstyrlynn", "Mystentold", "Vangdonis", "Kerrhylon", "Sumbyxiria", "Bhenkumbyrznaax", "Pfaphnyren", "Chumbyxirinnish", "Orexijandilin", "Turngdon", "Raghthroknaar", "Wivvyrholdalphiax", "Mystan", "Zzzxaaxth", "Zzzxaaxthroth", "Wystanth", "Wystongjiir", "Verthisathurgiesh", "Yarjerit", "Beryntolthropal"}
+
+    Private Shared dwarfFirstNamesM As String() = {"Gimurbin", "Thravar", "Erias", "Whurbin", "Gimurt", "Tradain", "Brottor", "Dain", "Adrik", "Thorim", "Olorin", "Morgran", "Nalral", "Harbek", "Baerk", "Mordal", "Alberich", "Whurbin", "Orsik", "Oskar", "Thorin", "Rurbin", "Gimgen", "Beloril", "Dworic", "Vonbin", "Nuraval", "Rurik", "Uraim", "Elaim", "Kildrak", "Traubon", "Thoradin", "Darrak", "Erias", "Oloric", "Torkrak", "Falral", "Olunt", "Dalgal", "Alberich", "Rangrim", "Adric", "Gimurt", "Baern", "Rurik", "Morkral"}
+    Private Shared dwarfFirstNamesF As String() = {"Bardryn", "Kilia", "Sannl", "Vistra", "Nurkara", "Eldeth", "Torbera", "Tordrid", "Werydd", "Dardred", "Vonana", "Liff", "Eridred", "Gunnloda", "Bardryn", "Dagna", "Kathra", "Fallthra", "Valida", "Diesa", "Ilde", "Bolhild", "Audhild", "Morana", "Nurkara", "Gurdis", "Gunnloda", "Morana", "Falkrunn", "Sannl", "Balifra", "Jarana", "Kristryd", "Whurgunn", "Ballydd", "Thera", "Vistra", "Jarana", "Werydd", "Artin", "Barbena", "Balifra", "Helgret", "Fallthra", "Yurdre", "Ovina", "Fallthra"}
+    Private Shared dwarfSurname As String() = {"Durronghek", "Steelfist", "Daraln", "Burrowfound", "Glanhig", "Bofdann", "Lutgehr", "Rubyeye", "Silverstone", "Helcral", "Dankil", "Holderhek", "Loderr", "Brawnanvil", "Trueanvil", "Glankrak", "Stoutanvil", "Graybeard", "Ironfist", "Morigak", "Brazzik", "Torunn", "Caebrek", "Deepdelver", "Balderk", "Torevir", "Lutgehr", "Orcfoe", "Brawnanvil", "Darawnane", "Helcral", "Trollbleeder", "Durthane", "Gorunn", "Battlehard", "Trueblood", "Silverak", "Daerdahk", "Holdfiston", "Bigtoe", "Silverst", "Gollack", "Strakeln"}
+
+    Private Shared elfFirstNamesM As String() = {"Mindartis", "Nim", "Fivin", "Suhnae", "Beiro", "Naeris", "Enialis", "Ivellios", "Vanuath", "Utheren", "Theriatis", "Naal", "Berrian", "Koeth", "Quarion", "Mindartis", "Dayereth", "Vanuatis", "Arannis", "Heian", "Thervan", "Koeth", "Dreali", "Naill", "Beiro", "Dayereth", "Laucian", "Peren", "Erdan", "Nutae", "Aelar", "Varis", "Himo", "Enialis", "Gennal", "Thervan", "Rael", "Theren", "Riardon", "Erdan", "Aust", "Ivellios", "Rolen", "Mindar", "Lamlis"}
+    Private Shared elfFirstNamesF As String() = {"Syllin", "Irann", "Fararastra", "Claira", "Bethrynna", "Ahinar", "Mella", "Vaina", "Enna", "Myathethil", "Tiathaea", "Birel", "Shanairla", "Quelynneth", "Mialee", "Baelitae", "Lia", "Shanairla", "Irann", "Andraste", "Chaedi", "Ielenia", "Valanthe", "Ilanis", "Shava", "Arara", "Maiva", "Sumnes", "Sariel", "Ielenia", "Vadania", "Anastrianna", "Birel", "Mara", "Malquis", "Jarsali", "Keyleth", "Tiaathque", "Caelynn", "Naivara", "Myathethil"}
+    Private Shared elfSurname As String() = {"Ethanasath", "Meldrithi", "Netyoive", "Cithro", "Casilltenirra", "Galanodel", "Selevarun", "Galannodel", "Cithreth", "Ilphelkiir", "Wasanthi", "Othronus", "Qualanasas", "Ostoroth", "Amastacia", "Erevanodel", "Netyoive", "Yaeldrin", "Wasanthi", "Berdon", "Meldrin", "Koehlanna", "Xistsrith", "Mystralath", "Aloro", "Rothenel", "Horineth", "Wasilo", "Ariessus", "Xistsrith", "Tiltatha", "Tiltathana", "Fasharash", "Othronus", "Capharana", "Firahem", "Goltorah", "Casilo", "Amastacia", "Xistrasas", "Koehlanna", "Liadon", "Eathalena", "Xiloscient", "Horineth", "Caerdonel"}
+
+    Private Shared gnomeFirstNamesM As String() = {"Paggen", "Delebean", "Eldon", "Eberdeb", "Pallabar", "Seebo", "Dimble", "Kipper", "Anverth", "Cockaby", "Alston", "Fabbles", "Bilbron", "Boddynock", "Orryn", "Wobbles", "Qualen", "Senteq", "Dabbledob", "Fabien", "Gerbo", "Crampernap", "Glim", "Jebeddo", "Pallabar", "Kipper", "Fonkin", "Alston", "Umpen", "Zaffrab", "Ribble", "Fabble", "Oppleby", "Burgell", "Frouse", "Arumawan", "Erky", "Fondar", "Pog", "Dimble", "Frouse", "Arumawann", "Burgell", "Fibblestib", "Sindri"}
+    Private Shared gnomeFirstNamesF As String() = {"Veloptima", "Loopmottin", "Lorilla", "Enidda", "Menny", "Mumpena", "Caramip", "Luthra", "Ellyjoybell", "Breenaba", "Waywocket", "Carlin", "Rananab", "Abalaba", "Ulla", "Buvvie", "Tippletoe", "Mumpena", "Pyntle", "Nyx", "Luthra", "Reddlepop", "Reddle", "Dalaba", "Enidda", "Shamil", "Duvamil", "Tana", "Mumpena", "Oppah", "Unvera", "Callybon", "Bimpnottin", "Tenena", "Veloptima", "Pyntle", "Siffress", "Donella", "Yebe", "Nissa", "Panny", "Buvvie", "Ella", "Orla", "Cala"}
+    Private Shared gnomeSurname As String() = {"Pilwicken", "Bafflestone", "Miggledy", "Turen", "Gimlen", "Fapplestamp", "Munggen", "Folkor", "Wildwander", "Oomtrowl", "Turen", "Nucklestal", "Horcusporcus", "Rofferton", "Umbodoben", "Nackle", "Nopenstallen", "Quildwande", "Gobblefirn", "Welber", "Silverthread", "Shadowcloak", "Timbers", "Loofollue", "Rofferton", "Mungel", "Quillsharpener", "Musgraben", "Maekkelferce", "Gummen", "Offund", "Leffery", "Nopenstallen", "Timbers", "Sildwand", "Scheppen", "Turen", "Munggen", "Humple", "Horcusporcus", "Bafflestone", "Loond", "Wildwander", "Tarricken", "Lingenhall"}
+
+    Private Shared halflingFirstNamesM As String() = {"Roge", "Ulblyn", "Ghaliver", "Calcitro", "Fargas", "Pirithin", "Corkitron", "Ortegar", "Chay", "Tod", "Howar", "Bhevek", "Hobart", "Damien", "Halander", "Burto", "Tomi", "Ozyman", "Oblar", "Ghalcitro", "Bulzo", "Stannor", "Silvo", "Pikar", "Bundrigo", "Bertram", "Dondon", "Oblar", "Gormogord", "Altho", "Bundrigo", "Fargas", "Gildmak", "Foxilon", "Hupe", "Pirithin", "Faran", "Jak", "Radomir", "Burban", "Calcitro", "Nelkin", "Bucklal", "Oren", "Krimmon", "Vlorn", "Curran", "Wiggan", "Tomien", "Dami"}
+    Private Shared halflingFirstNamesF As String() = {"Chennia", "Nora", "Tyna", "Kithri", "Bree", "Eida", "Willow", "Anne", "Shaena", "Trym", "Jill", "Wella", "Robbie", "Nikki", "Gynna", "Jo", "Alain", "Verna", "Pearl", "Marigold", "Euphemia", "Lavinia", "Verna", "Maegan", "Lidda", "Nedda", "Olivia", "Andry", "Philomena", "Paela", "Stacee", "Harriet", "Cora", "Gynnie", "Callie", "Dee", "Wella", "Vani", "Sarai", "Blossomena", "Rose", "Olivia", "Phillia", "Maegan"}
+    Private Shared halflingSurname As String() = {"Sunmeadow", "Leagallow", "Underbough", "Jamjar", "Greenleaf", "Hilltopple", "Kettlewhistle", "Tealeaf", "Fastfoot", "Fatrabbit", "Swiftwhill", "Hogcollar", "Underfoot", "Goothhan", "Wildheart", "Silvereyes", "Porridgepot", "Nimblefingers", "Deephollow", "Greenbottle", "Quickstep", "Wildcloak", "Bigheart", "Strongbones", "Littlefing", "Thorngage", "Warmwater", "Appleblossom", "Leagallow", "Smoothhands", "Strongbon", "Brushgather", "High-hill", "Tosscobble", "Elderberry", "Underfoot", "Shadowquic", "Wiseacre"}
+
+    Private Shared orcFirstNamesM As String() = {"Garl", "Pígug", "Ogbur", "Folgûm", "Ur-Lasu", "Ar-Karo", "Skog", "Ûshgol", "Olgol", "Barg", "Krug", "Ar-Kaius", "Az-Bror", "Oren", "Ar-Gul", "Zog", "Tûhorn", "Ghâka", "Kothûg", "Ûkshak", "Shaká", "Ashgarn", "Nazdûg", "Ratanák", "Ur-Edin", "Gubrash", "Az-Bar", "Amûg", "Henk", "Rratans", "Grisha", "Ogg", "Ghash", "Skoth", "Kothra", "Dharg", "Thokk", "Ur-Masi", "Mormog", "Varg", "Hork", "Olgoth", "Tûmhom", "Zâthra", "Ogthrak", "Vilberg", "Dhag", "Drusk", "Thrak", "Skog", "Lûgdash", "Tang", "Mord", "Megged"}
+    Private Shared orcFirstNamesF As String() = {"Grigi", "Drenna", "Lagga", "Ootah", "Zagga", "Zaggi", "Vorka", "Murgen", "Hurga", "Nella", "Ilga", "Nagrette", "Bilga", "Murgen", "Brakka", "Fistula", "Gynk", "Arha", "Silgre", "Gorka", "Yevelda", "Arha", "Bendoo", "Tawar", "Ownka", "Taggi", "Tagga", "Huru", "Bilga", "Hurga", "Hraki", "Ovak", "Nagazi", "Volen", "Hrathy", "Gaaki", "Sutha", "Puyet", "Emen", "Drenna", "Grai", "Ekk", "Vorka", "Lezre", "Ubada", "Gorga", "Greeza", "", "", "", "", "", "", ""}
+
+    Private Shared humanFirstNamesM As String() = {"Raymond", "Arnold", "Richard", "Bertram", "Clerebold", "Theodoric", "Perar", "Gerard", "Dustin", "Gerald", "Drogo", "Charles", "Geoffrey", "Hubert", "Hugh", "Randal", "Antert", "Alex", "Rolan", "Patrick", "Tim", "Norman", "Ernest", "Nicholas", "Bernard", "Solomon", "Rolf", "Balim", "Henry", "Alexandre", "Theobald", "Cormas", "Chad", "Balimaar", "Wymar", "Aldous", "Miles", "Anselm", "Dean", "Perad", "Adelyn", "Heward", "Odo", "William", "Thomas", "Howard", "Charles", "Man", "Frederick"}
+    Private Shared humanFirstNamesF As String() = {"Bailey", "Annie", "Hugolina", "Anne", "Vicky", "Adelaide", "Geva", "Egelina", "Hadwisa", "Emmeline", "Susannah", "Galiena", "Katherine", "Jane", "Rohesia", "Rosabeth", "Sarah", "Ella", "Melissa", "Joan", "Eleanor", "Ida", "Juliana", "Margery", "Matilda", "Avelina", "Helen", "Alice", "Jane", "Emma", "Eva", "Agatha", "Sybil", "Mary", "Eloise", "Beatrice", "Juliana", "Helen", "Elysande", "Elizabeth", "Mela", "Williamina", "Isabella", "Yvonne", "Oriel", "Jan"}
+    Private Shared humanSurname As String() = {"Jacobs", "Morrie", "Blyth", "Hart", "Leemancon", "Dumph", "Kitchur", "Byron", "Anderton", "Winchester", "Hamilton", "Hadlee", "Gladstone", "Nibley", "Jacobs", "Hackney", "Blyth", "Watson", "Malomary", "Bing", "Blackwood", "Reid", "Cornish", "Oakley", "Hadley", "Clinton", "Clayton", "Halsey", "Harper", "Tyndall", "Marley", "Hayes", "Cooper", "Langley", "Morley", "Clare", "Palomarez", "Callan", "Fawcett", "Graeme", "Atterton", "Ogden", "Albertson", "Tenley", "Birkenhead", "Hadleigh", "Camden", "Winten", "Tindall", "Mitchell", "Spaulding", "Watson", "Browning", "Heiser", "Lepus", "Dumph", "Garrick", "Shelby"}
+
+    Private Shared tieflingFirstNamesM As String() = {"Barbas", "Rimmon", "Damakos", "Ahrim", "Fenrihim", "Vassago", "Damakos", "Leucis", "Tethren", "Zephan", "Cairn", "Barakas", "Therai", "Nicor", "Barai", "Mantus", "Oriax", "Balam", "Thamuz", "Pelech", "Orimer", "Bathin", "Mordaios", "Qemuel", "Fenriz", "Pelaios", "Merihim", "Xappan", "Paymon", "Cimer", "Skamos", "Tethim", "Ekemon", "Modean", "Forcas", "Paymon", "Rimmon", "Kairon", "Fenrihim", "Euron", "Amnon", "Mamuz"}
+    Private Shared tieflingFirstNamesF As String() = {"Orianna", "Nemyaza", "Manea", "Bryseis", "Shava", "Ea", "Nemeia", "Sorath", "Astemah", "Armara", "Aym", "Seddit", "Kasdeya", "Akta", "Gomory", "Hecat", "Makaria", "Purah", "Pyra", "Ronwe", "Seere", "Damaia", "Prosperine", "Ronobe", "Vepar", "Azza", "Astaro", "Jezebeth", "Semeia", "Lereella", "Markosian", "Lerissa", "Kali", "Uzza", "Naamah", "Bune", "Manea", "Rieta", "Bryseis", "Kasdeya", "Bryseis", "Nija", "Phellis", "Shax"}
 
     Public Shared Function GenerateName(race As String, isMasc As Boolean, includeSurname As Boolean) As String
         Dim names As String()
         Dim surnames As String()
 
         Select Case race.ToLower()
+            Case "dragonborn"
+                names = If(isMasc, dragonbornFirstNamesM, dragonbornFirstNamesF)
+                surnames = dragonbordSurname
+            Case "dwarf"
+                names = If(isMasc, dwarfFirstNamesM, dwarfFirstNamesF)
+                surnames = dwarfSurname
+            Case "elf"
+                names = If(isMasc, elfFirstNamesM, elfFirstNamesF)
+                surnames = elfSurname
+            Case "gnome"
+                names = If(isMasc, gnomeFirstNamesM, gnomeFirstNamesF)
+                surnames = gnomeSurname
+            Case "half-elf"
+                If random.Next(2) = 0 Then
+                    names = If(isMasc, humanFirstNamesM, humanFirstNamesF)
+                Else
+                    names = If(isMasc, elfFirstNamesM, elfFirstNamesF)
+                End If
+
+                If random.Next(2) = 0 Then
+                    surnames = humanSurname
+                Else
+                    surnames = elfSurname
+                End If
+            Case "halfling"
+                names = If(isMasc, halflingFirstNamesM, halflingFirstNamesF)
+                surnames = halflingSurname
+            Case "half-orc"
+                names = If(isMasc, orcFirstNamesM, orcFirstNamesF)
+                surnames = humanSurname
             Case "human"
                 names = If(isMasc, humanFirstNamesM, humanFirstNamesF)
+                surnames = humanSurname
+            Case "tiefling"
+                names = If(isMasc, tieflingFirstNamesM, tieflingFirstNamesF)
                 surnames = humanSurname
             Case Else
                 Throw New ArgumentException("Invalid race: " & race)
@@ -669,6 +728,64 @@ Public Class Creature
         Me.Challenge = challenge
         Me.XP = xp
         Me.Source = source
+    End Sub
+End Class
+
+Public Class CreatureFullStats
+    Public Property Name As String
+    Public Property AC As Integer
+    Public Property HP As Integer
+    Public Property Speed As String
+    Public Property STR As Integer
+    Public Property DEX As Integer
+    Public Property CON As Integer
+    Public Property INT As Integer
+    Public Property WIS As Integer
+    Public Property CHA As Integer
+    Public Property Saves As String
+    Public Property Skills As String
+    Public Property Senses As String
+    Public Property Languages As String
+    Public Property Additional As String
+
+    Public Sub New(name As String, ac As Integer, hp As Integer, speed As String, str As Integer, dex As Integer, con As Integer, int As Integer, wis As Integer, cha As Integer, saves As String, skills As String, senses As String, lang As String, additional As String)
+        Me.Name = name
+        Me.AC = ac
+        Me.HP = hp
+        Me.Speed = speed
+        Me.STR = str
+        Me.DEX = dex
+        Me.CON = con
+        Me.INT = int
+        Me.WIS = wis
+        Me.CHA = cha
+        Me.Saves = saves
+        Me.Skills = skills
+        Me.Senses = senses
+        Me.Languages = lang
+        Me.Additional = additional
+    End Sub
+End Class
+
+Public Class Spell
+    Public Property Name As String
+    Public Property Level As Integer
+    Public Property School As String
+    Public Property CastTime As String
+    Public Property Range As String
+    Public Property VSM As String
+    Public Property Concentration As String
+    Public Property Ritual As String
+
+    Public Sub New(name As String, level As Integer, school As String, casttime As String, range As String, vsm As String, con As String, rit As String)
+        Me.Name = name
+        Me.Level = level
+        Me.School = school
+        Me.CastTime = casttime
+        Me.Range = range
+        Me.VSM = vsm
+        Me.Concentration = con
+        Me.Ritual = rit
     End Sub
 End Class
 
@@ -1339,7 +1456,415 @@ Public Module CreatureDatabase
         New Creature("Basilisk", "Medium", "Monstrosity", "Unaligned", 3, 700, "mm 24"),
         New Creature("Bearded Devil", "Medium", "Fiend (devil)", "LE", 3, 700, "mm 70"),
         New Creature("Blue Dragon Wyrmling", "Medium", "Dragon", "LE", 3, 700, "mm 91"),
-        New Creature("", "", "", "", 3, 700, ""),
-        New Creature("", "", "", "", 0, 0, "")
+        New Creature("Bugbear Chief", "Medium", "Humanoid (goblinoid)", "CE", 3, 700, "mm 33"),
+        New Creature("Bulazau", "Medium", "Fiend (demon)", "CE", 3, 700, "motm 67, mtf 131"),
+        New Creature("Cave Fisher", "Medium", "Monstrosity", "Unaligned", 3, 700, "motm 73, vgm 130"),
+        New Creature("Choldrith", "Medium", "Monstrosity", "CE", 3, 700, "motm 77, vgm 132"),
+        New Creature("Deathlock Wight", "Medium", "Undead", "NE", 3, 700, "motm 87, mtf 129"),
+        New Creature("Deep Scion", "Medium", "Humanoid (shapechanger)", "NE", 3, 700, "motm 88, vgm 135"),
+        New Creature("Derro Savant", "Small", "Humanoid (derro)", "CE", 3, 700, "motm 92, mtf 159"),
+        New Creature("Displacer Beast", "Large", "Monstrosity", "LE", 3, 700, "mm 81"),
+        New Creature("Dolphin Delighter", "Medium", "Fey", "CG", 3, 700, "motm 97"),
+        New Creature("Doppelganger", "Medium", "Monstrosity (shapechanger)", "N", 3, 700, "mm 82"),
+        New Creature("Duergar Screamer", "Medium", "Construct", "LE", 3, 700, "motm 112, mtf 190"),
+        New Creature("Flail Snail", "Large", "Elemental", "Unaligned", 3, 700, "motm 126, vgm 144"),
+        New Creature("Giant Scorpion", "Large", "Beast", "Unaligned", 3, 700, "mm 327"),
+        New Creature("Giff", "Medium", "Humanoid", "LN", 3, 700, "motm 138, mtf 204"),
+        New Creature("Githyanki Warrior", "Medium", "Humanoid (gith)", "LE", 3, 700, "mm 160"),
+        New Creature("Gold Dragon Wyrmling", "Medium", "Dragon", "LG", 3, 700, "mm 115"),
+        New Creature("Green Hag", "Medium", "Fey", "NE", 3, 700, "mm 177"),
+        New Creature("Grell", "Medium", "Aberration", "NE", 3, 700, "mm 172"),
+        New Creature("Hell Hound", "Medium", "Fiend", "LE", 3, 700, "mm 182"),
+        New Creature("Hobgoblin Captain", "Medium", "Humanoid (goblinoid)", "LE", 3, 700, "mm 186"),
+        New Creature("Hook Horror", "Large", "Monstrosity", "N", 3, 700, "mm 189"),
+        New Creature("Illusionist", "Medium", "Humanoid", "Any", 3, 700, "motm 263, vgm 214"),
+        New Creature("Killer Whale", "Huge", "Beast", "Unaligned", 3, 700, "mm 331"),
+        New Creature("Knight", "Medium", "Humanoid", "Any", 3, 700, "mm 347"),
+        New Creature("Leucrotta", "Large", "Monstrosity", "CE", 3, 700, "motm 170, vgm 169"),
+        New Creature("Manticore", "Large", "Monstrosity", "LE", 3, 700, "mm 213"),
+        New Creature("Martial Arts Adept", "Medium", "Humanoid", "Any", 3, 700, "motm 172, vgm 216"),
+        New Creature("Merrenoloth", "Medium", "Fiend (yugoloth)", "NE", 3, 700, "motm 180, mtf 250"),
+        New Creature("Minotaur", "Large", "Monstrosity", "CE", 3, 700, "mm 223"),
+        New Creature("Mummy", "Medium", "Undead", "LE", 3, 700, "mm 228"),
+        New Creature("Neogi", "Small", "Aberration", "LE", 3, 700, "motm 192, vgm 180"),
+        New Creature("Nightmare", "Large", "Fiend", "NE", 3, 700, "mm 235"),
+        New Creature("Ogre Chain Brute", "Large", "Giant", "CE", 3, 700, "motm 201, mtf 221"),
+        New Creature("Orc Red Fang of Shargaas", "Medium", "Humanoid (orc)", "CE", 3, 700, "vgm 185"),
+        New Creature("Owlbear", "Large", "Monstrosity", "Unaligned", 3, 700, "mm 249"),
+        New Creature("Phase Spider", "Large", "Monstrosity", "Unaligned", 3, 700, "mm 334"),
+        New Creature("Quaggoth Thonot", "Medium", "Humanoid (quaggoth)", "CN", 3, 700, "mm 256"),
+        New Creature("Redcap", "Small", "Fey", "CE", 3, 700, "motm 208, vgm 188"),
+        New Creature("Shadow Mastiff Alpha", "Medium", "Monstrosity", "NE", 3, 700, "motm 215"),
+        New Creature("Slithering Tracker", "Medium", "Ooze", "CE", 3, 700, "motm 221, vgm 191"),
+        New Creature("Spectator", "Medium", "Aberration", "LN", 3, 700, "mm 30"),
+        New Creature("Swashbuckler", "Medium", "Humanoid", "Any non-lawful", 3, 700, "motm 238, vgm 217"),
+        New Creature("Sword Wraith Warrior", "Medium", "Undead", "LE", 3, 700, "mot 239, mtf 241"),
+        New Creature("Trapper", "Large", "Monstrosity", "Unaligned", 3, 700, "motm 245, vgm 194"),
+        New Creature("Vampiric Mist", "Medium", "Undead", "CE", 3, 700, "motm 250, mtf 246"),
+        New Creature("Veteran", "Medium", "Humanoid", "Any", 3, 700, "mm 350"),
+        New Creature("Water Weird", "Large", "Elemental", "N", 3, 700, "mm 299"),
+        New Creature("Werewolf", "Medium", "Humanoid (human,shapechanger)", "CE", 3, 700, "mm 211"),
+        New Creature("Wight", "Medium", "Undead", "NE", 3, 700, "mm 300"),
+        New Creature("Winter Wolf", "Large", "Monstrosity", "NE", 3, 700, "mm 340"),
+        New Creature("Yeti", "Large", "Monstrosity", "CE", 3, 700, "mm 305"),
+        New Creature("Yuan-ti Malison", "Medium", "Monstrosity (shapechanger,yuan-ti)", "NE", 3, 700, "mm 309"),
+        New Creature("Babau", "Medium", "Fiend (demon)", "CE", 4, 1100, "motm 52, vgm 136"),
+        New Creature("Banshee", "Medium", "Undead", "CE", 4, 1100, "mm 23"),
+        New Creature("Barghest", "Large", "Fiend (shapechanger)", "NE", 4, 1100, "motm 60, vgm 123"),
+        New Creature("Black Pudding", "Large", "Ooze", "Unaligned", 4, 1100, "mm 241"),
+        New Creature("Bone Naga", "Large", "Undead", "LE", 4, 1100, "mm 233"),
+        New Creature("Chuul", "Large", "Aberration", "CE", 4, 1100, "mm 40"),
+        New Creature("Couatl", "Medium", "Celestial", "LG", 4, 1100, "mm 43"),
+        New Creature("Deathlock", "Medium", "Undead", "NE", 4, 1100, "motm 86, mtf 128"),
+        New Creature("Dybbuk", "Medium", "Fiend (demon)", "CE", 4, 1100, "motm 113, mtf 132"),
+        New Creature("Elephant", "HUge", "Beast", "Unaligned", 4, 1100, "mm 322"),
+        New Creature("Ettin", "Large", "Giant", "CE", 4, 1100, "mm 132"),
+        New Creature("Flameskull", "Tiny", "Undead", "NE", 4, 1100, "mm 134"),
+        New Creature("Ghost", "Medium", "Undead", "Any", 4, 1100, "mm 147"),
+        New Creature("Girallon", "Large", "Monstrosity", "Unaligned", 4, 1100, "motm 139, vgm 152"),
+        New Creature("Gnoll Fang of Yeenoghu", "Medium", "Fiend (gnoll)", "CE", 4, 1100, "mm 163"),
+        New Creature("Helmed Horror", "Medium", "Construct", "N", 4, 1100, "mm 183"),
+        New Creature("Hobgoblin Devastator", "Medium", "Humanoid (goblinoid)", "LE", 4, 1100, "motm 153, vgm 161"),
+        New Creature("Incubus", "Medium", "Fiend (shapechanger)", "NE", 4, 1100, "mm 285"),
+        New Creature("Iron Cobra", "Medium", "Construct", "Unaligned", 4, 1100, "motm 79, mtf 125"),
+        New Creature("Lamia", "Large", "Monstrosity", "CE", 4, 1100, "mm 201"),
+        New Creature("Lizard King/Queen", "Medium", "Humanoid (lizardfolk)", "CE", 4, 1100, "mm 205"),
+        New Creature("Merregon", "Medium", "Fiend (devil)", "LE", 4, 1100, "motm 179, mtf 166"),
+        New Creature("Neogi Master", "Medium", "Aberration", "LE", 4, 1100, "motm 192, vgm 180"),
+        New Creature("Ogre Battering Ram", "Large", "Giant", "CE", 4, 1100, "motm 200, mtf 220"),
+        New Creature("Orc Blade of Ilneval", "Medium", "Humanoid (orc)", "CE", 4, 1100, "vgm 183"),
+        New Creature("Orc War Chief", "Medium", "Humanoid (orc)", "CE", 4, 1100, "mm 246"),
+        New Creature("Red Dragon Wyrmling", "Medium", "Dragon", "CE", 4, 1100, "mm 98"),
+        New Creature("Shadow Demon", "Medium", "Fiend (demon)", "CE", 4, 1100, "mm 64"),
+        New Creature("Stegosaurus", "Huge", "Beast", "Unaligned", 4, 1100, "motm 96, vgm 140"),
+        New Creature("Stone Defender", "Medium", "Construct", "Unaligned", 4, 1100, "motm 80, mtf 126"),
+        New Creature("Succubus", "Medium", "Fiend (shapechanger)", "NE", 4, 1100, "mm 285"),
+        New Creature("Warlock of the Archfey", "Medium", "Humanoid", "Any", 4, 1100, "motm 255, vgm 219"),
+        New Creature("Wereboar", "Medium", "Humanoid (human,shapechanger)", "NE", 4, 1100, "mm 209"),
+        New Creature("Weretiger", "Medium", "Humanoid (human,shapechanger)", "N", 4, 1100, "mm 210"),
+        New Creature("Yeth Hound", "Large", "Fey", "NE", 4, 1100, "motm 271, vgm 201"),
+        New Creature("Yuan-ti Mind Whisperer", "Medium", "Monstrosity (shapechanger,yuan-ti)", "NE", 4, 1100, "motm 274, vgm 204"),
+        New Creature("Yuan-ti Nightmare Speaker", "Medium", "Monstrosity (shapechanger,yuan-ti)", "NE", 4, 1100, "motm 275, vgm 205"),
+        New Creature("Adult Oblex", "Medium", "Ooze", "LE", 5, 1800, "motm 198, mtf 218"),
+        New Creature("Air Elemental", "Large", "Elmental", "N", 5, 1800, "mm 124"),
+        New Creature("Allip", "Medium", "Undead", "NE", 5, 1800, "motm 45, mtf 116"),
+        New Creature("Banderhobb", "Large", "Monstrosity", "NE", 5, 1800, "motm 56, vgm 122"),
+        New Creature("Barbed Devil", "Medium", "Fiend (devil)", "LE", 5, 1800, "mm 70"),
+        New Creature("Barlgura", "Large", "Fiend (devil)", "CE", 5, 1800, "mm 56"),
+        New Creature("Beholder Zombie", "Large", "Undead", "NE", 5, 1800, "mm 316"),
+        New Creature("Brontosaurus", "Gargantuan", "Beast", "Unaligned", 5, 1800, "motm 95, vgm 139"),
+        New Creature("Bulette", "Large", "Monstrosity", "Unaligned", 5, 1800, "mm 34"),
+        New Creature("Cambion", "Medium", "Fiend", "Any evil", 5, 1800, "mm 36"),
+        New Creature("Catoblepas", "Large", "Monstrosity", "Unaligned", 5, 1800, "motm 70, vgm 129"),
+        New Creature("Drow Elite Warrior", "Medium", "Humanoid (elf)", "NE", 5, 1800, "mm 128"),
+        New Creature("Earth Elemental", "Large", "Elemental", "N", 5, 1800, "mm 124"),
+        New Creature("Enchanter", "Medium", "Humanoid", "Any", 5, 1800, "motm 261, vgm 213"),
+        New Creature("Fire Elemental", "Large", "Elemental", "N", 5, 1800, "mm 125"),
+        New Creature("Flesh Golem", "Medium", "Construct", "N", 5, 1800, "mm 169"),
+        New Creature("Giant Crocodile", "Huge", "Beast", "Unaligned", 5, 1800, "mm 324"),
+        New Creature("Giant Shark", "Huge", "Beast", "Unaligned", 5, 1800, "mm 328"),
+        New Creature("Gladiator", "Medium", "Humanoid", "Any", 5, 1800, "mm 346"),
+        New Creature("Gorgon", "Large", "Monstrosity", "Unaligned", 5, 1800, "mm 171"),
+        New Creature("Half-Red Dragon Veteran", "Medium", "Humanoid (human)", "Any", 5, 1800, "mm 180"),
+        New Creature("Hill Giant", "Huge", "Giant", "CE", 5, 1800, "mm 155"),
+        New Creature("Kraken Priest", "Medium", "Humanoid", "Any", 5, 1800, "motm 167, vgm 215"),
+        New Creature("Kruthik Hive Lord", "Large", "Monstrosity", "Unaligned", 5, 1800, "motm 169, mtf 212"),
+        New Creature("Master Thief", "Medium", "Humanoid", "Any", 5, 1800, "motm 174, vgm 216"),
+        New Creature("Mezzoloth", "Medium", "Fiend (yugoloth)", "NE", 5, 1800, "mm 313"),
+        New Creature("Mindwitness", "Large", "Aberration", "LE", 5, 1800, "motm 181, vgm 176"),
+        New Creature("Night Hag", "Medium", "Fiend", "NE", 5, 1800, "mm 178"),
+        New Creature("Oaken Bolter", "Medium", "Construct", "Unaligned", 5, 1800, "motm 80, mtf 126"),
+        New Creature("Otyugh", "Large", "Aberration", "N", 5, 1800, "mm 248"),
+        New Creature("Red Slaad", "Large", "Aberration", "CN", 5, 1800, "mm 276"),
+        New Creature("Revenant", "Medium", "Undead", "N", 5, 1800, "mm 259"),
+        New Creature("Roper", "Large", "Monstrosity", "NE", 5, 1800, "mm 261"),
+        New Creature("Sahuagin Baron", "Large", "Humanoid (sahuagin)", "LE", 5, 1800, "mm 264"),
+        New Creature("Salamander", "Large", "Elemental", "NE", 5, 1800, "mm 266"),
+        New Creature("Shambling Mound", "Large", "Plant", "Unaligned", 5, 1800, "mm 270"),
+        New Creature("Spawn of Kyuss", "Medium", "Undead", "CE", 5, 1800, "motm 225, vgm 192"),
+        New Creature("Star Spawn Mangler", "Medium", "Aberration", "CE", 5, 1800, "motm 229, mtf 236"),
+        New Creature("Swarm of Cranium Rats", "Medium", "Beast", "LE", 5, 1800, "motm 83, vgm 133"),
+        New Creature("Tanarukk", "Medium", "Fiend (demon,orc)", "CE", 5, 1800, "motm 240, vgm 186"),
+        New Creature("Tlincalli", "Large", "Monstrosity", "NE", 5, 1800, "motm 243, vgm 193"),
+        New Creature("Transmuter", "Medium", "Humanoid", "Any", 5, 1800, "motm 265, vgm 218"),
+        New Creature("Triceratops", "Huge", "Beast", "Unaligned", 5, 1800, "mm 80"),
+        New Creature("Troll", "Large", "Giant", "CE", 5, 1800, "mm 291"),
+        New Creature("Umber Hulk", "Large", "Monstrosity", "CE", 5, 1800, "mm 292"),
+        New Creature("Unicorn", "Large", "Celestial", "LG", 5, 1800, "mm 294"),
+        New Creature("Vampire Spawn", "Medium", "Undead", "NE", 5, 1800, "mm 298"),
+        New Creature("Water Elemental", "Large", "Elemental", "N", 5, 1800, "mm 125"),
+        New Creature("Werebear", "Medium", "Humanoid (human,shapechanger)", "NG", 5, 1800, "mm 208"),
+        New Creature("Wood Woad", "Medium", "Plant", "LN", 5, 1800, "motm 266, vgm 198"),
+        New Creature("Wraith", "Medium", "Undead", "NE", 5, 1800, "mm 302"),
+        New Creature("Xorn", "Medium", "Elemental", "N", 5, 1800, "mm 304"),
+        New Creature("Young Remorhaz", "Large", "Monstrosity", "Unaligned", 5, 1800, "mm 258"),
+        New Creature("Yuan-ti Pit Master", "Medium", "Monstrosity (shapechanger,yuan-ti)", "NE", 5, 1800, "motm 276, vgm 206"),
+        New Creature("Annis Hag", "Large", "Fey", "CE", 6, 2300, "motm 47, vgm 159"),
+        New Creature("Bodak", "Medium", "Undead", "CE", 6, 2300, "motm 64, vgm 127"),
+        New Creature("Chasme", "Large", "Fiend (demon)", "CE", 6, 2300, "mm 57"),
+        New Creature("Chimera", "Large", "Monstrosity", "CE", 6, 2300, "mm 39"),
+        New Creature("Conjurer", "Medium", "Humanoid", "Any", 6, 2300, "motm 260, vgm 212"),
+        New Creature("Cyclops", "Huge", "Giant", "CN", 6, 2300, "mm 45"),
+        New Creature("Drider", "Large", "Monstrosity", "CE", 6, 2300, "mm 120"),
+        New Creature("Duergar Warlord", "Medium", "Humanoid (dwarf)", "LE", 6, 2300, "motm 111, mtf 192"),
+        New Creature("Galeb Duhr", "Medium", "Elemental", "N", 6, 2300, "mm 139"),
+        New Creature("Githzerai Zerth", "Medium", "Humanoid (gith)", "LN", 6, 2300, "mm 161"),
+        New Creature("Gauth", "Medium", "Aberration", "LE", 6, 2300, "motm 133, vgm 125"),
+        New Creature("Hobgblin Warlord", "Medium", "Humanoid (goblinoid)", "LE", 6, 2300, "mm 187"),
+        New Creature("Invisible Stalker", "Medium", "Elemental", "N", 6, 2300, "mm 192"),
+        New Creature("Kuo-toa Archpriest", "Medium", "Humanoid (kuo-toa)", "NE", 6, 2300, "mm 200"),
+        New Creature("Mage", "Medium", "Humanoid", "Any", 6, 2300, "mm 347"),
+        New Creature("Mammoth", "Huge", "Beast", "Unaligned", 6, 2300, "mm 332"),
+        New Creature("Medusa", "Medium", "Monstrosity", "LE", 6, 2300, "mm 214"),
+        New Creature("Mouth of Grolantor", "Huge", "Giant (hill giant)", "CE", 6, 2300, "motm 187, vgm 149"),
+        New Creature("Vrock", "Large", "Fiend (demon)", "CE", 6, 2300, "mm 64"),
+        New Creature("Warlock of the Great Old One", "Medium", "Humanoid", "Any", 6, 2300, "motm 256, vgm 220"),
+        New Creature("White Abishai", "Medium", "Fiend (devil)", "LE", 6, 2300, "motm 41, mtf 163"),
+        New Creature("Wyvern", "Large", "Dragon", "Unaligned", 6, 2300, "mm 303"),
+        New Creature("Young Brass Dragon", "Large", "Dragon", "CG", 6, 2300, "mm 105"),
+        New Creature("Young White Dragon", "Large", "Dragon", "CE", 6, 2300, "mm 101"),
+        New Creature("Air Elemental Myrmidon", "Medium", "Elemental", "N", 7, 2900, "motm 122, mtf 202"),
+        New Creature("Armanite", "Large", "Fiend (demon)", "CE", 7, 2900, "motm 50, mtf 131"),
+        New Creature("Bheur Hag", "Medium", "Fey", "CE", 7, 2900, "motm 62, vgm 160"),
+        New Creature("Black Abishai", "Medium", "Fiend (devil)", "LE", 7, 2900, "motm 38, mtf 160"),
+        New Creature("Blue Slaad", "Large", "Aberration", "CN", 7, 2900, "mm 276"),
+        New Creature("Dhergoloth", "Medium", "Fiend (yugoloth)", "NE", 7, 2900, "motm 94, mtf 248"),
+        New Creature("Draegloth", "Large", "Fiend (demon)", "CE", 7, 2900, "motm 98, vgm 141"),
+        New Creature("Drow Mage", "Medium", "Humanoid (elf)", "NE", 7, 2900, "mm 129"),
+        New Creature("Earth Elemental Myrmidon", "Medium", "Elemental", "N", 7, 2900, "motm 122, mtf 202"),
+        New Creature("Fire Elemental Myrmidon", "Medium", "Elemental", "N", 7, 2900, "motm 123, mtf 203"),
+        New Creature("Giant Ape", "Huge", "Beast", "Unaligned", 7, 2900, "mm 323"),
+        New Creature("Grick Alpha", "Large", "Monstrosity", "N", 7, 2900, "mm 173"),
+        New Creature("Korred", "Small", "Fey", "CN", 7, 2900, "motm 166, vgm 168"),
+        New Creature("Lost Sorrowsworn", "Medium", "Monstrosity", "NE", 7, 2900, "motm 224, mtf 233"),
+        New Creature("Maurezhi", "Medium", "Fiend (demon)", "CE", 7, 2900, "motm 175, mtf 133"),
+        New Creature("Mind Flayer", "Medium", "Aberration", "LE", 7, 2900, "mm 222"),
+        New Creature("Oni", "Large", "Giant", "LE", 7, 2900, "mm 239"),
+        New Creature("Shadow Dancer", "Medium", "Humanoid (elf)", "N", 7, 2900, "motm 213, mtf 225"),
+        New Creature("Shield Guardian", "Large", "Construct", "Unaligned", 7, 2900, "mm 271"),
+        New Creature("Stone Giant", "Huge", "Giant", "N", 7, 2900, "mm 156"),
+        New Creature("Venom Troll", "Large", "Giant", "CE", 7, 2900, "motm 248, mtf 245"),
+        New Creature("Warlock of the Fiend", "Medium", "Humanoid", "Any", 7, 2900, "motm 255, vgm 219"),
+        New Creature("Water Elemental Myrmidon", "Medium", "Elemental", "N", 7, 2900, "motm 123, mtf 203"),
+        New Creature("Young Black Dragon", "Large", "Dragon", "CE", 7, 2900, "mm 88"),
+        New Creature("Young Copper Dragon", "Large", "Dragon", "CG", 7, 2900, "mm 111"),
+        New Creature("Yuan-ti Abomination", "Large", "Monstrosity (shapechanger,yuan-ti)", "NE", 7, 2900, "mm 308"),
+        New Creature("Assassin", "Medium", "Humanoid", "Any non-good", 8, 3900, "mm 343"),
+        New Creature("Blackguard", "Medium", "Humanoid", "Any non-good", 8, 3900, "motm 63, vgm 211"),
+        New Creature("Canoloth", "Medium", "Fiend (yugoloth)", "NE", 8, 3900, "motm 69, mtf 247"),
+        New Creature("Chain Devil", "Medium", "Fiend (devil)", "LE", 8, 3900, "mm 72"),
+        New Creature("Cloaker", "Large", "Aberration", "CN", 8, 3900, "mm 41"),
+        New Creature("Corpse Flower", "Large", "Plant", "CE", 8, 3900, "motm 82, mtf 127"),
+        New Creature("Deathlock Mastermind", "Medium", "Undead", "NE", 8, 3900, "motm 87, mtf 129"),
+        New Creature("Diviner", "Medium", "Humanoid", "Any", 8, 3900, "motm 261, vgm 213"),
+        New Creature("Drow Priestess of Lolth", "Medium", "Humanoid (elf)", "NE", 8, 3900, "mm 129"),
+        New Creature("Fomorian", "Huge", "Giant", "CE", 8, 3900, "mm 136"),
+        New Creature("Frost Giant", "Huge", "Giant", "NE", 8, 3900, "mm 155"),
+        New Creature("Githyanki Knight", "Medium", "Humanoid (gith)", "LE", 8, 3900, "mm 160"),
+        New Creature("Green Slaad", "Large", "Aberration (shapechanger)", "CN", 8, 3900, "mm 277"),
+        New Creature("Hezrou", "Large", "Fiend (demon)", "CE", 8, 3900, "mm 60"),
+        New Creature("Howler", "Large", "Fiend", "CE", 8, 3900, "motm 155, mtf 210"),
+        New Creature("Hydra", "Huge", "Monstrosity", "Unaligned", 8, 3900, "mm 190"),
+        New Creature("Mind Flayer Arcanist", "Medium", "Abberation", "LE", 8, 3900, "mm 222"),
+        New Creature("Shoosuva", "Large", "Fiend (demon)", "CE", 8, 3900, "motm 216, vgm 137"),
+        New Creature("Spirit Naga", "Large", "Monstrosity", "CE", 8, 3900, "mm 234"),
+        New Creature("Sword Wraith Commander", "Medium", "Undead", "LE", 8, 3900, "motm 239, mtf 241"),
+        New Creature("Tyrannosaurus Rex", "Huge", "Beast", "Unaligned", 8, 3900, "mm 80"),
+        New Creature("Young Bronze Dragon", "Large", "Dragon", "LG", 8, 3900, "mm 108"),
+        New Creature("Young Green Dragon", "Large", "Dragon", "LE", 8, 3900, "mm 94"),
+        New Creature("Abjurer", "Medium", "Humanoid", "Any", 9, 5000, "motm 260, vgm 209"),
+        New Creature("Abominable Yeti", "Huge", "Monstrosity", "CE", 9, 5000, "mm 306"),
+        New Creature("Bone Devil", "Large", "Fiend (devil)", "LE", 9, 5000, "mm 71"),
+        New Creature("Champion", "Medium", "Humanoid", "Any", 9, 5000, "motm 74, vgm 212"),
+        New Creature("Clay Golem", "Large", "Construct", "Unaligned", 9, 5000, "mm 168"),
+        New Creature("Cloud Giant", "Huge", "Giant", "NG or NE", 9, 5000, "mm 154"),
+        New Creature("Drow House Captain", "Medium", "Humanoid (elf)", "NE", 9, 5000, "motm 101, mtf 184"),
+        New Creature("Evoker", "Medium", "Humanoid", "Any", 9, 5000, "motm 262, vgm 214"),
+        New Creature("Fire Giant", "Huge", "Giant", "LE", 9, 5000, "mm 154"),
+        New Creature("Flind", "Medium", "Humanoid (gnoll)", "CE", 9, 5000, "motm 127, vgm 153"),
+        New Creature("Frost Salamander", "Huge", "Elemental", "Unaligned", 9, 5000, "motm 132, mtf 223"),
+        New Creature("Glabrezu", "Large", "Fiend (demon)", "CE", 9, 5000, "mm 58"),
+        New Creature("Gloom Weaver", "Medium", "Humanoid (elf)", "N", 9, 5000, "motm 213, mtf 224"),
+        New Creature("Gray Slaad", "Medium", "Aberration (shapechanger)", "CN", 9, 5000, "mm 277"),
+        New Creature("Hydroloth", "Medium", "Fiend (yugoloth)", "NE", 9, 5000, "motm 158, mtf 249"),
+        New Creature("Lonely Sorrowsworn", "Medium", "Monstrosity", "NE", 9, 5000, "motm 223, mtf 232"),
+        New Creature("Necromancer", "Medium", "Humanoid", "Any", 9, 5000, "motm 264, vgm 217"),
+        New Creature("Nycaloth", "Large", "Fiend (yugoloth)", "NE", 9, 5000, "mm 314"),
+        New Creature("Rot Troll", "Large", "Giant", "CE", 9, 5000, "motm 247, mtf 244"),
+        New Creature("Treant", "Huge", "Plant", "CG", 9, 5000, "mm 289"),
+        New Creature("Ulitharid", "Large", "Aberration", "LE", 9, 5000, "motm 249, vgm 175"),
+        New Creature("War Priest", "Medium", "Humanoid", "Any", 9, 5000, "motm 254, vgm 218"),
+        New Creature("Young Blue Dragon", "Large", "Dragon", "LE", 9, 5000, "mm 91"),
+        New Creature("Young Silver Dragon", "Large", "Dragon", "LG", 9, 5000, "mm 118"),
+        New Creature("Aboleth", "Large", "Aberration", "LE", 10, 5900, "mm 13"),
+        New Creature("Alhoon", "Medium", "Undead", "Any evil", 10, 5900, "motm 43, vgm 172"),
+        New Creature("Autumn Eladrin", "Medium", "Fey (elf)", "CN", 10, 5900, "motm 115, mtf 195"),
+        New Creature("Death Kiss", "Large", "Aberration", "NE", 10, 5900, "motm 85, vgm 124"),
+        New Creature("Death Slaad", "Medium", "Aberration (shapechanger)", "CE", 10, 5900, "mm 278"),
+        New Creature("Deva", "Medium", "Celestial", "LG", 10, 5900, "mm 16"),
+        New Creature("Elder Oblex", "Huge", "Ooze", "LE", 10, 5900, "motm 199, mtf 219"),
+        New Creature("Froghemoth", "Huge", "Monstrosity", "Unaligned", 10, 5900, "motm 130, vgm 145"),
+        New Creature("Githyanki Gish", "Medium", "Humanoid (gith)", "LE", 10, 5900, "motm 140, mtf 205"),
+        New Creature("Githzerai Enlightened", "Medium", "Humanoid (gith)", "LN", 10, 5900, "motm 143, mtf 208"),
+        New Creature("Guardian Naga", "Large", "Monstrosity", "LG", 10, 5900, "mm 234"),
+        New Creature("Orthon", "Large", "Fiend (devil)", "LE", 10, 5900, "motm 205, mtf 169"),
+        New Creature("Spring Eladrin", "Medium", "Fey (elf)", "CN", 10, 5900, "motm 116, mtf 196"),
+        New Creature("Star Spawn Hulk", "Large", "Aberration", "CE", 10, 5900, "motm 227, mtf 234"),
+        New Creature("Stone Giant Dreamwalker", "Huge", "Giant (stone giant)", "CN", 10, 5900, "motm 234, vgm 150"),
+        New Creature("Stone Golem", "Large", "Construct", "Unaligned", 10, 5900, "mm 170"),
+        New Creature("Summer Eladrin", "Medium", "Fey (elf)", "CN", 10, 5900, "motm 116, mtf 196"),
+        New Creature("Winter Eladrin", "Medium", "Fey (elf)", "CN", 10, 5900, "motm 117, mtf 197"),
+        New Creature("Yochlol", "Medium", "Fiend (demon,shapechanger)", "CE", 10, 5900, "mm 65"),
+        New Creature("Young Gold Dragon", "Large", "Dragon", "LG", 10, 5900, "mm 115"),
+        New Creature("Young Red Dragon", "Large", "Dragon", "CE", 10, 5900, "mm 98"),
+        New Creature("Alkilith", "Medium", "Fiend (demon)", "CE", 11, 7200, "motm 44, mtf 130"),
+        New Creature("Balhannoth", "Large", "Aberration", "CE", 11, 7200, "motm 55, mtf 118"),
+        New Creature("Behir", "Huge", "Monstrosity", "NE", 11, 7200, "mm 25"),
+        New Creature("Cloud Giant Smiling One", "Huge", "Giant (cloud giant)", "CN", 11, 7200, "motm 81, vgm 146"),
+        New Creature("Dao", "Large", "Elemental", "NE", 11, 7200, "mm 143"),
+        New Creature("Djinni", "Large", "Elemental", "CG", 11, 7200, "mm 144"),
+        New Creature("Drow Shadowblade", "Medium", "Humanoid (elf)", "NE", 11, 7200, "motm 105, mtf 187"),
+        New Creature("Efreeti", "Large", "Elemental", "LE", 11, 7200, "mm 145"),
+        New Creature("Gynosphinx", "Large", "Monstrosity", "LN", 11, 7200, "mm 282"),
+        New Creature("Horned Devil", "Large", "Fiend (devil)", "LE", 11, 7200, "mm 74"),
+        New Creature("Hungry Sorrowsworn", "Medium", "Monstrosity", "NE", 11, 7200, "motm 223, mtf 232"),
+        New Creature("Marid", "Large", "Elemental", "CN", 11, 7200, "mm 146"),
+        New Creature("Morkoth", "Medium", "Aberration", "CE", 11, 7200, "motm 186, vgm 178"),
+        New Creature("Remorhaz", "Huge", "Monstrosity", "Unaligned", 11, 7200, "mm 258"),
+        New Creature("Roc", "Gargantuan", "Monstrosity", "Unaligned", 11, 7200, "mm 260"),
+        New Creature("Soul Monger", "Medium", "Humanoid (elf)", "N", 11, 7200, "motm 214, mtf 226"),
+        New Creature("Spirit Troll", "Large", "Giant", "CE", 11, 7200, "motm 247, mtf 244"),
+        New Creature("Yagnoloth", "Large", "Fiend (yugoloth)", "NE", 11, 7200, "motm 268, mtf 252"),
+        New Creature("Arcanaloth", "Medium", "Fiend (yugoloth)", "NE", 12, 8400, "mm 313"),
+        New Creature("Archdruid", "Medium", "Humanoid", "Any", 12, 8400, "motm 48, vgm 210"),
+        New Creature("Archmage", "Medium", "Humanoid", "Any", 12, 8400, "mm 342"),
+        New Creature("Boneclaw", "Large", "Undead", "CE", 12, 8400, "motm 66, mtf 121"),
+        New Creature("Duergar Despot", "Medium", "Humanoid (dwarf)", "LE", 12, 8400, "motm 107, mtf 188"),
+        New Creature("Eidolon", "Medium", "Undead", "Any", 12, 8400, "motm 114, mtf 194"),
+        New Creature("Erinyes", "Medium", "Fiend (devil)", "LE", 12, 8400, "mm 73"),
+        New Creature("Frost Giant Everlasting One", "Huge", "Giant (frost giant)", "CE", 12, 8400, "motm 131, vgm 148"),
+        New Creature("Githyanki Kith'rak", "Medium", "Humanoid (gith)", "LE", 12, 8400, "motm 140, mtf 205"),
+        New Creature("Gray Render", "Large", "Monstrosity", "CN", 12, 8400, "motm 146, mtf 209"),
+        New Creature("Ki-rin", "Huge", "Celestial", "LG", 12, 8400, "motm 162, vgm 163"),
+        New Creature("Morkoth (in lair)", "Medium", "Aberration", "CE", 12, 8400, "vgm 178"),
+        New Creature("Oinoloth", "Medium", "Fiend (yugoloth)", "NE", 12, 8400, "motm 202, mtf 251"),
+        New Creature("Warlord", "Medium", "Humanoid", "Any", 12, 8400, "motm 257, vgm 220"),
+        New Creature("Yuan-ti Anathema", "Huge", "Monstrosity (shapechanger,yuan-ti)", "NE", 12, 8400, "motm 272, vgm 202"),
+        New Creature("Adult Brass Dragon", "Huge", "Dragon", "CG", 13, 10000, "mm 105"),
+        New Creature("Adult White Dragon", "Huge", "Dragon", "CE", 13, 10000, "mm 101"),
+        New Creature("Angry Sorrowstorm", "Medium", "Monstrosity", "NE", 13, 10000, "motm 222, mtf 231"),
+        New Creature("Beholder", "Large", "Aberration", "LE", 13, 10000, "mm 28"),
+        New Creature("Devourer", "Large", "Fiend", "CE", 13, 10000, "motm 93, vgm 138"),
+        New Creature("Dire Troll", "Huge", "Giant", "CE", 13, 10000, "motm 246, mtf 243"),
+        New Creature("Drow Arachnomancer", "Medium", "Humanoid (elf)", "CE", 13, 10000, "motm 99, mtf 182"),
+        New Creature("Nalfeshnee", "Large", "Fiend (demon)", "CE", 13, 10000, "mm 62"),
+        New Creature("Narzugon", "Medium", "Fiend (devil)", "LE", 13, 10000, "motm 190, mtf 167"),
+        New Creature("Neothelid", "Gargantuan", "Aberration", "CE", 13, 10000, "motm 193, vgm 181"),
+        New Creature("Rakshasa", "Medium", "Fiend", "LE", 13, 10000, "mm 257"),
+        New Creature("Star Spawn Seer", "Medium", "Aberration", "NE", 13, 10000, "motm 230, mtf 236"),
+        New Creature("Storm Giant", "Huge", "Giant", "CG", 13, 10000, "mm 156"),
+        New Creature("Ultroloth", "Medium", "Fiend (yugoloth)", "NE", 13, 10000, "mm 314"),
+        New Creature("Vampire", "Medium", "Undead (shapechanger)", "LE", 13, 10000, "mm 297"),
+        New Creature("Wastrilith", "Large", "Fiend (demon)", "CE", 13, 10000, "motm 258, mtf 139"),
+        New Creature("Young Red Shadow Dragon", "Large", "Dragon", "CE", 13, 10000, "mm 85"),
+        New Creature("Adult Black Dragon", "Huge", "Dragon", "CE", 14, 11500, "mm 88"),
+        New Creature("Adult Copper Dragon", "Huge", "Dragon", "CG", 14, 11500, "mm 111"),
+        New Creature("Beholder (in lair)", "Large", "Aberration", "LE", 14, 11500, "mm 28"),
+        New Creature("Cadaver Collector", "Large", "Contruct", "LE", 14, 11500, "motm 68, mtf 122"),
+        New Creature("Death Tyrant", "Large", "Undead", "LE", 14, 11500, "mm 29"),
+        New Creature("Drow Inquisitor", "Medium", "Humanoid (elf)", "NE", 14, 11500, "motm 102, mtf 184"),
+        New Creature("Elder Brain", "Large", "Aberration", "LE", 14, 11500, "motm 120, vgm 174"),
+        New Creature("Fire Giant Dreadnought", "Huge", "Giant (fire giant)", "LE", 14, 11500, "motm 124, vgm 147"),
+        New Creature("Githyanki Supreme Commander", "Medium", "Humanoid (gith)", "LE", 14, 11500, "motm 141, mtf 206"),
+        New Creature("Ice Devil", "Large", "Fiend (devil)", "LE", 14, 11500, "mm 75"),
+        New Creature("Retriever", "Large", "Contruct", "LE", 14, 11500, "motm 209, mtf 222"),
+        New Creature("Adult Bronze Dragon", "Huge", "Dragon", "LG", 15, 13000, "mm 108"),
+        New Creature("Adult Green Dragon", "Huge", "Dragon", "LE", 15, 13000, "mm 94"),
+        New Creature("Death Tyrant (in lair)", "Large", "Undead", "LE", 15, 13000, "mm 29"),
+        New Creature("Green Abishai", "Medium", "Fiend (devil)", "LE", 15, 13000, "motm 40, mtf 162"),
+        New Creature("Mummy Lord", "Medium", "Undead", "LE", 15, 13000, "mm 229"),
+        New Creature("Nabassu", "Medium", "Fiend (demon)", "CE", 15, 13000, "motm 188, mtf 135"),
+        New Creature("Purple Worm", "Gargantuan", "Monstrosity", "Unaligned", 15, 13000, "mm 255"),
+        New Creature("Skull Lord", "Medium", "Undead", "LE", 15, 13000, "motm 220, mtf 230"),
+        New Creature("Vampire (spellcaster)", "Medium", "Undead (shapechanger)", "LE", 15, 13000, "mm 297"),
+        New Creature("Vampire (warrior)", "Medium", "Undead (shapechanger)", "LE", 15, 13000, "mm 297"),
+        New Creature("Adult Blue Dragon", "Huge", "Dragon", "LE", 16, 15000, "mm 91"),
+        New Creature("Adult Silver Dragon", "Huge", "Dragon", "LG", 16, 15000, "mm 117"),
+        New Creature("Githzerai Anarch", "Medium", "Humanoid (gith)", "LN", 16, 15000, "motm 142, mtf 207"),
+        New Creature("Hellfire Engine", "Huge", "Construct", "LE", 16, 15000, "motm 152, mtf 165"),
+        New Creature("Iron Golem", "Large", "Contruct", "Unaligned", 16, 15000, "mm 170"),
+        New Creature("Marilith", "Large", "Fiend (demon)", "CE", 16, 15000, "mm 61"),
+        New Creature("Mummy Lord (in lair)", "Medium", "Undead", "LE", 16, 15000, "mm 229"),
+        New Creature("Phoenix", "Gargantuan", "Elemental", "N", 16, 15000, "motm 206, mtf 199"),
+        New Creature("Planetar", "Large", "Celestial", "LG", 16, 15000, "mm 17"),
+        New Creature("Star Spawn Larva Mage", "Medium", "Aberration", "CE", 16, 15000, "motm 228, mtf 235"),
+        New Creature("Steel Predator", "Large", "Construct", "LE", 16, 15000, "motm 232, mtf 239"),
+        New Creature("Storm Giant Quintessent", "Huge", "Giant (storm giant)", "CG", 16, 15000, "motm 235, vgm 151"),
+        New Creature("Adult Blue Dracolich", "Huge", "Undead", "LE", 17, 18000, "mm 84"),
+        New Creature("Adult Gold Dragon", "Huge", "Dragon", "LG", 17, 18000, "mm 114"),
+        New Creature("Adult Red Dragon", "Huge", "Dragon", "CE", 17, 18000, "mm 98"),
+        New Creature("Androsphinx", "Large", "Monstrosity", "LN", 17, 18000, "mm 281"),
+        New Creature("Blue Abishai", "Medium", "Fiend (devil)", "LE", 17, 18000, "motm 39, mtf 161"),
+        New Creature("Death Knight", "Medium", "Undead", "CE", 17, 18000, "mm 47"),
+        New Creature("Dragon Turtle", "Gargantuan", "Dragon", "N", 17, 18000, "mm 119"),
+        New Creature("Goristro", "Huge", "Fiend (demon)", "CE", 17, 18000, "mm 59"),
+        New Creature("Nagpa", "Medium", "Humanoid (nagpa)", "NE", 17, 18000, "motm 189, mtf 215"),
+        New Creature("Amnizu", "Medium", "Fiend (devil)", "LE", 18, 20000, "motm 46, mtf 164"),
+        New Creature("Demilich", "Tiny", "Undead", "NE", 18, 20000, "mm 48"),
+        New Creature("Drow Favored Consort", "Medium", "Humanoid (elf)", "NE", 18, 20000, "motm 100, mtf 183"),
+        New Creature("Sibriex", "Huge", "Fiend (demon)", "CE", 18, 20000, "motm 217, mtf 137"),
+        New Creature("Balor", "Huge", "Fiend (demon)", "CE", 19, 22000, "mm 55"),
+        New Creature("Red Abishai", "Medium", "Fiend (devil)", "LE", 19, 22000, "motm 40, mtf 162"),
+        New Creature("Demilich (in lair)", "Tiny", "Undead", "NE", 20, 24500, "mm 48"),
+        New Creature("Ancient Brass Dragon", "Gargantuan", "Dragon", "CG", 20, 25000, "mm 104"),
+        New Creature("Anient White Dragon", "Gargantuan", "Dragon", "CE", 20, 25000, "mm 100"),
+        New Creature("Drow Matron Mother", "Medium", "Humanoid (elf)", "NE", 20, 25000, "motm 104, mtf 186"),
+        New Creature("Leviathan", "Gargantuan", "Elemental", "N", 20, 25000, "motm 171, mtf 198"),
+        New Creature("Nightwalker", "Huge", "Undead", "CE", 20, 25000, "motm 194, mtf 216"),
+        New Creature("Pit Fiend", "Large", "Fiend (devil)", "LE", 20, 25000, "mm 77"),
+        New Creature("Ancient Black Dragon", "Gargantuan", "Dragon", "CE", 21, 33000, "mm 87"),
+        New Creature("Ancient Copper Dragon", "Gargantuan", "Dragon", "CG", 21, 33000, "mm 110"),
+        New Creature("Astral Dreadnought", "Gargantuan", "Monstrosity (titan)", "Unaligned", 21, 33000, "motm 51, mtf 117"),
+        New Creature("Lich", "Medium", "Undead", "Any evil", 21, 33000, "mm 202"),
+        New Creature("Molydeus", "Huge", "Fiend (demon)", "CE", 21, 33000, "motm 184, mtf 134"),
+        New Creature("Solar", "Large", "Celestial", "LG", 21, 33000, "mm 18"),
+        New Creature("Ancient Bronze Dragon", "Gargantuan", "Dragon", "LG", 22, 41000, "mm 107"),
+        New Creature("Ancient Green Dragon", "Gargantuan", "Dragon", "LE", 22, 41000, "mm 93"),
+        New Creature("Lich (in lair)", "Medium", "Undead", "Any evil", 22, 41000, "mm 202"),
+        New Creature("Mind Flayer Lich", "Medium", "Undead", "Any evil", 22, 41000, "vgm 172"),
+        New Creature("Zaratan", "Gargantuan", "Elemental", "N", 22, 41000, "motm 278, mtf 201"),
+        New Creature("Ancient Blue Dragon", "Gargantuan", "Dragon", "LE", 23, 50000, "mm 90"),
+        New Creature("Ancient Silver Dragon", "Gargantuan", "Dragon", "LG", 23, 50000, "mm 116"),
+        New Creature("Elder Tempest", "Gargantuan", "Elemental", "N", 23, 50000, "motm 121, mtf 200"),
+        New Creature("Empyrean", "Huge", "Celestial (titan)", "CG or NE", 23, 50000, "mm 130"),
+        New Creature("Kraken", "Gargantuan", "Monstrosity (titan)", "CE", 23, 50000, "mm 197"),
+        New Creature("Ancient Gold Dragon", "Gargantuan", "Dragon", "LG", 24, 62000, "mm 113"),
+        New Creature("Ancient Red Dragon", "Gargantuan", "Dragon", "CE", 24, 62000, "mm 97"),
+        New Creature("Marut", "Large", "Construct (inevitable)", "LN", 25, 75000, "motm 173, mtf 213"),
+        New Creature("Tarrasque", "Gargantuan", "Monstrosity (titan)", "Unaligned", 30, 155000, "mm 286")
         }
+End Module
+
+Public Module SpellDatabase
+    Public ReadOnly Spells As New List(Of Spell) From {
+        New Spell("Acid Splash", 0, "Conjuration", "1 Action", "60 ft.", "V,S", "", ""),
+        New Spell("Blade Ward", 0, "Abjuration", "1 Action", "Self", "V,S", "", ""),
+        New Spell("Booming Blade", 0, "Evocation", "1 Action", "Self (5-ft. radius)", "V,M", "", ""),
+        New Spell("Chill Touch", 0, "Necromancy", "1 Action", "120 ft.", "V,S", "", ""),
+        New Spell("Control Flames", 0, "Transmutation", "1 Action", "60 ft.", "S", "", ""),
+        New Spell("Create Bonfire", 0, "Conjuration", "1 Action", "60 ft.", "V,S", "Concentration", ""),
+        New Spell("Dancing Lights", 0, "Evocation", "1 Action", "120 ft.", "V,S,M", "Concentration", ""),
+        New Spell("Druidcraft", 0, "Transmutation", "1 Action", "30 ft.", "V,S", "", ""),
+        New Spell("Eldritch Blast", 0, "Evocation", "1 Action", "120 ft.", "V,S", "", ""),
+        New Spell("Fire Bolt", 0, "Evocation", "1 Action", "120 ft.", "V,S", "", ""),
+        New Spell("Friends", 0, "Enchantment", "1 Action", "Self", "S,M", "Concentration", ""),
+        New Spell("Frostbite", 0, "Evocation", "1 Action", "60 ft.", "V,S", "", ""),
+        New Spell("", 0, "", "1 Action", "", "", "", ""),
+        New Spell("", 0, "", "1 Action", "", "", "", ""),
+        New Spell("", 0, "", "1 Action", "", "", "", ""),
+        New Spell("", 0, "", "1 Action", "", "", "", ""),
+        New Spell("", 0, "", "1 Action", "", "", "", ""),
+        New Spell("", 0, "", "1 Action", "", "", "", ""),
+        New Spell("", 0, "", "", "", "", "", "")
+    }
 End Module

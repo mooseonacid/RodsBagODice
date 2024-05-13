@@ -1,0 +1,781 @@
+Name,AC,HP,Speeds,STR,DEX,CON,INT,WIS,CHA,Sav. Throws,Skills,Senses,Languages,Additional
+Aarakocra,12,13,"20, 50 fly",10,14,10,11,12,11,None,Perception,Normal,Auran,Dive Attack
+Aboleth,17,135,"10, swim 40",21,9,15,18,15,18,"CON, INT, WIS","History, Perception",Darkvision 120,"Deep Speech, Telepathy 120","Amphibious,  Mucous Cloud, Probing Telepathy, Legendary, Lair"
+Albino Dwarf Warrior,13,30,25,13,13,17,12,14,11,None,"Perception, Stealth, Survival",Darkvision 60,"Common, Dwarvish",Dwarven Resilience
+Aldani,14,49,"20, swim 30",13,8,12,10,14,10,None,"Perception, Survival",Darkvision 60,Common,Amphibious
+Allip,13,40,fly 40,6,17,10,17,15,16,"INT, WIS","Perception, Stealth",Darkvision 60,Any,Incorporeal Movement
+Almiraj,13,3,50,2,16,10,2,14,10,None,"Perception, Stealth","Darkvision 30, tremorsense 60",None,"Keen Hearing, Keen Sight"
+Ambush Drake,13,22,30,13,15,14,4,11,6,None,"Perception, Stealth",Darkvision 60,Draconic,"Pack Tactics, Surprise Attack"
+Deva,17,136,"30, 90 fly",18,18,18,17,20,20,"WIS, CHA","Insight, Perception",Darkvision 120,"All, Telepathy 120","Angelic Weapons, Innate Spellcasting, Magic Resistance"
+Planetar,19,200,"40, 120 fly",24,20,24,19,22,25,"CON, WIS, CHA",Perception,Truesight 120,"All, telepathy 120","Angelic Weapons, Divine Awareness, Innate Spellcasting, Magic Resistance"
+Solar,21,243,"50, 150 fly",26,22,26,25,25,30,"INT, WIS, CHA",Perception,Truesight 120,"All, telepathy 120","Angelic Weapons, Divine Awareness, Innate Spellcasting, Magic Resistance, Legendary"
+Armor,18,33,25,14,11,13,1,3,1,None,None,Blindsight 60,None,"Antimagic, False"
+Broom of Attack,15,17,50 fly,10,17,10,1,5,1,None,None,Blindsight 30,None,"False, None"
+Flying Sword,17,17,50 fly,12,15,11,1,5,1,DEX,None,Blindsight 60,None,"Antimagic, False"
+Rug of Smothering,12,33,10,17,14,10,1,3,1,None,None,Blindsight 60,None,"Antimagic, Damage Transfer, False"
+Table,15,39,40,18,8,13,1,3,1,None,None,Blindsight 60,None,"Antimagic Susceptibility, False Appearance, Charge"
+Ankheg,14,39,"30, 10 burrow",17,11,13,1,13,6,None,None,"Darkvision 60, tremorsense 60",None,None
+Assassin Vine,13,85,"5, climb 5",18,10,16,1,10,1,None,None,Blindsight 30,None,False Appearance
+Aurochs,11,38,50,20,10,19,2,12,5,None,None,Normal,None,Charge
+Cattle,10,15,30,18,10,14,2,10,4,None,None,Normal,None,Charge
+Dolphin,12,11,swim 60,14,13,13,6,12,7,None,Perception,Blindsight 60,None,"Charge, Hold Breath"
+Swarm of Rot Grubs,8,22,"5, climb 5",2,7,10,1,2,1,None,None,Blindsight 10,None,Swarm
+Astral Dreadnought,20,297,"15, fly 80",28,7,25,5,14,18,"DEX, WIS",Perception,Darkvision 120,None,"Antimagic Cone, Astral Entity, Demiplanar Donjon, Legendary, Magic Weapons, Sever Silver Cord"
+Atropal,7,225,fly 50,19,5,22,25,19,24,"CON, WIS",None,"Darkvision 120, truesight 120",Celestial,"Magic Resistance, Negative Energy Aura, Turn Resistance Aura, Legendary"
+Avatar of Death,20,VARIES,"60, fly 60",16,16,16,16,16,16,None,None,"Darkvision 60, truesight 60",Creator,"Incorporeal Movement, Turning Immunity"
+Awakened Zurkhwood,13,59,20,19,6,15,10,10,7,None,None,Normal,Any,False Appearance
+Azer,17,39,30,17,12,15,12,13,10,CON,None,Normal,Ignan,"Heated Body, Heated Weapons, Illumination"
+Baba Lysaga's Creeping Hut,16,263,30,26,7,20,1,3,3,"CON, WIS, CHA",None,Blindsight 120,None,"False, Siege"
+Balhannoth,17,114,"25, climb 25",17,8,18,6,15,8,CON,Perception,Blindsight 500,"Deep Speech, telepathy 1 mile","Legendary, Lair"
+Banderhobb,15,84,30,20,12,20,11,14,8,None,"Athletics, Stealth",Darkvision 120,"Common, Any","Resonant Connection, Shadow Stealth"
+Banshee,12,58,40 fly,1,14,10,12,11,17,"WIS, CHA",None,Darkvision 60,"Common, Elvish","Detect Life, Incorporeal Movement"
+Barghest,17,90,60,19,15,14,13,12,14,None,"Deception, Intimidation, Perception, Stealth","Blindsight 60, darkvision 60","Abyssal, Common, Goblin, Infernal, telepathy 60","Shapechanger, Fire Banishment, Keen Smell, Innate Spellcasting"
+Basilisk,15,52,30,16,8,15,2,8,7,"STR, CON, WIS, CHA","Deception, Insight, Perception",Darkvision 120,"Infernal, telepathy 120","Barbed Hide, Devil's Sight, Magic Resistance"
+Behir,17,168,"50, climb 40",23,16,18,7,16,12,None,"Perception, Stealth",Darkvision 90,Draconic,None
+Beholder,18,180,30,10,14,18,17,15,17,"STR, CON, WIS",None,Darkvision 120,"Infernal, telepathy 120","Devil's Sight,  Magic Resistance, Steadfast"
+Death Kiss,16,161,fly 30,18,14,18,10,12,10,"CON, WIS",Perception,Darkvision 120,"Deep Speech, Undercommon",Lightning Blood
+Death Tyrant,19,187,"50, 40 climb",10,14,14,19,15,19,None,"Perception, Stealth",Darkvision 90,Draconic,None
+Gauth,15,67,fly 20,10,14,16,15,15,13,"INT, WIS, CHA",Perception,Darkvision 120,"Deep Speech, Undercommon","Stunning Gaze, Death Throes"
+Gazer,13,13,fly 30,3,17,14,3,10,7,WIS,"Perception, Stealth",Darkvision 60,None,"Aggressive, Mimicry"
+Spectator,14,39,20 fly,8,14,14,13,14,11,"INT, WIS, CHA",Perception,Darkvision 120,"Deep Speech, Undercommon","Antimagic Cone, Lair, Legendary"
+Berbalang,14,38,"30, fly 40",9,16,9,17,11,10,None,"Arcana, History, Insight, Perception, Religion",Truesight 120,All,"Spectral Duplicate, Innate Spellcasting"
+Black Earth Guard,18,39,30,17,11,14,10,10,9,None,"Intimidation, Perception",Normal,Common,None
+Black Earth Priest,17,45,30,15,11,14,12,10,16,None,"Intimidation, Religion, Persuasion",Normal,"Common, Terran",Normal Spellcasting
+Burrowshark,18,82,30,18,12,16,10,11,13,None,"Animal Handling, Athletics, Intimidation, Perception",Normal,Common,Bond of the Black Earth
+Sacred Stone Monk,14,22,40,13,15,12,10,14,9,None,"Acrobatics, Athletics, Perception",Tremorsense 10,Common,"Unarmored Defense, Unarmored Movement"
+Stonemelder,17,75,30,15,10,16,12,11,17,None,"Intimidation, Perception",Tremorsense 30,"Common, Terran","Death Burst, Normal Spellcasting"
+Needle,12,11,30,12,12,13,4,8,3,None,None,Blindsight 60,Common,None
+Tree,15,149,30,23,10,20,6,10,3,None,None,Blindsight 60,"Common, Druidic","False, Siege"
+Twig,13,4,"20, ",6,13,12,4,8,3,None,Stealth,Blindsight 60,Common,False Appearance
+Vine,12,26,30,15,8,14,5,10,3,None,None,Blindsight 60,Common,False Appearance
+Bodak,15,58,30,15,16,15,7,12,12,None,"Perception, Stealth",Darkvision 120,"Abyssal, Any","Aura of Annihilation, Death Gazer, Sunlight Hypersensitivity"
+Boggle,14,18,"30, climb 30",8,18,13,6,12,7,None,"Perception, Sleight of Hand, Stealth",Darkvision 60,Sylvan,"Boggle Oil, Dimensional Rift, Uncanny Smell"
+Boneclaw,16,127,40,19,16,15,13,15,9,"DEX, CON, WIS","Perception, Stealth",Darkvision 60,"Common, Any","Rejuvenation, Shadow Stealth"
+Bugbear,16,27,30,15,14,13,8,11,9,None,"Stealth, Survival",Darkvision 60,"Common, Goblin","Brute, Surprise Attack"
+Bugbear Chief,17,65,30,17,14,14,11,12,11,None,"Intimidation, Stealth, Survival",Darkvision 60,"Common, Goblin","Brute, Hearth of Hruggek, Surprise Attack"
+Bulette,17,94,"40, 40 burrow",19,11,21,2,10,5,None,Perception,"Darkvision 60, tremorsense 60",None,Standing Leap
+Bullywug,15,11,"20, swim 40",12,12,13,7,10,7,None,Stealth,Normal,Own,"Amphibious, Speak with Frogs, Speak with Toads, Swamp Camouflage, Standing Leap"
+Cadaver Collector,17,189,30,21,14,20,5,11,8,None,None,Darkvision 60,All,"Magic Resistance, Summon Specters"
+Cambion,19,82,"30, fly 60",18,18,16,14,12,16,"STR, CON, INT, CHA","Deception, Intimidation, Perception, Stealth",Darkvision 60,"Abyssal, Common, Infernal","Fiendish Blessing, Innate Spellcasting"
+Carrion Crawler,13,51,"30, 30 climb",14,13,16,1,12,5,None,Perception,Darkvision 60,None,"Keen Smell, Spider Climb"
+Catoblepas,14,84,30,19,12,21,3,4,8,None,None,Darkvision 60,None,"Keen Smell, Stench"
+Cave Fisher,16,58,"20, climb 20",16,13,14,3,10,3,None,"Perception, Stealth",Blindsight 60,None,"Adhesive Filament, Flammable Blood, Spider Climb"
+Centaur,12,45,50,18,14,14,9,13,11,None,"Athletics, Perception, Survival",Normal,"Elvish, Sylvan",Charge
+Centaur Mummy,13,85,30,20,12,16,5,14,12,WIS,None,Darkvision 60,"Common, Sylvan",Charge
+Chimera,14,114,"30, fly 60",19,11,19,3,14,10,None,Perception,Darkvision 60,Draconic,None
+Chitine,14,18,"30, climb 30",10,14,12,10,10,7,None,"Athletics, Stealth",Darkvision 60,Undercommon,"Fey Ancestry, Sunlight Sensitivity, Web Sense,  Web Walker"
+Choldrith,15,66,"30, climb 30",12,16,12,11,14,10,None,"Athletics, Religion, Stealth",Darkvision 60,Undercommon,"Fey Ancestry, Normal Spellcasting, Spider Climb, Sunlight Sensitivity, Web Sense, Web Walker"
+Choker,16,13,30,16,14,13,4,12,7,None,Stealth,Darkvision 60,Deep Speech,"Aberrant Quickness, Boneless, Spider Climb"
+Chuul,16,93,"30, 30 swim",19,10,16,5,11,5,None,Perception,Darkvision 60,Deep Speech,"Amphibious, Sense Magic"
+Chwinga,15,5,"20, climb 20, swim 20",1,20,10,14,16,16,None,"Acrobatics, Perception, Stealth",Blindsight 60,None,"Evasion, Innate Spellcasting"
+Cloaker,14,78,"10, fly 40",17,15,12,13,12,14,None,Stealth,Darkvision 60,"Deep Speech, Undercommon","Damage Transfer, False Appearance, Light Sensitivity"
+Bronze Scout,13,18,"30, burrow 30",10,16,11,3,14,1,None,"Perception, Stealth",Darkvision 60,Creator,"Earth Armor, Magic Resistance"
+Iron Cobra,13,45,30,12,16,14,3,10,1,None,Stealth,Darkvision 60,Creator,Magic Resistance
+Oaken Bolter,16,58,30,12,18,15,3,10,1,None,None,Darkvision 60,Creator,Magic Resistance
+Stone Defender,16,52,30,19,10,17,3,10,1,None,None,Darkvision 60,Creator,"False Appearance, Magic Resistance"
+Cockatrice,11,27,"20, fly 40",6,12,12,2,13,5,None,None,Darkvision 60,None,None
+Corpse Flower,12,127,"20, climb 20",14,14,16,7,15,3,None,None,Blindsight 120,None,"Corpses, Spider Climb, Stench of Death"
+Couatl,19,97,"30, 90 fly",16,20,17,18,20,18,"CON, WIS, CHA",None,Truesight 120,"All, telepathy 120","Innate Spellcasting, Magic Weapons, Shielded Mind"
+Crag Cat,13,34,40,16,17,16,4,14,8,None,"Perception, Stealth",Darkvision 60,None,"Nondetection, Pounce, Spell Turning"
+Cranium Rat,12,2,30,2,14,10,4,11,8,None,None,"Darkvision 30, tremorsense 60",Telepathy 30,"Illumination, Telepathic Shroud"
+Swarm of Cranium Rats,12,36,30,9,14,10,15,11,14,None,None,"Darkvision 30, tremorsense 60",Telepathy 30,"Illumination, Innate Spellcasting, Swarm, Telepathic Shroud"
+Crawling Claw,12,2,"20, climb 20",13,14,11,5,10,4,None,None,Blindsight 30,Common,Turn Immunity
+Crushing Wave Priest,13,52,30,15,11,14,10,11,16,None,"Deception, Religion, Stealth",Normal,"Aquan, COmmon",Normal Spellcasting
+Crushing Wave Reaver,14,22,30,15,14,13,10,11,8,None,"Athletics, Stealth",Normal,Common,None
+Dark Tide Knight,13,58,30,17,16,14,10,11,11,None,"Athletics, Stealth",Normal,Common,Bonded Mount
+Fathomer,10,52,30,14,11,14,11,11,15,None,"Arcana, Perception, Stealth",Normal,"Aquan, Common","Shapechanger, Olhydra's Armor, Normal Spellcasting"
+One-Eyed Shiver,12,49,30,10,14,12,13,13,17,None,"Arcana, Perception, Intimidation",Normal,Common,Chilling Mist
+Cyclops,14,138,30,22,11,20,8,6,10,None,None,Normal,Giant,Poor Depth Perception
+Darkling,14,13,30,9,16,12,10,12,10,None,"Acrobatics, Deception, Perception, Stealth","Blindsight 30, darkvision 120","Elvish, Sylvan","Death Flash, Light Sensitivity"
+Darkling Elder,15,27,30,13,17,12,10,14,13,None,"Acrobatics, Deception, Perception, Stealth","Blindsight 30, darkvision 120","Elvish, Sylvan",Death Burn
+Darkmantle,11,22,"10, fly 30",16,12,13,2,10,5,None,Stealth,Blindsight 60,None,"Echolocation,  False Appearance"
+Death Knight,20,180,30,20,11,20,12,16,18,"DEX, WIS, CHA",None,Darkvision 120,"Abyssal, Common","Magic Resistance, Marshal Undead, Spellcasting"
+Deathlock,12,36,30,11,15,10,14,12,16,"INT, CHA","Arcana, History",Darkvision 60,Any,"Innate Spellcasting, Normal Spellcasting, Turn Resistance"
+Deathlock Mastermind,13,110,30,11,16,12,15,12,17,"INT, CHA","Arcana, History, Perception",Darkvision 120,Any,"Innate Spellcasting, Normal Spellcasting, Turn Resistance"
+Deathlock Wight,12,37,30,11,14,16,12,14,16,WIS,"Arcana, Perception",Darkvision 60,Any,"Innate Spellcasting, Sunlight Sensitivity"
+Decapus,14,75,"15, climb 30",15,14,14,4,10,7,None,"Athletics, Perception, Stealth",Darkvision 60,None,None
+Deep Scion,11,67,"30, swim 40",18,13,16,10,12,14,"WIS, CHA","Deception, Insight, Sleight of Hand, Stealth",Darkvision 120,"Aquan, Common, Thieves' Cant","Shapechanger, Amphibious"
+Demilich,20,80,fly 30,1,20,10,20,17,20,"CON, INT, WIS, CHA",None,Truesight 120,None,"Avoidance, Legendary Resistance, Turn Immunity, Legendary, Lair"
+Baphomet,22,275,40,30,14,26,18,24,16,"DEX, CON, WIS","Intimidation, Perception",Truesight 120,"All, telepathy 120","Charge, Innate Spellcasting, Labyrinthine Recall, Legendary, Magic Resistance, Magic Weapons, Reckless, Lair"
+Demogorgon,22,406,"50, swim 50",29,14,26,20,17,25,"DEX, CON, WIS, CHA","Insight, Perception",Truesight 120,"All, telepathy 120","Innate Spellcasting, Legendary, Magic Resistance, Lair, Magic Weapons, Two Heads"
+Fraz-Urb'Luu,18,337,"40, fly 40",29,12,25,26,24,26,"DEX, CON, INT, WIS","Deception, Perception, Stealth",Truesight 120,"All, telepathy 120","Innate Spellcasting, Legendary, Lair, Magic Resistance, Magic Weapons, Undetectable"
+Graz'Zt,20,346,40,22,15,21,23,21,26,"DEX, CON, WIS","Deception, Insight, Perception, Persuasion",Truesight 120,"All, telepathy 120","Shapechanger, Innate Spellcasting, Legendary, Lair, Magic Resistance, Magic Weapons"
+Juiblex,18,350,30,24,10,23,20,20,16,"DEX, CON, WIS",Perception,Truesight 120,"All, telepathy 120","Foul, Innate Spellcasting, Legendary, Lair, Magic Resistance, Magic Weapons, Regeneration, Spider Climb"
+Orcus,20,405,"40, fly 40",27,14,25,20,20,25,"DEX, CON, WIS","Arcana, Perception",Truesight 120,"All, telepathy 120","Wand of Orcus, Innate Spellcasting, Legendary, Lair, Magic Resistance, Magic Weapons, Master of Undeath"
+Yeenoghu,20,333,50,29,16,23,15,24,15,"DEX, CON, WIS","Intimidation, Perception",Truesight 120,"All, telepathy 120","Innate Spellcasting, Legendary, Lair, Magic Resistance, Magic Weapons, Rampage"
+Zuggtmoy,18,304,30,22,15,18,20,19,24,"DEX, CON, WIS",Perception,Truesight 120,"All, telepathy 120","Innate Spellcasting, Legendary, Lair, Magic Resistance, Magic Weapons"
+Abyssal Wretch,11,18,20,9,12,11,5,8,5,None,None,Darkvision 120,Abyssal,None
+Alkilith,17,157,40,12,19,22,6,11,7,"DEX, CON",Stealth,Darkvision 120,Abyssal,"Amorphous, False Appearance, Foment Madness, Magic Resistance"
+Armanite,16,84,60,21,18,21,8,12,13,None,None,Darkvision 120,"Abyssal, telepathy 120","Magic Resistance, Magic Weapons"
+Babau,16,82,40,19,16,16,11,12,13,None,"Perception, Stealth",Darkvision 120,Abyssal,Innate Spellcasting
+Balor,19,262,"40, 80 fly",26,15,22,20,16,22,"STR, CON, WIS, CHA",None,Truesight 120,"Abyssal, telepathy 120","Death Throes, Fire Aura, Magic Resistance, Magic Weapons"
+Barlgura,15,68,"30, 30 climb",18,15,16,7,14,9,"DEX, CON","Perception, Stealth","Blindsight 30, Darkvision 120","Abyssal, telepathy 120","Innate Spellcasting, Reckless, Running Leap"
+Bulezau,14,52,40,15,14,17,8,9,6,None,None,Darkvision 120,"Abyssal, telepathy 60","Rotting Presence, Standing Leap, Sure-Footed"
+Chasme,15,84,"20, fly 60",15,15,12,11,14,10,"DEX, WIS",Perception,"Blindsight 10, darkvision 120","Abyssal, telepathy 120","Drone, Magic Resistance, Spider Climb"
+Draegloth,15,123,30,20,15,18,13,11,11,None,"Perception, Stealth",Darkvision 120,"Abyssal, Elvish, Undercommon","Fey Ancestry, Innate Spellcasting"
+Dretch,11,18,20,11,11,12,5,8,3,None,None,Darkvision 60,"Abyssal, telepathy 60",None
+Dybbuk,14,37,40 fly,6,19,16,16,15,14,None,"Deception, Intimidation, Perception",Darkvision 120,"Abyssal, Common, telepathy 120","Incorporeal Movement, Innate Spellcasting, Magic Resistance, Violate Corpse"
+Glabrezu,17,157,40,20,15,21,19,17,16,"STR, CON, WIS, CHA",None,Truesight 120,"Abyssal, telepathy 120","Innate Spellcasting, Magic Resistance"
+Goristro,19,310,40,25,11,25,6,13,14,"STR, DEX, CON, WIS",Perception,Darkvision 120,Abyssal,"Charge, Labyrinthine Recall, Magic Resistance, Siege"
+Hezrou,16,136,30,19,17,20,5,12,13,"STR, CON, WIS",None,Darkvision 120,"Abyssal, telepathy 120","Magic Resistance, Stench"
+Manes,9,9,20,10,9,13,3,8,4,None,None,Darkvision 60,Abyssal,None
+Marilith,18,189,40,18,20,20,18,16,20,"STR, CON, WIS, CHA",None,Truesight 120,"Abyssal, telepathy 120","Magic Resistance, Magic Weapons, Reactive"
+Maurezhi,15,88,30,14,17,12,11,12,15,None,Deception,Darkvision 120,"Abyssal, Elvish, telepathy 120","Assume Form, Magic Resistance"
+Maw,13,33,30,14,8,13,5,8,5,None,None,Darkvision 60,Abyssal,Rampage
+Molydeus,19,216,40,28,22,25,21,24,24,"STR, CON, WIS, CHA",Perception,Truesight 120,"Abyssal, telepathy 120","Innate Spellcasting, Legendary, Magic Resistance, Magic Weapons"
+Nabassu,18,190,"40, fly 60",22,14,21,14,15,17,"STR, DEX",Perception,Darkvision 60,"Abyssal, telepathy 120","Demonic Shadows, Devour Soul, Magic Resistance, Magic Weapons"
+Nalfeshnee,18,184,"20, fly 30",21,10,22,19,12,15,"CON, INT, WIS, CHA",None,Truesight 120,"Abyssal, telepathy 120",Magic Resistance
+Quasit,13,7,40,5,17,10,7,10,10,None,Stealth,Darkvision 120,"Abyssal, Common","Shapechanger, Magic Resistance"
+Rutterkin,12,37,20,14,15,17,5,12,6,None,None,Darkvision 120,Abyssal,Crippling Fear
+Shadow,13,66,"30, fly 30",1,17,12,14,13,14,"DEX, CHA",Stealth,Darkvision 120,"Abyssal, telepathy 120","Incorporeal Movement, Light Sensitivity, Shadow Stealth"
+Shoosuva,14,110,40,18,13,17,7,14,9,"DEX, CON, WIS",None,Darkvision 60,"Abyssal, Gnoll, telepathy 120",Rampage
+Sibriex,19,150,fly 20,10,3,23,25,24,25,"INT, CHA","Arcana, History, Perception",Truesight 120,"All, telepathy 120","Contamination, Innate Spellcasting, Legendary, Magic Resistance"
+"Demon, Vrock",15,104,"40, fly 60",17,15,18,8,13,8,"DEX, WIS, CHA",None,Darkvision 120,"Abyssal, telepathy 120",Magic Resistance
+Wastrilith,18,157,"30, swim 80",19,18,21,19,12,14,"STR, CON",None,Darkvision 120,"Abyssal, telepathy 120","Amphibious, Corrupt Water, Magic Resistance, Undertow"
+Yochlol,15,136,"30, 30 climb",15,14,18,13,15,15,"DEX, INT, WIS, CHA","Deception, Insight",Darkvision 120,"Abyssal, Elvish, Undercommon","Shapechanger, Magic Resistance, Spider Climb, Innate Spellcasting, Web Walker"
+Derro,13,13,30,10,14,12,11,5,9,None,Stealth,Darkvision 120,"Dwarvish, Undercommon","Magic Resistance, Sunlight Sensitivity"
+Derro Savant,13,36,30,9,14,12,11,5,14,None,Stealth,Darkvision 120,"Dwarvish, Undercommon","Magic Resistance, Normal Spellcasting, Sunlight Sensitivity"
+Black Abishai,15,58,"30, fly 40",14,17,14,13,16,11,"DEX, WIS","Perception, Stealth",Darkvision 120,"Draconic, Infernal, telepathy 120","Devil's Sight, Magic Resistance, Magic Weapons, Shadow Stealth"
+Blue Abishai,19,195,"30, fly 50",15,14,17,22,23,18,"INT, WIS",Arcana,Darkvision 120,"Draconic, Infernal, telepathy 120","Devil's Sight, Magic Resistance, Magic Weapons, Normal Spellcasting"
+Green Abishai,18,187,"30, fly 40",12,17,16,17,12,19,"INT, CHA","Deception, Insight, Perception, Persuasion",Darkvision 120,"Draconic, Infernal, telepathy 120","Devil's Sight, Innate Spellcasting, Magic Resistance, Magic Weapons"
+Red Abishai,22,255,"30, fly 50",23,16,19,14,15,19,"STR, CON, WIS","Intimidation, Perception",Darkvision 120,"Draconic, Infernal, telepathy 120","Devil's SIght, Magic Resistance, Magic Weapons"
+White Abishai,15,68,"30, fly 40",16,11,18,11,12,13,"STR, CON",None,Darkvision 120,"Draconic, Infernal, telepathy 120","Devil's Sight, Magic Resistance, Magic Weapons, Reckless"
+Amnizu,21,202,"30, fly 40",11,13,16,20,12,18,"DEX, CON, WIS, CHA",Perception,Darkvision 120,"Common, Infernal, telepathy 1000","Devil's Sight, Innate Spellcasting, Magic Resistance"
+Bael,18,189,30,24,17,20,21,24,24,"DEX, CON, INT, CHA","Intimidation, Perception, Persuasion",Truesight 120,"All, telepathy 120","Dreadful, Innate Spellcasting, Legendary Resistance, Magic Resistance, Magic Weapons, Regeneration, Lair"
+Geryon,19,300,"30, fly 50",29,17,22,19,16,23,"DEX, CON, WIS, CHA","Deception, Intimidation, Perception",Truesight 120,"All, telepathy 120","Innate Spellcasting, Legendary, Lair, Magic Resistance, Magic Weapons, Regeneration"
+Hutijin,19,200,"30, fly 60",27,15,25,23,19,25,"DEX, CON, WIS","Intimidation, Perception",Truesight 120,"All, telepathy 120","Infernal Despair, Innate Spellcasting, Legendary, Magic Resistance, Lair, Magic Weapons, Regeneration"
+Moloch,19,253,30,26,19,22,21,18,23,"DEX, CON, WIS, CHA","Deception, Intimidation, Perception",Darkvision 120,"All, telepathy 120","Innate Spellcasting, Legendary, Lair, Magic Resistance, Magic Weapons, Regeneration"
+Titivilus,20,127,"40, fly 60",19,22,17,24,22,26,"DEX, CON, WIS, CHA","Deception, Insight, Intimidation, Persuasion",Darkvision 120,"All, telepathy 120","Innate Spellcasting, Legendary, Lair, Magic Resistance, Magic Weapons, Regeneration, Ventriloquism"
+Zariel,21,580,"50, fly 150",27,24,28,26,27,30,"INT, WIS, CHA","Intimidation, Perception",Darkvision 120,"All, telepathy 120","Devil's Sight, Fiery Weapons, Innate Spellcasting, Legendary, Lair, Magic Resistance, Regeneration"
+"Devil, Barbed",15,110,30,16,17,18,12,14,14,"STR, CON, WIS, CHA","Deception, Insight, Perception",Darkvision 120,"Infernal, telepathy 120","Barbed Hide, Devil's Sight, Magic Resistance"
+Bearded Devil,13,52,30,16,15,15,9,11,11,"STR, CON, WIS",None,Darkvision 120,"Infernal, telepathy 120","Devil's Sight, Magic Resistance, Steadfast"
+Bone Devil,19,142,"40, 40 fly",18,16,18,13,14,16,"INT, WIS, CHA","Deception, Insight",Darkvision 120,"Infernal, telepathy 120","Devil's Sight, Magic Resistance"
+Chain Devil,16,85,30,18,15,18,11,12,14,"CON, WIS, CHA",None,Darkvision 120,"Infernal, telepathy 120","Devil's Sight, Magic Resistance"
+"Devil, Erinyes",18,153,"30, fly 60",18,16,18,14,14,18,"DEX, CON, WIS, CHA",None,Truesight 120,"Infernal, telepathy 120","Hellish Weapons, Magic Resistance"
+Hellfire Engine,18,216,40,20,16,24,2,10,1,"DEX, WIS, CHA",None,Darkvision 120,Infernal,"Immutable Form, Magic Resistance"
+Horned Devil,18,178,"20, fly 60",22,17,21,12,16,17,"STR, DEX, WIS, CHA",None,Darkvision 120,"Infernal, telepathy 120","Devil's Sight, Magic Resistance"
+Ice Devil,18,180,40,21,14,18,18,15,18,"DEX, CON, WIS, CHA",None,"Blindsight 60, darkvision 120","Infernal, telepathy 120","Devil's Sight, Magic Resistance"
+Imp,13,10,"20, 40 fly",6,17,13,11,12,14,None,"Deception, Insight, Persuasion, Stealth",Darkvision 120,"Infernal, Common","Shapechanger, Devil's Sight, Magic Resistance"
+Lemure,7,13,15,10,5,11,1,11,3,None,None,Darkvision 120,Infernal,"Devil's Sight, Hellish Rejuvenation"
+Merregon,16,45,30,18,14,17,6,12,8,None,None,Darkvision 60,"Infernal, telepathy 120","Devil's Sight, Magic Resistance"
+Narzugon,20,112,30,20,10,17,16,14,19,"DEX, CON, CHA",Perception,Darkvision 120,"Common, Infernal, telepathy 120","Diabolical Sense, Infernal Tack, Magic Resistance"
+Nupperibo,13,11,20,16,11,13,3,8,1,None,Perception,Blindsight 10,Infernal,"Cloud of Vermin, Hunger-Driven"
+Orthon,17,105,"30, climb 30",22,16,21,15,15,16,"DEX, CON, WIS","Perception, Stealth, Survival","Darkvision 120, truesight 30","Common, INfernal, telepathy 120","Invisibility Field, Magic Resistance"
+Pit Fiend,19,300,"30, fly 60",26,14,24,22,18,24,"DEX, CON, WIS",None,Truesight 120,"Infernal, telepathy 120","Fear Aura, Magic Resistance, Magic Weapon, Innate Spellcasting"
+Spined Devil,15,22,"20, 40 fly",10,15,12,11,14,8,None,None,Darkvision 120,"Infernal, telepathy 120","Devil's Sight, Flyby, Limited Spines, Magic Resistance"
+Devourer,16,178,30,20,12,20,13,10,16,None,None,Darkvision 120,"Abyssal, telepathy 120",None
+Allosaurus,13,51,60,19,13,17,2,12,5,None,Perception,Normal,None,Pounce
+Ankylosaurus,15,68,30,19,11,15,2,12,5,None,None,Normal,None,None
+Brontosaurus,15,121,30,21,9,17,2,10,7,CON,None,Normal,None,None
+Deinonychus,13,26,40,15,15,14,4,12,6,None,Perception,Normal,None,Pounce
+Dimetrodon,12,19,"30, swim 20",14,10,15,2,10,5,None,Perception,Normal,None,None
+Hadrosaurus,11,19,40,15,10,13,2,10,5,None,Perception,Normal,None,None
+Plesiosaurus,13,68,"20, swim 40",18,15,16,2,12,5,None,"Perception, Stealth",Normal,None,Hold Breath
+Pteranodon,13,13,"10, fly 60",12,15,10,2,9,5,None,Perception,Normal,None,Flyby
+Quetzalcoatlus,13,30,"10, fly 80",15,13,13,2,10,5,None,Perception,Normal,None,"Dive Attack, FLyby"
+Stegosaurus,13,76,40,20,9,17,2,11,5,None,None,Normal,None,None
+Triceratops,13,95,50,22,9,17,2,11,5,None,None,Normal,None,Trampling Charge
+Tyrannosaurus Rex,13,136,50,25,10,19,2,12,9,None,Perception,Normal,None,None
+Velociraptor,13,10,30,6,14,13,4,12,6,None,Perception,Normal,None,Pack Tactics
+Displacer Beast,13,85,40,18,15,16,6,12,8,None,None,Darkvision 60,None,"Avoidance, Displacement"
+Doppelganger,14,52,30,11,18,14,11,12,14,None,"Deception, Insight",Darkvision 60,Common,"Shapechanger, Ambusher, Surprise Attack"
+Adult Black Dragon,19,195,"40, 80 fly, swim 40",23,14,21,14,13,17,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Amphibious, Legendary Resistance, Legendary, Lair"
+Black Ancient Dragon,22,367,"40, 80 fly, swim 40",27,14,25,16,15,19,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Amphibious, Legendary Resistance, Legendary, Lair"
+Black Dragon Wyrmling,17,33,"30, fly 60, 30 swim",15,14,13,10,11,13,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 30, darkvision 120","Common, Draconic",Amphibious
+Young Black Dragon,18,127,"40, 80 fly, swim 40",19,14,17,12,11,15,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 10, darkvision 60",Draconic,Amphibious
+Adult Blue Dragon,19,225,"40, 40 burrow, 80 fly",25,10,23,16,15,19,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Legendary, Legendary Resistance, Lair"
+Ancient Blue Dragon,22,481,"40, 30 burrow, 80 fly",29,10,27,18,17,21,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Legendary, Legendary Resistance, Lair"
+Blue Dragon Wyrmling,17,52,"30, 15 burrow, fly 60",17,10,15,12,11,15,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 30, darkvision 120","Common, Draconic",None
+Young Blue Dragon,18,152,"40, 20 burrow, 80 fly",21,10,19,14,13,17,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 10, darkvision 60",Draconic,None
+Adult Green Dragon,19,207,"40, 80 fly, swim 40",23,12,21,18,15,17,"DEX, CON, WIS, CHA","Deception, Insight, Perception, Persuasion, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Amphibious, Legendary Resistance, Legendary, Lair"
+Ancient Green Dragon,21,385,"40, 80 fly, swim 40",27,12,25,20,17,19,"DEX, CON, WIS, CHA","Deception, Insight, Perception, Persuasion, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Amphibious, Legendary Resistance, Legendary, Lair"
+Green Dragon Wyrmling,17,38,"30, fly 60, swim 30",15,12,13,14,11,13,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 30, darkvision 120",Draconic,Amphibious
+Young Green Dragon,18,136,"40, fly 80, swim 40",19,12,17,16,13,15,"DEX, CON, WIS, CHA","Deception, Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic",Amphibious
+Adult Red Dragon,19,256,"40, climb 40, fly 80",27,10,25,16,13,21,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Legendary Resistance, Legendary, Lair"
+Ancient Red Dragon,22,546,"40, climb 40, fly 80",30,10,29,18,15,23,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Legendary Resistance, Legendary, Lair"
+Red Dragon Wyrmling,17,75,"40, climb 40, fly 80",19,10,17,12,11,15,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 30, darkvision 120",Draconic,None
+Young Red Dragon,18,178,"30, climb 30, fly 60",23,10,21,14,11,19,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 10, darkvision 60","Common, Draconic",None
+Adult White Dragon,18,200,"40, burrow 30, fly 80,  swim 40",22,10,22,8,12,12,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Ice Walk, Legendary Resistance, Legendary, Lair"
+Ancient White Dragon,20,333,"40, burrow 40, fly 80, swim 40",26,10,26,10,13,14,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Ice Walk, Legendary Resistance, Legendary, Lair"
+White Dragon Wyrmling,16,32,"30, burrow 15, fly 60, swim 30",14,10,14,5,10,11,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 10, darkvision 60",Draconic,Ice Walk
+Young White Dragon,14,133,"40, burrow 20, fly 80, swim 40",18,10,18,6,11,12,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 30, darkvision 120","Common, Draconic",Ice Walk
+Adult Brass Dragon,18,172,"40, burrow 30, fly 80",23,10,21,14,13,17,"DEX, CON, WIS, CHA","History, Perception, Persuasion, Stealth","Blindsight 60, darkvision 120,","Common, Draconic","Legendary, Legendary Resistance, Lair"
+Ancient Brass Dragon,20,297,"40, burrow 40, fly 80",27,10,25,16,15,19,"DEX, CON, WIS, CHA","History, Perception, Persuasion, Stealth","Blindsight 60, darkvision 120,","Common, Draconic","Legendary, Legendary Resistance, Lair"
+Brass Dragon Wyrmling,16,16,"30, burrow 15, fly 60",15,10,13,10,11,13,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 10, Darkvision 60",Draconic,None
+Young Brass Dragon,17,110,"40, burrow 20, fly 80",19,10,17,12,11,15,"DEX, CON, WIS, CHA","Perception, Persuasion, Stealth","Blindsight 30, Darkvision 120","Common, Draconic",None
+Adult Bronze Dragon,19,212,"40, 80 fly, swim 40",25,10,23,16,15,19,"DEX, CON, WIS, CHA","Insight, Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Amphibious, Legendary Resistance, Legendary, Lair"
+Ancient Bronze Dragon,22,444,"40, fly 80, swim 40",29,10,27,18,17,21,"DEX, CON, WIS, CHA","Insight, Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Amphibious, Legendary Resistance, Legendary, Lair"
+Bronze Dragon Wyrmling,17,32,"30, fly 60, swim 30",17,10,15,12,11,15,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 10, darkvision 60",Draconic,Amphibious
+Young Bronze Dragon,18,142,"40, fly 80, swim 40",21,10,19,14,13,17,"DEX, CON, WIS, CHA","Insight, Perception, Stealth","Blindsight 30, Darkvision 120","Common, Draconic",Amphibious
+Adult Copper Dragon,18,184,"40, climb 40, fly 80",23,12,21,18,15,17,"DEX, CON, WIS, CHA","Deception, Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Legendary Resistance, Legendary, Lair"
+Ancient Copper Dragon,21,350,"40, climb 40, fly 80",27,12,25,20,17,19,"DEX, CON, WIS, CHA","Deception, Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Legendary Resistance, Legendary, Lair"
+Copper Dragon Wyrmling,16,22,"30, climb 30, fly 60",15,12,13,14,11,13,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 10, darkvision 60",Draconic,None
+Young Copper Dragon,17,119,"40, climb 40, fly 80",19,12,17,16,13,15,"DEX, CON, WIS, CHA","Deception, Perception, Stealth","Blindsight 30, darkvision 120","Common, Draconic",None
+Adult Gold Dragon,19,256,"40, fly 80, swim 40",27,14,25,16,15,24,"DEX, CON, WIS, CHA","Insight, Perception, Persuasion, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Amphibious, Legendary Resistance, Legendary, Lair"
+Ancient Gold Dragon,22,546,"40, fly 80, swim 40",30,14,29,18,17,28,"DEX, CON, WIS, CHA","Insight, Perception, Persuasion, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Amphibious, Legendary Resistance, Legendary, Lair"
+Gold Dragon Wyrmling,17,60,"30, fly 60, swim 30",19,14,17,14,11,16,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 10, darkvision 60",Draconic,Amphibious
+Young Gold Dragon,18,178,"40, fly 80, swim 40",23,14,21,16,13,20,"DEX, CON, WIS, CHA","Insight, Perception, Persuasion, Stealth","Blindsight 30, darkvision 120","Common, Draconic",Amphibious
+Adult Silver Dragon,19,243,"40, fly 80",27,10,25,16,13,21,"DEX, CON, WIS, CHA","Arcana, History, Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Legendary Resistance, Legendary, Lair"
+Ancient Silver Dragon,22,487,"40, fly 80",30,10,29,18,15,23,"DEX, CON, WIS, CHA","Arcana, History, Perception, Stealth","Blindsight 60, darkvision 120","Common, Draconic","Legendary Resistance, Legendary, Lair"
+Silver Dragon Wyrmling,17,45,"30, fly 60",19,10,17,12,11,15,"DEX, CON, WIS, CHA","Perception, Stealth","Blindsight 10, darkvision 60",Draconic,None
+Young Silver Dragon,18,168,"40, fly 80",23,10,21,14,11,19,"DEX, CON, WIS, CHA","Arcana, History, Perception, Stealth","Blindsight 30, darkvision 120","Common, Draconic",None
+Dragon Turtle,20,341,"20, swim 40",25,10,20,10,12,12,"DEX, CON, WIS",None,Darkvision 120,"Aquan, Draconic",Amphibious
+Dragonclaw,14,16,30,9,16,13,11,10,12,WIS,"Deception, Stealth",Normal,"Common, Draconic","Dragon Fanatic, Fanatical Advantage, Pack Tactics"
+Dragonfang,15,78,30,11,16,14,12,12,14,WIS,"Deception, Stealth",Normal,"Common, Draconic, Infernal","Dragon Fanatic, Fanatic Advantage, Limited Flight, Pack Tactics"
+Dragonsoul,16,110,30,11,18,14,13,12,16,WIS,"Deception, Stealth",Normal,"Common, Draconic, Infernal","Dragon Fanatic, Fanatic Advantage, Limited Flight, Pack Tactics"
+Dragonwing,14,32,30,9,16,13,11,10,12,WIS,"Deception, Stealth",Normal,"Common, Draconic","Dragon Fanatic, Fanatical Advantage, Pack Tactics"
+Dread Warrior,18,37,30,15,11,16,10,12,10,WIS,"Athletics, Perception",Darkvision 60,Common,Undead Fortitude
+Drider,19,123,"30, climb 30",16,16,18,13,14,12,None,"Perception, Stealth",Darkvision 120,"Elvish, Undercommon","Fey Ancestry, Innate Spellcasting, Spider Climb, Sunlight Sensitivity, Web Walker"
+Drow,15,13,30,10,14,10,11,11,12,None,"Perception, Stealth",Darkvision 120,"Elvish, Undercommon","Fey Ancestry, Innate Spellcasting, Sunlight Sensitivity"
+Drow Arachnomancer,15,162,"30, climb 30",11,17,14,19,14,16,"CON, INT, CHA","Arcana, Nature, Perception, Stealth","Blindsight 10, darkvision 120","Elvish, Undercommon, spiders","Change Shape, Fey Ancestry, Innate Spellcasting, Normal Spellcasting, Spider Climb, Sunlight Sensitivity"
+Drow Elite Warrior,18,71,30,13,18,14,11,13,12,"DEX, CON, WIS","Perception, Stealth",Darkvision 120,"Elvish, Undercommon","Fey Ancestry, Innate Spellcasting, Sunlight Sensitivity"
+Drow Favored Consort,15,225,30,15,20,16,18,15,18,"DEX, CON, CHA","Acrobatics, Athletics, Perception, Stealth",Darkvision 120,"Elvish, Undercommon","Fey Ancestry, Innate Spellcasting, Normal Spellcasting, Sunlight Sensitivity, War Magic"
+Drow House Captain,16,162,30,14,19,15,12,14,13,"DEX, CON, WIS","Perception, Stealth",Darkvision 120,"Elvish, Undercommon","Battle Command, Fey Ancestry, Innate Spellcasting, Sunlight Sensitivity"
+Drow Inquisitor,16,143,30,11,15,14,16,21,20,"CON, WIS, CHA","Insight, Perception, Religion, Stealth",Darkvision 120,"Elivhs, Undercommon","Discern Lie, Fey Ancestry, Innate Spellcasting, Magic Resistance, Spellcasting, Sunlight Sensitivity"
+Drow Mage,12,45,30,9,14,10,17,13,12,None,"Arcana, Deception, Perception, Stealth",Darkvision 120,"Elvish, Undercommon","Fey Ancestry, Innate Spellcasting, Normal Spellcasting, Sunlight Sensitivity"
+Drow Matron Mother,17,262,30,12,18,16,17,21,22,"CON, WIS, CHA","Insight, Perception, Religion, Stealth",Darkvision 120,"Elvish, Undercommon","Fey Ancestry, Innate Spellcasting, Lolth's Fickle Favor, Magic Resistance, Normal Spellcasting, Sunlight Sensitivity"
+Drow Priestess of Lolth,16,71,30,10,14,12,13,17,18,"CON, WIS, CHA","Insight, Perception, Religion, Stealth",Darkvision 120,"Elvish, Undercommon","Fey Ancestry, Innate Spellcasting, Normal Spellcasting, Sunlight Sensitivity"
+Drow Shadowblade,17,150,30,14,21,16,12,14,13,"DEX, CON, WIS","Perception, Stealth",Darkvision 120,"Elvish, Undercommon","Fey Ancestry, Innate Spellcasting, Shadow Step, Sunlight Sensitivity"
+Dryad,11,22,30,1,12,11,14,15,18,None,"Perception, Stealth",Darkvision 60,"Elvish, Sylvan","Innate Spellcasting, Magic Resistance, Speak with Beasts, Speak with Plants, Tree Stride"
+Duergar,16,26,25,14,11,14,11,10,9,None,None,Darkvision 120,"Dwarvish, Undercommon","Duergar Resilience, Sunlight Sensitivity"
+Duergar Darkhaft,16,26,25,14,11,14,11,10,9,None,None,Darkvision 120,"Dwarvish, Undercommon","Duergar Resilience, Sunlight Sensitivity, Normal Spellcasting (Psionics)"
+Duergar Despot,21,119,25,20,5,19,15,14,13,"CON, WIS",None,Darkvision 120,"Dwarvish, Undercommon","Innate Spellcasting, Magic Resistance, Psychic Engine, Sunlight Sensitivity"
+Duergar Hammerer,17,33,20,17,7,12,5,5,5,None,None,Darkvision 60,Dwarvish,"Engine of Pain, Siege Monster"
+Duergar Kavalrachni,16,26,25,14,11,14,11,10,9,None,None,Darkvision 120,"Dwarvish, Undercommon","Cavalry Training, Duergar Resilience, Sunlight Sensitivity"
+Duergar Keeper of the Flame,16,26,25,14,11,14,11,10,9,None,None,Darkvision 120,"Dwarvish, Undercommon","Duergar Resilience, Innate Spellcasting (Psionics), Normal Spellcasting"
+Duergar Mind Master,14,39,25,11,17,14,15,10,12,WIS,"Perception, Stealth","Darkvision 120, truesight 30","Dwarvish, Undercommon","Duergar Resilience, Sunlight Sensitivity"
+Duergar Screamer,15,38,20,18,7,12,5,5,5,None,None,Darkvision 60,Dwarvish,Engine of Pain
+Duergar Soulblade,14,18,25,11,16,10,11,10,12,None,None,Darkvision 120,"Dwarvish, Undercommon","Duergar Resilience, Create Soulblade, Innate Spellcasting, Sunlight Sensitivity"
+Duergar Spy,15,33,25,10,16,12,12,10,13,None,"Deception, Insight, Investigation, Perception, Persuasion, Sleight of Hand, Stealth",Darkvision 120,"Dwarvish, Undercommon","Cunning Action, Duergar Resilience, Sneak Attack, Sunlight Sensitivity"
+Duergar Stone Guard,18,39,25,18,11,14,11,10,9,None,None,Darkvision 120,"Dwarvish, Undercommon","Duergar Resilience, Phalanx Formation, Sunlight Sensitivity"
+Duergar Warlord,20,75,25,18,11,17,12,12,14,None,None,Darkvision 120,"Dwarvish, Undercommon","Duergar Resilience, Sunlight Sensitivity"
+Duergar Xarrorn,18,26,25,16,11,14,11,10,9,None,None,Darkvision 120,"Dwarvish, Undercommon","Duergar Resilience, Sunlight Sensitivity"
+Eblis,13,26,"30, fly 40",11,16,12,12,14,11,None,None,Normal,"Auran, Common",Innate Spellcasting
+Eidolon,9,63,fly 40,7,8,9,14,19,16,WIS,Perception,Darkvision 60,Any,"Incorporeal Movement, Sacred Animation, Turn Resistance"
+Autumn Eladrin,19,127,30,12,16,16,14,17,18,None,"Insight, Medicine",Darkvision 60,"Common, Elvish, Sylvan","Enchanting Presence, Fey Step, Innate Spellcasting, Magic Resistance"
+Spring Eladrin,19,127,30,14,16,16,18,11,18,None,"Deception, Persuasion",Darkvision 60,"Common, Elvish, Sylvan","Fey Step, Innate Spellcasting, Joyful Presence, Magic Resistance"
+Summer Eladrin,19,127,50,19,21,16,14,12,18,None,"Athletics, Intimidation",Darkvision 60,"Common, Elvish, Sylvan","Fearsome Presence, Fey Step, Magic Resistance"
+Winter Eladrin,19,127,30,11,10,16,18,17,13,None,None,Darkvision 60,"Common, Elvish, Sylvan","Fey Step, Innate Spellcasting, Magic Resistance, Sorrowful Presence"
+Elder Tempest,19,264,fly 120,23,28,23,2,21,18,"WIS, CHA",None,Darkvision 60,None,"Air Form, Flyby, Legendary, Living Storm, Siege Monster"
+Leviathan,17,328,"40, swim 120",30,24,30,2,18,17,"WIS, CHA",None,Darkvision 60,None,"Legendary, Partial Freeze, Siege Monster, Water Form"
+Phoenix,18,175,"20, fly 120",19,26,25,2,21,18,"WIS, CHA",None,Darkvision 60,None,"Fiery Death and Rebirth, Fire Form, Flyby, Illumination, Legendary, Siege Monster"
+Zaratan,21,307,"40, swim 40",30,10,30,2,21,18,"WIS, CHA",None,"Darkvision 60, tremorsense 60",None,"Earth-Shaking Movement, Legendary, Magic Weapons, Siege Monster"
+Air Elemental Myrmidon,18,117,"30, fly 30",18,14,14,9,10,10,None,None,Darkvision 60,"Auran, Any",Magic Weapons
+Earth Elemental Myrmidon,18,127,30,18,10,17,8,10,10,None,None,Darkvision 60,"Terran, Any",Magic Weapons
+Fire Elemental Myrmidon,18,123,40,13,18,15,9,10,10,None,None,Darkvision 60,"Ignan, Any","Illumination, Magic Weapons, Water Susceptibility"
+Water Elemental Myrmidon,18,127,"40, swim 40",18,14,15,8,10,10,None,None,Darkvision 60,"Aquan, Any",Magic Weapons
+Air Elemental,15,90,fly 90,14,20,14,6,10,6,None,None,Darkvision 60,Auran,Air Form
+Earth Elemental,17,126,"30, burrow 30",20,8,20,5,10,5,None,None,"Darkvision 60, tremorsense 60",Terran,"Earth Glide, Siege Monster"
+Fire Elemental,13,102,50,10,17,16,6,10,7,None,None,Darkvision 60,Ignan,"Fire Form, Illumination, Water Susceptibility"
+Water Elemental,14,114,"30, swim 90",18,14,18,5,10,8,None,None,Darkvision 60,Aquan,"Water Form, Freeze"
+Empyrean,22,313,"50, fly 50, swim 50",30,21,30,21,22,27,"STR, INT, WIS, CHA","Insight, Persuasion",Truesight 120,All,"Innate Spellcasting, Legendary Resistance, Magic Resistance, Magic Weapons"
+Eternal Flame Guardian,17,45,30,15,13,14,8,11,13,None,"Intimidation, Perception",Normal,Common,Flaming Weapon
+Eternal Flame Priest,12,52,30,12,15,14,10,11,16,None,"Deception, Intimidation, Religion",Normal,"Common, Ignan",Normal Spellcasting
+Ettercap,13,44,"30, climb 30",14,15,13,7,12,8,None,"Perception, Stealth, Survival",Darkvision 60,None,"Spider Climb, Web Sense, Web Walker"
+Ettin,12,85,40',21,8,17,6,10,8,None,Perception,Darkvision 60,"Giant, Orc","Two Heads, Wakeful"
+Faerie Dragon,15,14,"10, fly 60",3,20,13,14,12,16,None,"Arcana, Perception, Stealth",Darkvision 60,"Draconic, Sylvan","Superior Invisibility, Limited Telepathy, Magic Resistance, Innate Spellcasting"
+Firenewt Warlock of Imix,10,33,30,13,11,12,9,11,14,None,None,Darkvision 120,"Draconic, Ignan","Amphibious, Innate Spellcasting, Normal Spellcasting, Imix's Blessing"
+Firenewt Warrior,16,22,30,10,13,12,7,11,8,None,None,Normal,"Draconic, Ignan",Amphibious
+Flail Snail,16,52,10,17,5,20,3,10,5,None,None,"Darkvision 60, tremorsense 60",None,"Antimagic Shell, Flail Tentacles"
+Flameskull,13,40,fly 40,1,17,14,16,10,11,None,"Arcana, Perception",Darkvision 60,Common,"Illumination, Magic Resistance, Rejuvenation, Normal Spellcasting"
+Flumph,12,7,"5, fly 30",6,15,10,14,14,11,None,"Arcana, History, Religion",Darkvision 60,"Undercommon, telepathy 60","Advanced Telepathy, Prone Deficiency, Telepathic Shroud"
+Flying Monkey,12,3,"20, climb 20, fly 30",8,14,11,5,12,6,None,None,Normal,None,Pack Tactics
+Fomorian,14,149,30,23,10,20,9,14,6,None,"Perception, Stealth",Darkvision 120,"Giant, Undercommon",None
+Froghemoth,14,184,"30, swim 30",23,13,20,2,12,5,"CON, WIS","Perception, Stealth",Darkvision 60,None,"Amphibious, Shock SUsceptibility"
+Gas Spore,5,1,fly 10,5,1,3,1,1,1,None,None,Blindsight 30,None,"Death Burst, Eerie Resemblance"
+Shrieker,5,13,None,1,1,10,1,10,3,None,None,Blindsight 30,None,False Appearance
+Violet Fungus,5,18,5,3,1,10,1,3,1,None,None,Blindsight 30,None,False Appearance
+Galeb Duhr,16,85,"15, rolling",20,14,20,11,12,11,None,None,"Darkvision 60, tremorsense 60",Terran,"False Appearance, Rolling Charge"
+Gargoyle,15,52,"30, fly 60",15,11,16,6,11,7,None,None,Darkvision 60,Terran,False Appearance
+Dao,18,187,"30, burrow 30, fly 30",23,12,24,12,13,14,"INT, WIS, CHA",None,Darkvision 120,Terran,"Earth Glide, Elemental Demise, Innate Spellcasting, Sure-Footed"
+"Genie, Djinni",17,161,"30, fly 90",21,15,22,15,16,20,"DEX, WIS, CHA",None,Darkvision 120,Auran,"Elemental Demise, Innate Spellcasting"
+Efreeti,17,200,"40, fly 60",22,12,24,16,15,16,"INT, WIS, CHA",None,Darkvision 120,Ignan,"Elemental Demise, Innate Spellcasting"
+"Genie, Marid",17,229,"30, fly 60, swim 90",22,12,26,18,17,18,"DEX, WIS, CHA",None,"Blindsight 30, darkvision 120",Aquan,"Amphibious, Elemental Demise, Innate Spellcasting"
+Geonid,17,26,30,12,10,16,9,14,11,None,"Perception, Stealth","Darkvision 60, tremorsense 30",Terran,Boulder Guise
+Ghost,11,45,fly 40,7,13,10,10,12,17,None,None,Darkvision 60,Any,"Ethereal Sight, Incorporeal Movement"
+Ghoul,12,22,30,13,15,10,7,10,6,None,None,Darkvision 60,Common,None
+Ghast,13,36,30,16,17,10,11,10,8,None,None,Darkvision 60,Common,"Stench, Turning Defiance"
+Giant Crayfish,15,45,"30, swim 30",15,13,13,1,9,3,None,Stealth,Blindsight 30,None,Amphibious
+Giant Fly,11,19,"30, fly 60",14,13,13,2,10,3,None,None,Darkvision 60,None,None
+Giant Ice Toad,14,52,30,16,13,14,8,10,6,None,None,Darkvision 60,Own,"Amphibious, Cold Aura, Standing Leap"
+Giant Lightning Eel,13,42,"5, swim 30",11,17,16,2,12,3,None,None,Blindsight 60,None,Water Breathing
+Giant Snapping Turtle,17,75,"30, swim 40",19,10,14,2,12,5,None,None,Darkvision 60,None,"Amphibious, Stable"
+Giant Strider,14,22,50,18,13,14,4,12,6,None,None,Normal,None,Fire Absorption
+Giant Subterranean Lizard,14,66,"30, swim 50",21,9,17,2,10,7,None,Stealth,Normal,None,None
+Cloud Giant,14,200,40,27,10,22,12,16,16,"CON, WIS, CHA","Insight, Perception",Normal,"Common, Giant","Keen Smell, Innate Spellcasting"
+Cloud Giant Smiling One,15,262,40,26,12,22,15,16,17,"CON, INT, CHA","Deception, Insight, Perception, Sleight of Hand",Normal,"Common, Giant","INnate Spellcasting, Normal Spellcasting, Keen Smell"
+Fire Giant,18,162,30,25,9,23,10,14,13,"DEX, CON, CHA","Athletics, Perception",Normal,Giant,None
+Fire Giant Dreadnought,21,187,30,27,9,23,8,10,11,"DEX, CON, CHA","Athletics, Perception",Normal,Giant,Dual Shields
+Frost Giant,15,138,40,23,9,21,9,10,12,"CON, WIS, CHA","Athletics, Perception",Normal,Giant,None
+Frost Giant Everlasting One,15,189,40,25,9,24,9,10,12,"STR, CON, WIS","Athletics, Perception",Darkvision 60,Giant,"Extra Heads, Regeneration, Vaprak's Rage"
+Hill Giant,13,105,40,21,8,19,5,9,6,None,Perception,Normal,Giant,None
+Mouth of Grolantor,14,105,50,21,10,18,5,7,5,None,Perception,Normal,Giant,Mouth of Madness
+Stone Giant,17,126,40,23,15,20,10,12,9,"DEX, CON, WIS","Athletics, Perception",Darkvision 60,Giant,Stone Camouflage
+Stone Giant Dreamwalker,18,161,40,23,14,21,10,8,12,"DEX, CON, WIS","Athletics, Perception",Darkvision 60,"Common, Giant",Dreamwalker's Charm
+Storm Giant,16,230,"50, swim 50",29,14,20,16,18,18,"STR, CON, WIS, CHA","Arcana, Athletics, History, Perception",Normal,"Common, Giant","Amphibious, Innate Spellcasting"
+Storm Giant Quintessent,12,230,"50, fly 50, swim 50",29,14,20,17,20,19,"STR, CON, WIS, CHA","Arcana, History, Perception",Truesight 60,"Common, Giant","Amphibious, Legendary"
+Gibbering Mouther,9,67,"10, swim 10",10,8,16,3,10,6,None,None,Darkvision 60,None,"Aberrant Ground, Gibbering"
+Giff,16,60,30,18,14,17,11,12,12,None,None,Normal,Common,"Headfirst Charge, Firearms Knowledge"
+Girallon,13,59,"40, climb 40",18,16,16,5,12,7,None,"Perception, Stealth",Darkvision 60,None,"Aggressive, Keen Smell"
+Githyanki Gish,17,123,30,17,15,14,16,15,16,"CON, INT, WIS","Insight, Perception, Stealth",Normal,Own,"Innate Spellcasting (Psionics), Normal Spellcasting, War Magic"
+Githyanki Kith'Rak,18,180,30,18,16,17,16,15,17,"CON, INT, WIS","Intimidation, Perception",Normal,Own,"Innate Spellcasting (Psionics), Rally the Troops"
+Githyanki Knight,18,91,30,16,14,15,14,14,15,"CON, INT, WIS",None,Normal,Own,Innate Spellcasting
+Githyanki Supreme Commander,18,187,30,19,17,18,16,16,18,"CON, INT, WIS","Insight, Intimidation, Perception",Normal,Own,"Innate Spellcasting (Psionics), Legendary"
+Githyanki Warrior,17,49,30,15,14,12,13,13,10,"CON, INT, WIS",None,Normal,Own,Innate Spellcasting
+Githzerai Anarch,20,144,30,16,21,18,18,20,14,"STR, DEX, INT, WIS","Arcana, Insight, Perception",Normal,Own,"Innate Spellcasting (Psionics), Psychic Defense, Lair, Legendary"
+Githzerai Enlightened,18,112,30,14,19,16,17,19,13,"STR, DEX, INT, WIS","Arcana, Insight, Perception",Normal,Own,"Innate Spellcasting (Psionics), Psychic Defense"
+Githzerai Monk,14,38,30,12,15,12,13,14,10,"STR, DEX, INT, WIS","Insight, Perception",Normal,Own,"Innate Spellcasting (Psionics), Psychic Defense"
+Githzerai Zerth,17,84,30,13,18,15,16,17,12,"STR, DEX, INT, WIS","Arcana, Insight, Perception",Normal,Own,"Innate Spellcasting, Psychic Defense"
+Gnoll,15,22,30,14,12,11,6,10,7,None,None,Darkvision 60,Gnoll,Rampage
+Gnoll Fang of Yeenoghu,14,65,30,17,15,15,10,11,13,"CON, WIS, CHA",None,Darkvision 60,"Abyssal, Gnoll",Rampage
+Gnoll Flesh Gnawer,14,22,30,12,14,12,8,10,8,DEX,None,Darkvision 60,Gnoll,Rampage
+Gnoll Hunter,13,22,30,14,14,12,8,12,8,None,"Perception, Stealth",Darkvision 60,GNoll,Rampage
+Gnoll Pack Lord,15,49,30,16,14,13,8,11,9,None,None,Darkvision 60,Gnoll,Rampage
+Gnoll Witherling,12,11,30,14,8,12,5,5,5,None,None,Darkvision 60,Gnoll,Rampage
+Flind,16,127,30,20,10,19,11,13,12,"CON, WIS","Intimation, Perception",Darkvision 60,"Gnoll, Abyssal",Aura of Blood Thirst
+Goblin,15,7,30,8,14,10,10,8,8,None,Stealth,Darkvision 60,"Common, Goblin",Nimble Escape
+Goblin Boss,17,21,30,10,14,10,10,8,10,None,Stealth,Darkvision 60,"Common, Goblin",Nimble Escape
+Clay Golem,14,133,20,20,9,18,3,8,1,None,None,Darkvision 60,Creator,"Acid Absorption, Berserk, Immutable Form, Magic Resistance, Magic Weapons"
+Flesh Golem,9,93,30,19,9,18,6,10,5,None,None,Darkvision 60,Creator,"Berserk, Aversion of Fire, Immutable Form, Lightning Absorption, Magic Resistance, Magic Weapons"
+Iron Golem,20,210,30,24,9,20,3,11,1,None,None,Darkvision 120,Creator,"Fire Absorption, Immutable Form, Magic Resistance, Magic Weapons"
+Stone Golem,17,178,30,22,9,20,3,11,1,None,None,Darkvision 120,Creator,"Immutable Form, Magic Resistance, Magic Weapons"
+Gorgon,19,114,40,20,11,18,2,12,7,None,Perception,Darkvision 60,None,Trampling Charge
+Gray Render,19,189,30,19,13,20,3,6,8,"STR, CON",Perception,Darkvision 60,None,None
+Grell,12,55,"10, fly 30",15,14,13,12,11,9,None,"Perception, Stealth",Blindsight 60,Own,None
+Grick,14,27,"30, climb 30",14,14,11,3,14,5,None,None,Darkvision 60,None,Stone Camouflage
+Grick Alpha,18,75,"30, climb 30",18,16,15,4,14,9,None,None,Darkvision 60,None,Stone Camouflage
+Griffon,12,59,"30, fly 80",18,15,16,2,13,8,None,Perception,Darkvision 60,None,Keen Sight
+Grimlock,11,11,30,16,12,12,9,8,6,None,"Athletics, Perception, Stealth",Blindsight 30,Undercommon,"Blind Senses, Keen Hearing, Keen Smell, Stone Camouflage"
+Grung,12,11,"25, climb 25",7,14,15,10,11,10,DEX,"Athletics, Perception, Stealth, Survival",Normal,Own,"Amphibious, Poisonous Skin, Standing Leap"
+Grung Elite Warrior,13,49,"25, climb 25",7,16,15,10,11,12,DEX,"Athletics, Perception, Stealth, Survival",Normal,Own,"Amphibious, Poisonous Skin, Standing Leap"
+Grung Wildling,13,27,"25, climb 25",7,16,15,10,15,11,DEX,"Athletics, Perception, Stealth, Survival",Normal,Own,"Amphibious, Poisonous SKin, Normal Spellcasting, Standing Leap"
+Guard Drake,14,52,30,16,11,16,4,10,7,None,Perception,Darkvision 60,"Draconic, Ignan",None
+Guardian Portrait,5,22,None,1,1,10,14,10,10,None,None,Darkvision 60,"Common, Any","False, Innate Spellcasting"
+Annis Hag,17,75,40,21,12,14,13,14,15,CON,"Deception, Perception",Darkvision 60,"COmmon, Giant, Sylvan",Innate Spellcasting
+Bheur Hag,17,91,30,13,16,14,12,13,16,WIS,"Nature, Perception, Stealth, Survival",Darkvision 60,"Auran, Common, Giant","Graystaff Magic, Ice Walk, Innate Spellcasting"
+Green Hag,17,82,30,18,12,16,13,14,14,None,"Arcana, Deception, Perception, Stealth",Darkvision 60,"Common, Draconic, Sylvan","Amphibious, Innate Spellcasting, Mimicry"
+Night Hag,17,112,30,18,15,16,16,14,16,None,"Deception, Insight, Perception, Stealth",Darkvision 120,"Abyssal, Common, Infernal, Primordial","Innate Spellcasting, Magic Resistance"
+Sea Hag,14,52,"30, swim 40",16,13,16,12,12,13,None,None,Darkvision 60,"Aquan, Common, Giant","Amphibious, Horrific Appearance"
+Harpy,11,38,"20, fly 40",12,13,12,7,10,13,None,None,Normal,Common,None
+Hell Hound,15,45,50,17,12,14,6,13,6,None,Perception,Darkvision 60,Infernal,"Keen Hearing, Keen Smell, Pack Tactics"
+Helmed Horror,20,60,"30, fly 30",18,13,16,10,10,10,None,Perception,Blindsight 60,Creator,"Magic Resistance, Spell Immunity"
+Hippogriff,11,19,"40, fly 60",17,13,13,2,12,8,None,Perception,Normal,None,Keen Sight
+Hobgoblin,18,11,30,13,12,12,10,10,9,None,None,Darkvision 60,"Common, Goblin",Martial Advantage
+Hobgoblin Captain,17,39,30,15,14,14,12,10,13,None,None,Darkvision 60,"Common, Goblin",Martial Advantage
+Hobgoblin Devastator,13,45,30,13,12,14,16,13,11,None,Arcana,Darkvision 60,"Common, Goblin","Arcane Advantage, Army Arcana, Normal Spellcasting"
+Hobgoblin Iron Shadow,15,32,40,14,16,15,14,15,11,None,"Acrobatics, Athletics, Stealth",Darkvision 60,"Common, Goblin","Normal Spellcasting, Unarmored Defense"
+Hobgoblin Warlord,20,97,30,16,14,16,14,11,15,"INT, WIS, CHA",None,Darkvision 60,"Common, Goblin",Martial Advantage
+Homunculus,13,5,"20, fly 40",4,15,11,10,10,7,None,None,Darkvision 60,Creator,Telepathic Bond
+Hook Horror,15,75,"30, climb 30",18,10,15,6,12,7,None,Perception,"Blindsight 60, darkvision 10",None,"Echolocation, Keen Hearing"
+Howler,16,90,40,17,16,15,5,20,6,None,Perception,Darkvision 60,Abyssal,Pack Tactics
+Hulking Crab,17,76,"20, swim 30",19,8,16,3,11,3,None,Stealth,Blindsight 30,None,"Amphibious, Shell Camouflage"
+Hydra,15,172,"30, swim 30",20,12,20,2,10,7,None,Perception,Darkvision 60,None,"Hold Breath, Multiple Heads, Reactive Heads, Wakeful"
+Ice Toad,12,32,"30, swim 30",13,10,14,8,10,6,None,Perception,Darkvision 60,Own,"Amphibious, Cold Aura, Standing Leap"
+Marut,22,432,"40, fly 30",28,12,26,19,15,18,"INT, WIS, CHA","Insight, Intimidation, Perception",Darkvision 60,All,"Immutable Form, Innate Spellcasting, Legendary Resistance, Magic Resistance"
+Intellect Devourer,12,21,40,6,14,13,12,11,10,None,"Perception, Stealth",Blindsight 60,"Deep Speech, telepathy 60",Detect Sentience
+Invisible Stalker,14,104,"50, fly 50",16,19,14,10,15,11,None,"Perception, Stealth",Darkvision 60,"Auran, Common","Invisibility, Faultless Tracker"
+Jackalwere,12,18,40,11,15,11,13,11,10,None,"Deception, Perception, Stealth",Normal,Common,"Shapechanger, Keen Hearing, Keen Smell, Pack Tactics"
+Jaculi,14,16,"30, climb 20",15,14,11,2,8,3,None,"Athletics, Perception, Stealth",Blindsight 30,None,"Camouflage, Keen Smell"
+Kalka-Kylla,15,85,"30, swim 30",17,12,16,15,16,12,None,"Deception, Insight, Stealth",Blindsight 30,Olman,"Amphibious, False Appearance, Shell"
+Kamadan,13,67,30,16,16,14,3,14,10,None,"Perception, Stealth",Normal,None,"Keen Smell, Pounce"
+Kelpie,14,67,"10, swim 30",14,14,16,7,12,10,None,"Perception, Stealth",Blindsight 60,"Common, Sylvan","Amphibious, Seaweed Shape, False Appearance"
+Kenku,13,13,30,10,16,10,11,10,10,None,"Deception, Perception, Stealth",Normal,"Auran, Common","Ambusher, Mimicry"
+Ki-Rin,20,152,"60, fly 120",21,16,16,19,20,20,None,"Perception, Insight, Religion","Blindsight 30, darkvision 120","All, telepathy 120","Innate Spellcasting, Legendary Resistance, lair, Magic Resistance, Magic Weapons, Normal Spellcasting"
+Kobold,12,5,30,7,15,9,8,7,8,None,None,Darkvision 60,"Common, Draconic","Sunlight Sensitivity, Pack Tactics"
+Kobold Dragonshield,15,44,20,12,15,14,8,9,10,None,Perception,Darkvision 60,"Common, Draconic","Dragon's Resistance, Heart of the Dragon, Pack Tactics, Sunlight Sensitivity"
+Kobold Inventor,12,13,30,7,15,12,8,7,8,None,Perception,Darkvision 60,"Common, Draconic","Pack Tactics, Sunlight Sensitivity"
+Kobold Scale Sorcerer,15,27,30,7,15,14,10,9,14,None,"Arcana, Medicine",Darkvision 60,"COmmon, Draconic","Normal Spellcasting, Sorcery Points, Pack Tactics, Sunlight Sensitivity"
+Winged Kobold,13,7,"30, fly 30",7,16,9,8,7,8,None,None,Darkvision 60,"Common, Draconic","Sunlight Sensitivity, Pack Tactics"
+Korred,17,102,"30, burrow 30",23,14,20,10,15,9,None,"Athletics, Perception, Stealth","Darkvision 120, tremorsense 120","Dwarvish, Gnomish, Sylvan, Terran, Undercommon","Command Hair, Innate Spellcasting, Stone Camouflage, Stone's Strength"
+Kraken,18,472,"20, swim 60",30,11,25,22,18,20,"STR, DEX, CON, INT, WIS",None,Truesight 120,"Abyssal, Celestial, Infernal, Primordial, telepathy 120","Amphibious, Freedom of Movement, Siege Monster, Lair, Legendary"
+Malformed Kraken,17,172,"20, swim 40",25,11,20,11,15,15,"STR, CON, INT, WIS, CHA",None,Truesight 60,"Common, telepathy 60","Amphibious, Siege Monster"
+Kruthik Hive Lord,20,102,"40, burrow 20, climb 40",19,16,17,10,14,10,None,None,"Darkvision 60, tremorsense 60",Own,"Keen Smell, Pack Tactics, Tunneler"
+Adult Kruthik,18,39,"40, burrow 20, climb 40",15,16,15,7,12,8,None,None,"Darkvision 60, tremorsense 60",Own,"Keen Smell, Pack Tactics, Tunneler"
+Young Kruthik,16,9,"30, burrow 10, climb 30",13,16,13,4,10,6,None,None,"Darkvision 30, tremorsense 60",Own,"Keen Smell, Pack Tactics, Tunneler"
+Kuo-Toa,13,13,"30, swim 30",13,10,11,11,10,8,None,Perception,Darkvision 120,Undercommon,"Amphibious, Otherworldly Perception, Slippery, Sunlight Sensitivity"
+Kuo-Toa Archpriest,13,97,"30, swim 30",16,14,16,13,16,14,None,"Perception, Religion",Darkvision 120,Undercommon,"Amphibious, Otherworldly Perception, Slippery, Sunlight Sensitivity, Normal Spellcasting"
+Kuo-Toa Whip,11,65,"30, swim 30",14,10,14,12,14,11,None,"Perception, Religion",Darkvision 120,Undercommon,"Amphibious, Otherworldly Perception, Slippery, Sunlight Sensitivity, Normal Spellcasting"
+Lamia,13,97,30,16,13,15,14,15,16,None,"Deception, Insight, Stealth",Darkvision 60,"Abyssal, Common",Innate Spellcasting
+Leucrotta,14,67,50,18,14,15,9,12,6,None,"Deception, Perception",Darkvision 60,"Abyssal, Gnoll","Keen Smell, Kicking Retreat, Mimicry, Rampage"
+Lich,17,135,30,11,16,16,20,14,16,"CON, INT, WIS","Arcana, History, Insight, Perception",Truesight 120,"Common, Any","Legendary, Rejuvenation, Normal Spellcasting, Turn Resistance, Lair"
+Lizard King/Queen,15,78,"30, swim 30",17,12,15,11,11,15,"CON, WIS","Perception, Stealth, Survival",Darkvision 60,"Abyssal, Draconic","Hold Breath, Skewer"
+Lizardfolk,15,22,"30, swim 30",15,10,13,7,12,7,None,"Perception, Stealth, Survival",Normal,Draconic,Hold Breath
+Lizardfolk Shaman,13,27,"30, swim 30",15,10,13,10,15,8,None,"Perception, Stealth, Survival",Normal,Draconic,"Hold Breath, Normal Spellcasting"
+Werebear,11,135,"40, climb 30",19,10,17,11,12,12,None,Perception,Normal,Common,"Shapechanger, Keen Smell"
+Wereboar,11,78,40,17,10,15,10,11,8,None,Perception,Normal,Common,"Shapechanger, Charge, Relentless"
+Wererat,12,33,30,10,15,12,11,10,8,None,"Perception, Stealth",Darkvision 60,Common,"Shapechanger, Keen Smell"
+Wereraven,12,31,30,10,15,11,13,15,14,None,"Insight, Perception",Normal,Common,"Shapechanger, Mimicry"
+Weretiger,12,120,40,17,15,16,10,13,11,None,"Perception, Stealth",Darkvision 60,Common,"Shapechanger, Keen Hearing, Keen Smell, Pounce"
+Werewolf,12,58,40,15,13,14,10,11,10,None,"Perception, Stealth",Normal,Common,"Shapechanger, Keen Hearing, Keen Smell"
+Magmin,14,9,30,7,15,12,8,11,10,None,None,Darkvision 60,Ignan,"Death Burst, Ignited Illumination"
+Manticore,14,68,"30, fly 50",17,16,17,7,12,8,None,None,Darkvision 60,Common,Tail Spike Regrowth
+Mantrap,12,45,5,15,14,12,1,10,2,None,None,Tremorsense 30,None,"Attractive Pollen, False Appearance"
+Meazel,13,35,30,8,17,9,14,13,10,None,"Perception, Stealth",Darkvision 120,Common,Shadow Stealth
+Medusa,15,127,30,10,15,16,12,13,15,None,"Deception, Insight, Perception, Stealth",Darkvision 60,Common,Petrifying Gaze
+Meenlock,15,31,30,7,15,12,11,10,8,None,"Perception, Stealth, Survival",Darkvision 120,Telepathy 120,"Fear Aura, Light Sensitivity, Shadow Teleport"
+Dust Mephit,12,17,"30, fly 30",5,14,10,9,11,10,None,"Perception, Stealth",Darkvision 60,"Auran, Terran","Death Burst, Innate Spellcasting"
+Ice Mephit,11,21,"30, fly 30",7,13,10,9,11,12,None,"Perception, Stealth",Darkvision 60,"Aquan, Auran","Death Burst, False Appearance, Innate Spellcasting"
+Magma Mephit,11,22,"30, fly 30",8,12,12,7,10,10,None,Stealth,Darkvision 60,"Ignan, Terran","Death Burst, False Appearance, Innate Spellcasting"
+Mud Mephit,11,27,"20, fly 20, swim 20",8,12,12,9,11,7,None,Stealth,Darkivision 60,"Aquan, Terran","Death Burst, False Appearance"
+Smoke Mephit,12,22,"30, fly 30",6,14,12,10,10,11,None,"Perception, Stealth",Darkvision 60,"Auran, Ignan","Death Burst, Innate Spellcasting"
+Steam Mephit,10,21,"30, fly 30",5,11,10,11,10,12,None,None,Darkvision 60,"Aquan, Ignan","Death Burst, Innate Spellcasting"
+Merfolk,11,11,"10, swim 40",10,13,12,11,11,12,None,Perception,Normal,"Aquan, Common",Amphibious
+Merrow,13,45,"10, swim 40",18,10,15,8,10,9,None,"Death Burst, Innate Spellcasting",Darkvision 60,"Abyssal, Aquan",Amphibious
+Mimic,12,58,15,17,12,15,5,13,8,None,Stealth,Darkvision 60,None,"Shapechanger, Adhesive, False Appearance, Grappler"
+Mind Flayer,15,71,30,11,12,12,19,17,17,"INT, WIS, CHA","Arcana, Deception, Insight, Perception, Persuasion, Stealth","Darkvision 120,","Deep Speech, Undercommon, telepathy 120","Magic Resistance, Innate Spellcasting (Psionics)"
+Alhoon,15,120,30,11,12,16,19,17,17,"CON, INT, WIS, CHA","Arcana, Deception, History, Insight, Perception, Stealth",Truesight 120,"Deep Speech, Undercommon, telepathy 120","Magic Resistance, Innate Spellcasting (Psionics), Normal Spellcasting, Turn Resistance"
+Elder Brain,10,210,"5, swim 10",15,10,20,21,19,24,"INT, WIS, CHA","Arcana, Deception, Insight, Intimidation, Persuasion",Blindsight 120,"Common, Deep SPeech, Undercommon, telepathy 5 miles","Creature Sense, Innate Spellcasting (Psionics), Lair, Legendary Resistance, magic Resistance, Telepathic Hub"
+Ulitharid,15,127,30,15,12,15,21,19,21,"INT, WIS, CHA","Arcana, Insight, Perception, Stealth",Darkvision 120,"Deep Speech, Undercommon, telepathy 2 miles","Creature Sense, Magic Resistance, Psionic Hub, Innate SPellcasting (Psionics)"
+Mindwitness,15,75,fly 20,10,14,14,15,15,10,"INT, WIS",Perception,Darkvision 120,"Deep Speech, Undercommon, telepathy 600",Telepathic Hub
+Minotaur,14,76,40,18,11,16,6,16,9,None,Perception,Darkvision 60,Abyssal,"Charge, Labyrinthine Recall, Reckless"
+Ape,12,19,"30, climb 30",16,14,14,6,12,7,None,"Athletics, Perception",Normal,None,None
+Awakened Shrub,9,10,20,3,8,11,10,10,6,None,None,Normal,Creator,False Appearance
+Awakened Tree,13,59,20,19,6,15,10,10,7,None,None,Normal,Creator,False Appearance
+Axe Beak,11,19,50,14,12,12,2,10,5,None,None,Normal,None,None
+Baboon,12,3,"30, climb 30",8,14,11,4,12,6,None,None,Normal,None,Pack Tactics
+Badger,10,3,"20, burrow 5",4,11,12,2,12,5,None,None,Darkvision 30,None,Keen Smell
+Bat,12,1,"5, fly 30",2,15,8,2,12,4,None,None,Blindsight 60,None,"Echolocation, Keen Hearing"
+Black Bear,11,19,"40, climb 30",15,10,14,2,12,7,None,Perception,Normal,None,Keen Smell
+Blink Dog,13,22,40,12,17,12,10,13,11,None,"Perception, Stealth",Normal,"Own, Sylvan","Keen Hearing, Keen Smell, Pack Tactics"
+Blood Hawk,12,7,"10, fly 60",6,14,10,3,14,5,None,Perception,Normal,None,"Keen Sight, Pack Tactics"
+Boar,11,11,40,13,11,12,2,9,5,None,None,Normal,None,"Charge, Relentless"
+Brown Bear,11,34,"40, climb 30",19,10,16,2,13,7,None,Perception,Normal,None,Keen Smell
+Camel,9,15,50,16,8,14,2,8,5,None,None,Normal,None,None
+Cat,12,2,"40, climb 30",3,15,10,3,12,7,None,"Perception, Stealth",Normal,None,Keen Smell
+Constrictor Snake,12,13,"30, swim 30",15,14,12,1,10,3,None,None,Blindsight 10,None,None
+Crab,11,2,"20, swim 20",2,11,10,1,8,2,None,Stealth,Blindsight 30,None,Amphibious
+Crocodile,12,19,"20, swim 30",15,10,13,2,10,5,None,Stealth,Normal,None,Hold Breath
+Death Dog,12,39,40,15,14,14,3,13,6,None,"Perception, Stealth",Darkvision 120,None,Two-Headed
+Deer,13,4,50,11,16,11,2,14,5,None,None,Normal,None,None
+Dire Wolf,14,37,50,17,15,15,3,12,7,None,"Perception, Stealth",Normal,None,"Keen Hearing, Keen Smell, Pack Tactics"
+Draft Horse,10,19,40,18,10,12,2,11,7,None,None,Normal,None,None
+Eagle,12,3,"10, fly 60",6,15,10,2,14,7,None,Perception,Normal,None,Keen Sight
+Elephant,12,76,40,22,9,17,3,11,6,None,None,Normal,None,Trampling Charge
+Elk,10,13,50,16,10,12,2,10,6,None,None,Normal,None,Charge
+Flying Snake,14,5,"30, fly 60, swim 30",4,18,11,2,12,5,None,None,Blindsight 10,None,Flyby
+Frog,11,1,"20, swim 20",1,13,8,1,8,3,None,"Perception, Stealth",Darkvision 30,None,"Amphibious, Standing Leap"
+Giant Ape,12,157,"40, climb 40",23,14,18,7,12,7,None,"Athletics, Perception",Normal,None,None
+Giant Badger,10,13,"30, burrow 10",13,10,15,2,12,5,None,None,Darkvision 30,None,Keen Smell
+Giant Bat,13,22,"10, fly 60",15,16,11,2,12,6,None,None,Blindsight 60,None,"Echolocation, Keen Hearing"
+Giant Boar,12,42,40,17,10,16,2,7,5,None,None,Normal,None,"Charge, Relentless"
+Giant Centipede,13,4,30,5,14,12,1,7,3,None,None,Blindsight 30,None,None
+Giant Constrictor Snake,12,60,"30, swim 30",19,14,12,1,10,3,None,Perception,Blindsight 10,None,None
+Giant Crab,15,13,"30, swim 30",13,15,11,1,9,3,None,Stealth,Blindsight 30,None,Amphibious
+Giant Crocodile,14,85,"30, swim 50",21,9,17,2,10,7,None,Stealth,Normal,None,Hold Breath
+Giant Eagle,13,26,"10, fly 80",16,17,13,8,14,10,None,Perception,Normal,"Own, Common, Auran",Keen Sight
+Giant Elk,14,42,60,19,16,14,7,14,10,None,Perception,Normal,"Own, Common, Elvish, Sylvan",Charge
+Giant Fire Beetle,13,4,30,8,10,12,1,7,3,None,None,Blindsight 30,None,Illumination
+Giant Frog,11,18,"30, swim 30",12,13,11,2,10,3,None,"Perception, Stealth",Darkvision 30,None,"Amphibious, Standing Leap"
+Giant Goat,11,19,40,17,11,12,3,12,6,None,None,Normal,None,"Charge, Sure-Footed"
+Giant Hyena,12,45,50,16,14,14,2,12,7,None,Perception,Normal,None,Rampage
+Giant Lizard,12,19,"30, climb 30",15,12,13,2,10,5,None,None,Darkvision 30,None,None
+Giant Octopus,11,52,"10, swim 60",17,13,13,4,10,4,None,"Perception, Stealth",Darkvision 60,None,"Hold Breath, Underwater Camouflage, Water Breathing"
+Giant Owl,12,19,"5, fly 60",13,15,12,8,13,10,None,"Perception, Stealth",Darkvision 120,"Own, Common, Elvish, Sylvan","FLyby, Keen Hearing, Keen Sight"
+Giant Poisonous Snake,14,11,"30, swim 30",10,18,13,2,10,3,None,Perception,Blindsight 10,None,None
+Giant Rat,12,7,30,7,15,11,2,10,4,None,None,Darkvision 60,None,"Keen Smell, Pack Tactics"
+Giant Scorpion,15,52,40,15,13,15,1,9,3,None,None,Blindsight 60,None,None
+Giant Sea Horse,13,16,swim 40,12,15,11,2,12,5,None,None,Normal,None,"Charge, Water Breathing"
+Giant Shark,13,126,swim 50,23,11,21,1,10,5,None,Perception,Blindsight 60,None,"Blood Frenzy, Water Breathing"
+Giant Spider,14,26,"30, climb 30",14,16,12,2,11,4,None,Stealth,"Blindsight 10, darkvision 60",None,"Spider Climb, Web Sense, Web Walker"
+Giant Toad,11,39,"20, swim 40",15,13,13,2,10,3,None,None,Darkvision 30,None,"Amphibious, Standing Leap"
+Giant Vulture,10,22,"10, fly 60",15,10,15,6,12,7,None,Perception,Normal,Common,"Keen Sight, Keen Smell, Pack Tactics"
+Giant Wasp,12,13,"10, fly 50",10,14,10,1,10,3,None,None,Normal,None,None
+Giant Weasel,13,9,40,11,16,10,4,12,5,None,"Perception, Stealth",Darkvision 60,None,"Keen Hearing, Keen Smell"
+Giant Wolf Spider,13,11,"40, climb 40",12,16,13,3,12,4,None,"Perception, Stealth","Blindsight 10, darkvision 60",None,"Spider Climb, Web Sense, Web Walker"
+Goat,10,4,40,12,10,11,2,10,5,None,None,Normal,None,"Charge, Sure-Footed"
+Hawk,13,1,"10, fly 60",5,16,8,2,14,6,None,Perception,Normal,None,Keen Sight
+Hunter Shark,12,45,swim 40,18,13,15,1,10,4,None,Perception,Blindsight 30,None,"Blood Frenzy, Water Breathing"
+Hyena,11,5,50,11,13,12,2,12,5,None,Perception,Normal,None,Pack Tactics
+Jackal,12,3,40,8,15,11,3,12,6,None,Perception,Normal,None,"Keen Hearing, Keen Smell, Pack Tactics"
+Killer Whale,12,90,swim 60,19,10,13,3,12,7,None,Perception,Blindsight 120,None,"Echolocation, Hold Breath, Keen Hearing"
+Lion,12,26,50,17,15,13,3,12,8,None,"Perception, Stealth",Normal,None,"Keen Smell, Pack Tactics, Pounce, Running Leap"
+Lizard,10,2,"20, climb 20",2,11,10,1,8,3,None,None,Darkvision 30,None,None
+Mammoth,13,126,40,24,9,21,3,11,6,None,None,Normal,None,Trampling Charge
+Mastiff,12,5,40,13,14,12,3,12,7,None,Perception,Normal,None,"Keen Hearing, Keen Smell"
+Mule,10,11,40,14,10,13,2,10,5,None,None,Normal,None,"Beast of Burden, Sure-Footed"
+Octopus,12,3,"5, swim 30",4,15,11,3,10,4,None,"Perception, Stealth",Darkvision 30,None,"Hold Breath, Underwater Camouflage, Water Breathing"
+Owl,11,1,"5, fly 60",3,13,8,2,12,7,None,"Perception, Stealth",Darkvision 120,None,"FLyby, Keen Hearing, Keen Sight"
+Panther,12,13,"50, climb 40",14,15,10,3,14,7,None,"Perception, Stealth",Normal,None,"Keen Smell, Pounce"
+Phase Spider,13,32,"30, climb 30",15,15,12,6,10,6,None,Stealth,Darkvision 60,None,"Ethereal Jaunt, Spider Climb, Web Walker"
+Poisonous Snake,13,13,"30, swim 30",2,16,11,1,10,3,None,None,Blindsight 10,None,None
+Polar Bear,12,42,"40, swim 30",20,10,16,2,13,7,None,Perception,Normal,None,Keen Smell
+Pony,10,11,40,15,10,13,2,11,7,None,None,Normal,None,None
+Quipper,13,1,swim 40,2,16,9,1,7,2,None,None,Darkvision 60,None,"Blood Frenzy, Water Breathing"
+Rat,10,1,20,2,11,9,2,10,4,None,None,Darkvision 30,None,Keen Smell
+Raven,12,1,"10, fly 50",2,14,8,2,12,6,None,Perception,Normal,None,Mimicry
+Reef Shark,12,22,swim 40,14,13,13,1,10,4,None,Perception,Blindsight 30,None,"Pack Tactics, Water Breathing"
+Rhinoceros,11,45,40,21,8,15,2,12,6,None,None,Normal,None,Charge
+Riding Horse,10,13,60,16,10,12,2,11,7,None,None,Normal,None,None
+Saber-Toothed Tiger,12,52,40,18,14,15,3,12,8,None,"Perception, Stealth",Normal,None,"Keen Smell, Pounce"
+Scorpion,11,1,10,2,11,8,1,8,2,None,None,Normal,None,None
+Sea Horse,11,1,swim 20,1,12,8,1,10,2,None,None,Normal,None,Water Breathing
+Spider,12,1,"20, climb 20",2,14,8,1,10,2,None,Stealth,Darkvision 30,None,"Spider Climb, Web Sense, Web Walker"
+Swarm of Bats,12,22,fly 30,5,15,10,2,12,4,None,None,Blindsight 60,None,"Echolocation, Keen Hearing Swarm"
+Swarm of Insects,12,22,"20, climb 20",3,13,10,1,7,1,None,None,Blindsight 10,None,Swarm
+Swarm of Poisonous Snakes,14,36,"30, swim 30",8,18,11,1,10,3,None,None,Blindsight 10,None,Swarm
+Swarm of Quippers,13,28,swim 40,13,16,9,1,7,2,None,None,Normal,None,"Blood Frenzy, Swarm, Water Breathing"
+Swarm of Rats,10,24,30,9,11,9,2,10,3,None,None,Normal,None,"Keen Smell, Swarm"
+Swarm of Ravens,12,24,"10, fly 50",6,14,8,3,12,6,None,Perception,Normal,None,Swarm
+Tiger,12,37,40,17,15,14,3,12,8,None,"Perception, Stealth",Darkvision 60,None,"Keen Smell, Pounce"
+Vulture,10,5,"10, fly 50",7,10,13,2,12,4,None,Perception,Normal,None,"Keen Sight, Keen Smell, Pack Tactics"
+Warhorse,11,19,60,18,12,13,2,12,7,None,None,Normal,None,Trampling Charge
+Weasel,13,1,30,3,16,8,2,12,3,None,"Perception, Stealth",Normal,None,"Keen Hearing, Keen Smell"
+Winter Wolf,13,75,50,18,13,14,7,12,8,None,"Perception, Stealth",Normal,"Common, Giant, Own","Keen Hearing, Keen Smell, Pack Tactics, Snow Camouflage"
+Wolf,13,11,40,12,15,12,3,12,6,None,"Perception, Stealth",Normal,None,"Keen Hearing, Keen Smell, Pack Tactics"
+Worg,13,26,50,16,13,13,7,11,8,None,Perception,Darkvision 60,"Goblin, Own","Keen Hearing, Keen Smell"
+Duodrone,15,11,30,11,13,12,6,10,7,None,None,Truesight 120,Modron,"Axiomatic Mind, Disintegration"
+Monodrone,15,5,"30, fly 30",1,13,12,4,10,5,None,None,Truesight 120,Modron,"Axiomatic Mind, Disintegration"
+Pentadrone,16,32,40,15,14,12,10,10,13,None,Perception,Truesight 120,Modron,"Axiomatic Mind, Disintegration"
+Quadrone,16,22,"30, fly 30",12,14,12,10,10,11,None,Perception,Truesight 120,Modron,"Axiomatic Mind, Disintegration"
+Tridrone,15,16,30,12,13,12,9,10,9,None,None,Truesight 120,Modron,"Axiomatic Mind, Disintegration"
+Mongrelfolk,11,26,20,12,9,15,9,10,6,None,"Deception, Perception, Stealth",Normal,Common,Mimicry
+Morkoth,17,130,"25, swim 50",14,14,14,20,15,13,"DEX, INT, WIS","Arcana, History, Perception, Stealth","Blindsight 30, darkvision 120",Telepathy 120,"Amphibious, Normal Spellcasting"
+Mummy,11,58,20,16,8,15,6,10,12,WIS,None,Darkvision 60,Any,None
+Mummy Lord,17,97,20,18,10,17,11,18,16,"CON, INT, WIS, CHA","History, Religion",Darkvision 60,Any,"Magic Resistance, Rejuvenation, Normal Spellcasting, Legendary, Lair"
+Myconid Adult,12,22,20,10,10,12,10,13,7,None,None,Darkvision 120,None,"Distress Spores, Sun Sickness"
+Myconid Sovereign,13,60,30,12,10,14,13,15,10,None,None,Darkvision 120,None,"Distress Spores, Sun Sickness"
+Myconid Sprout,10,7,10,8,10,10,8,11,5,None,None,Darkvision 120,None,"Distress Spores, Sun Sickness"
+Naergoth Bladelord,18,135,30,20,12,16,12,14,16,"DEX, WIS","Perception, Stealth",Darkvision 60,"Common, Draconic",Sunlight Sensitivity
+Bone Naga,15,58,30,15,16,12,15,15,16,None,None,Darkvision 60,"Common, Any",Normal Spellcasting
+Guardian Naga,18,127,40,19,18,16,16,19,18,"DEX, CON, INT, WIS, CHA",None,Darkvision 60,"Celestial, Common","Rejuvenation, Normal Spellcasting"
+Spirit Naga,15,75,40,18,17,14,16,15,16,"DEX, CON, INT, WIS, CHA",None,Darkvision 60,Abyssal Common,"Rejuvenation, Normal Spellcasting"
+Nagpa,19,187,30,9,15,12,23,18,21,"INT, WIS, CHA","Arcana, Deception, History, Insight, Perception",Truesight 120,"Common, Any","Corruption, Paralysis, Normal Spellcasting"
+Neogi,15,33,"30, climb 30",6,16,14,13,12,15,None,"Intimidation, Perception",Darkvision 60,"Common, Deep SPeech, Undercommon","Mental Fortitude, Spider Climb"
+Neogi Hatchling,11,7,"20, climb 20",3,13,10,6,10,9,None,None,Darkvision 60,None,"Mental Fortitude, Spider Climb"
+Neogi Master,15,71,"30, climb 30",6,16,14,16,12,18,WIS,"Arcana, Deception, Intimidation, Perception, Persuasion",Darkvision 120,"Common, Deep Speech, Undercommon","Mental Fortitude, Normal Spellcasting, Spider Climb"
+Neothelid,16,325,30,27,7,21,3,16,12,"INT, WIS, CHA",None,Blindsight 120,None,"Creature Sense, Innate Spellcasting (Psionics), Magic Resistance"
+Nereid,13,44,"30, swim 60",10,17,12,13,14,16,None,"Acrobatics, Nature, Stealth, Survival",Darkvision 60,"Aquan, Common, Elvish, Sylvan","Amphibious, Aquatic Invisibility, Mantle Dependent, Shape Water, Speak with Animals"
+Nightmare,13,68,"60, fly 90",18,15,16,10,13,15,None,None,Normal,"Abyssal, Common, Infernal","Confer Fire Resistance, Illumination"
+Nightwalker,14,297,"40, fly 40",22,19,24,6,9,8,CON,None,Darkvision 120,None,"Annihilating Aura, Life Eater"
+Nilbog,13,7,30,8,14,10,10,8,15,None,Stealth,Darkvision 60,"COmmon, Goblin","Innate Spellcasting, Nilbogism, Nimble Escape"
+Nothic,15,45,30,14,16,16,13,10,8,None,"Arcana, Insight, Perception, Stealth",Truesight 120,Undercommon,Keen Sight
+Abjurer,12,84,30,9,14,14,18,12,11,"INT, WIS","Arcana, History",Normal,Any,"Normal Spellcasting, Arcane Ward"
+Acolyte,10,9,30,10,10,10,10,14,11,None,"Medicine, Religion",Normal,Any,Normal Spellcasting
+Apprentice Wizard,10,9,30,10,10,10,14,10,11,None,"Arcana, History",Normal,Any,Normal Spellcasting
+Archdruid,16,132,30,10,14,12,12,20,11,"INT, WIS","Medicine, Nature, Perception",Normal,"Druidic, Any",Normal Spellcasting
+Archer,16,75,30,11,18,16,11,13,10,None,"Acrobatics, Perception, Stealth",Normal,Any,Archer's Eye
+Archmage,12,99,30,10,14,12,20,15,16,"INT, WIS","Arcana, History",Normal,Any,"Magic Resistance, Normal Spellcasting"
+Assassin,15,78,30,11,16,14,13,11,10,"DEX, INT","Acrobatics, Deception, Perception, Stealth",Normal,"Thieves' Cant, Any","Assassinate, Evasion, Sneak Attack"
+Bandit,12,11,30,11,12,12,10,10,10,None,None,Normal,Any,None
+Bandit Captain,15,65,30,15,16,14,14,11,14,"STR, DEX, WIS","Athletics, Deception",Normal,Any,None
+Bard,15,44,30,11,14,12,10,13,14,"DEX, WIS","Acrobatics, Perception, Performance",Normal,Any,"Normal SPellcasting, Song of Rest, Taunt"
+Berserker,13,67,30,16,12,17,9,11,9,None,None,Normal,Any,Reckless
+Blackguard,18,153,30,18,11,18,11,14,15,"WIS, CHA","Athletics, Deception, Intimidation",Normal,Any,Normal Spellcasting
+Champion,18,143,30,20,15,14,10,14,12,"STR, CON","Athletics, Intimidation, Perception",Normal,Any,"Indomitable, Second Wind"
+Commoner,10,4,30,10,10,10,10,10,10,None,None,Normal,Any,None
+Conjurer,12,40,30,9,14,11,17,12,11,"INT, WIS","Arcana, History",Normal,Any,"Normal Spellcasting, Benign Transportation"
+Cult Fanatic,13,33,30,11,14,12,10,13,14,None,"Deception, Persuasion, Religion",Normal,Any,"Dark Devotion, Normal Spellcasting"
+Cultist,12,9,30,11,12,10,10,11,10,None,"Deception, Religion",Normal,Any,Dark Devotion
+Diviner,12,67,30,9,14,11,18,12,11,"INT, WIS","Arcana, History",Normal,Any,"Normal Spellcasting, Portent"
+Druid,11,27,30,10,12,13,12,15,11,None,"Medicine, Nature, Perception",Normal,"Druidic, Any",Normal Spellcasting
+Enchanter,12,40,30,9,14,11,17,12,11,"INT, WIS","Arcana, History",Normal,Any,Normal SPellcasting
+Evoker,12,66,30,9,14,12,17,12,11,"INT, WIS","Arcana, History",Normal,Any,"Normal Spellcasting, Sculpt Spells"
+Gladiator,16,112,30,18,15,16,10,12,15,"STR, DEX, CON, INT, WIS","Athletics, Intimidation",Normal,Any,"Brave, Brute"
+Guard,16,11,30,13,12,12,10,11,10,None,Perception,Normal,Any,None
+Illusionist,12,38,30,9,14,13,16,11,12,"INT, WIS","Arcana, History",Normal,Any,"Normal Spellcasting, Displacement"
+Knight,18,52,30,16,11,14,11,11,15,"CON, WIS",None,Normal,Any,Brave
+Kraken Priest,10,75,"30, swim 30",12,10,16,10,15,14,None,Perception,Normal,Any,"Amphibious, Innate Spellcasting"
+Mage,12,40,30,9,14,11,17,12,11,"INT, WIS","Arcana, History",Normal,Any,Normal Spellcasting
+Martial Arts Adept,16,60,40,11,17,13,11,16,10,None,"Acrobatics, Insight, Stealth",Normal,Any,Unarmored Defense
+Master Thief,16,84,30,11,18,14,11,11,12,"DEX, INT","Acrobatics, Athletics, Perception, Sleight of Hand, Stealth",Normal,"Any, Thieves' Cant","Cunning ACtion, Evasion, Sneak Attack"
+Necromancer,12,66,30,9,14,12,17,12,11,"INT, WIS","Arcana, History",Normal,Any,"Normal Spellcasting, Grim Harvest"
+Noble,15,9,30,11,12,11,12,14,16,None,"Deception, Insight, Persuasion",Normal,Any,None
+Priest,13,27,25,10,10,12,13,16,13,None,"Medicine, Persuasion, Religion",Normal,Any,"Divine Eminence, Spellcasting"
+Scout,13,16,30,11,14,12,11,13,11,None,"Nature, Perception, Stealth, Survival",Normal,Any,"Keen Hearing, Keen Sight"
+Spy,12,27,30,10,15,10,12,14,16,None,"Deception, Insight, Investigation, Perception, Persuasion, Sleight of Hand, Stealth",Normal,Any,"Cunning Action, Sneak Attack"
+Swashbuckler,17,66,30,12,18,12,14,11,15,None,"Acrobatics, Athletics, Persuasion",Normal,Any,"Lightfooted, Suave Defense"
+Thug,11,32,30,15,11,14,10,10,11,None,Intimidation,Normal,Any,Pack Tactics
+Transmuter,12,40,30,9,14,11,17,12,11,"INT, WIS","Arcana, History",Normal,Any,"Normal Spellcasting, Transmuter's Stone"
+Tribal Warrior,12,11,30,13,11,12,8,11,8,None,None,Normal,Any,Pack Tactics
+Veteran,17,58,30,16,13,14,10,11,10,None,"Athletics, Perception",Normal,Any,None
+War Priest,18,117,30,16,10,14,11,17,13,"CON, WIS","Intimidation, Religion",Normal,Any,Normal Spellcasting
+Warlock of the Archfey,11,49,30,9,13,11,11,12,18,"WIS, CHA","Arcana, Deception, nature, Persuasion",Normal,Any,"Innate Spellcasting, Normal Spellcasting"
+Warlock of the Fiend,12,78,30,10,14,15,12,12,18,"WIS, CHA","Arcana, Deception, Persuasion, Religion",Darkvision 60,Any,"Innate SPellcasting, Normal Spellcasting, Dark One's Own Luck"
+Warlock of the Great Old One,12,91,30,9,14,15,12,12,18,"WIS, CHA","Arcana, History",Darkvision 60,"Any, telepathy 30","Innate Spellcasting, Normal Spellcasting, Whispering Aura"
+Warlord,18,229,30,20,16,18,12,12,18,"STR, DEX, CON","Athletics, Intimidation, Perception, Persuasion",Normal,Any,"Indomitable, Survivor"
+Oblex Spawn,13,18,20,8,16,15,14,11,10,"INT, CHA",None,Blindsight 60,None,"Amorphous, Aversion to Fire"
+Adult Oblex,14,75,20,8,19,16,19,12,15,"INT, CHA","Deception, Perception, Arcana, History, Nature, Religion",Blindsight 60,"Common, Any","Amorphous, Aversion to Fire, Innate Spellcasting, Sulfurous Impersonation"
+Elder Oblex,16,115,20,15,16,21,22,13,18,"INT, CHA","Arcana, Deception, History, Nature, Perception, Religion",Blindsight 60,"Common, Any","Amorphous, Aversion to Fire, Innate Spellcasting, Sulfurous Impersonation"
+Ogre,11,59,40,19,8,16,5,7,7,None,None,Darkvision 60,"Common, Giant",None
+Ogre Battering Ram,14,59,40,19,8,16,5,7,7,None,None,Darkvision 60,"Common, Giant",Siege Monster
+Ogre Bolt Launcher,13,59,40,19,12,16,5,7,7,None,None,Darkvision 60,"Common, Giant",None
+Ogre Chain Brute,11,59,40,19,8,16,5,7,7,None,None,Darkvision 60,"Common, Giant",None
+Ogre Howdah,13,59,40,19,8,16,5,7,7,None,None,Darkvision 60,"Common, Giant",Howdah
+Half-ogre,12,30,30,17,10,14,7,9,10,None,None,Darkvision 60,"Common, Giant",None
+Oni,16,110,"30, fly 30",19,11,16,14,12,15,"DEX, CON, WIS, CHA","Arcana, Deception, Perception",Darkvision 60,"Common, Giant","Innate Spellcasting, Magic Weapons, Regeneration"
+Ooze Master,9,138,"30, climb 30",16,1,20,17,10,16,"INT, WIS","Arcana, Insight",Blindsight 120,"Common, Primordial, Thayan","Corrosive Form, Instinctive Attack, Normal Spellcasting, Spider Climb"
+Black Pudding,7,85,"20, climb 20",16,5,16,1,6,1,None,None,Blindsight 60,None,"Amorphous, Corrosive Form, Spider Climb"
+Gelatinous Cube,6,84,15,14,3,20,1,6,1,None,None,Blindsight 60,None,"Ooze Cube, Transparent"
+Gray Ooze,8,22,"10, climb 10",12,6,16,1,6,2,None,Stealth,Blindsight 60,None,"Amorphous, Corrode Metal, False Appearance"
+Ochre Jelly,8,45,"10, climb 10",15,6,14,2,6,1,None,None,Blindsight 60,None,"Amorphous, Spider Climb"
+Orc,13,15,30,16,12,16,7,11,10,None,Intimidation,Darkvision 60,"Common, Orc",Aggressive
+Orc Blade of Ilneval,18,60,30,17,11,17,10,12,14,WIS,"Perception, Insight, Intimidation",Darkvision 60,"Common, Orc","Aggressive, Foe Smiter of Ilneval"
+Orc Claw of Luthic,14,45,30,14,15,16,10,15,11,None,"Intimidation, Medicine, Survival",Darkvision 60,"COmmon, Orc","Aggressive, Normal Spellcasting"
+Orc Eye of Gruumsh,16,45,30,16,12,16,9,13,12,None,"Intimidation, Religion",Darkvision 60,"Common, Orc","Aggressive, Gruumsh's Fury, Normal Spellcasting"
+Orc Hand of Yurtrus,12,30,30,12,11,16,11,14,9,None,"Arcana, Intimidation, Medicine, Religion",Darkvision 60,"Common, Orc","Aggressive, Normal Spellcasting"
+Orc Nurtured One of Yurtrus,9,30,30,15,8,16,7,11,7,None,None,Darkvision 60,"Common, Orc","Aggressive, Corrupted Carrier, Nurtured One of Yurtrus"
+Orc Red Fang of Shargaas,15,52,30,11,16,15,9,11,9,None,"Intimidation, Perception, Stealth",Darkvision 60,"Common, Orc","Cunning Action, Hand of Shargaas, Shargaas' Sight, Slayer"
+Orc War Chief,16,93,30,18,12,18,11,11,16,"STR, CON, WIS",Intimidation,Darkvision 60,"Common, Orc","Aggressive, Gruumsh's Fury"
+Orog,18,42,30,18,12,18,12,11,12,None,"Intimidation, Survival",Darkvision 60,"Common, Orc",Aggressive
+Tanarukk,14,95,30,18,13,20,9,9,9,None,"Intimidation, Perception",Darkvision 60,"Abyssal, Common, Orc","Aggressive, Magic Resistance"
+Otyugh,14,114,30,16,11,19,6,13,6,CON,None,Darkvision 120,Own,Limited Telepathy
+Owlbear,13,59,40,20,12,17,3,12,7,None,Perception,Darkvision 60,None,"Keen Sight, Keen Smell"
+Pegasus,12,59,"60, fly 90",18,15,16,10,15,13,"DEX, WIS, CHA",Perception,Normal,"Celestial, Common, Elvish, Sylvan",None
+Peryton,13,33,"20, fly 60",16,12,13,9,12,10,None,Perception,Normal,"Common, Elvish","Dive Attack, Flyby, Keen Sight, Keen Smell"
+Phantom Warrior,16,45,30,16,11,16,8,10,15,None,"Perception, Stealth",Darkvision 60,Any,"Ethereal Sight, Incorporeal Movement, Spectral Armor and Shield"
+Piercer,15,22,"5, climb 5",10,13,16,1,7,3,None,Stealth,"Blindsight 30, darkvision 60",None,"False Appearance, Spider Climb"
+Pixie,15,1,"10, fly 30",2,20,8,10,14,15,None,"Perception, Stealth",Normal,Sylvan,"Magic Resistance, Innate Spellcasting (Psionics)"
+Pseudodragon,13,7,"15, fly 60",6,15,13,10,12,10,None,"Perception, Stealth","Blindsight 10, darkvision 60","Common, Draconic","Keen Senses, Magic Resistance, Limited Telepathy"
+Pterafolk,12,26,"30, fly 50",15,13,12,9,10,11,None,"Perception, Survival",Normal,Common,Terror Dive
+Purple Worm,18,247,"50, burrow 30",28,7,22,1,8,4,"CON, WIS",None,"Blindsight 30, tremorsense 60",None,Tunneler
+Purple Wormling,12,42,20,16,7,16,1,6,2,None,None,"Blindsight 30, tremorsense 30",None,None
+Quaggoth,13,45,"30, climb 30",17,12,16,6,12,7,None,Athletics,Darkvision 120,Undercommon,Wounded Fury
+Quickling,16,10,120,4,23,13,10,12,7,None,"Acrobatics, Sleight of Hand, Stealth, Perception",Darkvision 60,"Common, Sylvan","Blurred Movement, Evasion"
+Rakshasa,16,110,40,14,17,18,13,16,20,None,"Deception, Insight",Darkvision 60,"Common, Infernal","Limited Magic Immunity, Innate Spellcasting"
+Redcap,13,45,25,18,13,18,10,12,9,None,"Athletics, Perception",Darkvision 60,"Common, Sylvan","Iron Boots, Outsize Strength"
+Remorhaz,17,195,"30, burrow 20",24,13,21,4,10,5,None,None,"Darkvision 60, tremorsense 60",None,Heated Body
+Young Remorhaz,14,93,"30, burrow 20",18,13,17,3,10,4,None,None,"Darkvision 60, tremorsense 60",None,Heated Body
+Retriever,19,210,"40, climb 40",22,16,20,3,11,4,"DEX, CON, WIS","Perception, Stealth","Blindsight 30, darkvision 60","Abyssal, Elvish, Undercommon","Faultless Tracker, Innate Spellcasting"
+Revenant,13,136,30,18,14,18,13,16,18,"STR, CON, WIS, CHA",None,Darkvision 60,Any,"Regeneration, Rejuvenation, Turn Immunity, Vengeful Tracker"
+Roc,15,248,"20, fly 120",28,10,20,3,10,9,"DEX, CON, WIS, CHA",Perception,Normal,None,Keen Sight
+Roper,20,93,"10, climb 10",18,8,17,7,16,6,None,"Perception, Stealth",Darkvision 60,None,"False Appearance, Grasping Tendrils, Spider Climb"
+Rust Monster,14,27,40,13,12,13,2,13,6,None,None,Darkvision 60,None,"Iron Scent, Rust Metal"
+Sahuagin,12,22,"30, swim 40",13,11,12,12,13,9,None,Perception,Darkvision 120,Own,"Blood Frenzy, Limited Amphibious, Shark Telepathy"
+Sahuagin Baron,16,76,"30, swim 50",19,15,16,14,13,17,"DEX, CON, INT, WIS",Perception,Darkvision 120,Own,"Blood Frenzy, Limited Amphibious, Shark Telepathy"
+Sahuagin Priestess,12,33,"30, swim 40",13,11,12,12,14,13,None,"Perception, Religion",Darkvision 120,Own,"Blood Frenzy, Limited Amphibious, Shark Telepathy, Normal Spellcasting"
+Salamander,15,90,30,18,14,15,11,10,12,None,None,Darkvision 60,Ignan,Heated Body
+Fire Snake,14,22,30,12,14,11,7,10,8,None,None,Darkvision 60,Ignan,"Heated Body, Heated Weapons"
+Frost Salamander,17,168,"60, burrow 40, climb 40",20,12,18,7,11,7,"CON, WIS",Perception,"Darkvision 60, tremorsense 60",Primordial,Burning Fury
+Satyr,14,31,40,12,16,11,12,10,14,None,"Perception, Performance, Stealth",Normal,"Common, Elvish, Sylvan",Magic Resistance
+Scarecrow,11,36,30,11,13,11,10,10,13,None,None,Darkvision 60,Creator,False Appearance
+Sea Lion,15,90,"10, swim 40",17,15,15,3,12,8,None,"Perception, Stealth",Normal,None,"Amphibious, Keen Smell, Pack Tactics, Swimming Leap"
+Sea Spawn,11,32,"20, swim 30",15,8,15,6,10,8,None,None,Darkvision 120,"Aquan, Common",Limited Amphibiousness
+Shadar-Kai Gloom Weaver,14,104,30,11,18,14,15,12,18,"DEX, CON",None,Darkvision 60,"Common, Elvish","Burden of Time, Fey Ancestry, Innate Spellcasting, Normal Spellcasting"
+Shadar-Kai Shadow Dancer,15,71,30,12,16,13,11,12,12,"DEX, CHA",Stealth,Darkvision 60,"Common, Elvish","Fey Ancestry, Shadow Jump"
+Shadar-Kai Soul Monger,15,123,30,8,17,14,19,15,13,"DEX, WIS, CHA",Perception,Darkvision 60,"Common, Elvish","Fey Ancestry, Innate Spellcasting, Magic Resistance, Soul Thirst, Weight of Ages"
+Shadow,12,16,40,6,14,13,6,10,8,None,Stealth,Darkvision 60,None,"Amorphous, Shadow Stealth, Sunlight Weakness"
+Shadow Dragon Template,18,TEMP,TEMP,23,10,21,14,11,19,TEMP,TEMP,TEMp,TEMp,TEMP
+Shadow Mastiff,12,33,40,16,14,13,5,12,5,None,"Perception, Stealth",Darkvision 60,None,"Ethereal Awareness, Keen Hearing, Keen Smell, Shadow Blend, Sunlight Weakness"
+Shadow Mastiff Alpha,12,48,40,16,14,13,6,12,5,None,"Perception, Stealth",Darkvision 60,None,"Ethereal Awareness, Keen Hearing, Keen Smell, Shadow Blend, Sunlight Weakness"
+Shambling Mound,15,136,"20, swim 20",18,8,16,5,10,5,None,Stealth,Blindsight 60,None,Lightning Absorption
+Shield Guardian,17,142,30,18,8,18,7,1,,None,None,"Blindsight 10, darkvision 60",Any,"Bound, Regeneration, Spell Storing"
+Siren,14,38,"30, swim 30",10,18,12,13,14,16,None,"Medicine, Nature, Stealth, Survival",Darkvision 60,"Common, Elvish, Sylvan","Amphibious, INnate Spellcasting, Magic Resistance"
+Skeleton,13,13,30,10,14,15,6,8,5,None,None,Darkvision 60,Any,None
+Giant Skeleton,17,115,30,21,10,20,4,6,6,None,None,Darkvision 60,Giant,"Evasion, Magic Resistance, Turn Immunity"
+Minotaur Skeleton,12,67,40,18,11,15,6,8,5,None,None,Darkvision 60,Abyssal,Charge
+Warhorse Skeleton,13,22,60,18,12,15,2,8,5,None,None,Darkvision 60,None,None
+Skulk,14,18,30,6,19,10,10,7,1,CON,Stealth,Darkvision 120,Common,"Fallible Invisibility, Trackless"
+Skull Lord,18,105,30,14,16,17,16,15,21,None,"Athletics, History, Perception, Stealth","Legendary Resistance, Master of the Grave, Evasion, Normal Spellcasting",Any,"Legendary Resistance, Master of the Grave, Evasion, Normal Spellcasting"
+Slaad Tadpole,12,10,30,7,15,10,3,5,3,None,Stealth,Darkvision 60,Own,Magic Resistance
+Blue Slaad,15,123,30,20,15,18,7,7,9,None,Perception,Darkvision 60,"Own, telepathy 60","Magic Resistance, Regeneration"
+Death Slaad,18,170,30,20,15,19,15,10,16,None,"Arcana, Perception","Blindsight 60, darkvision 60","Own, telepathy 60","Shapechanger, Innate Spellcasting, Magic Resistance, Magic Weapons, Regeneration"
+Gray Slaad,18,127,30,17,17,16,13,8,14,None,"Arcana, Perception","Blindsight 60, darkvision 60","Own, telepathy 60","Shapechanger, Innate Spellcasting, Magic Resistance, Magic Weapons, Regeneration"
+Green Slaad,16,127,30,18,15,16,11,8,12,None,"Arcana, Perception","Blindsight 30, darkvision 60","Own, telepathy 60","Shapechanger, Innate Spellcasting, Magic Resistance, Regeneration"
+Red Slaad,14,93,30,16,12,16,6,6,7,None,Perception,Darkvision 60,"Own, telepathy 60","Magic Resistance, Regeneration"
+Slithering Tracker,14,32,"30, climb 30, swim 30",16,19,15,10,14,11,None,Stealth,Blindsight 120,Any,"Ambusher, Damage Transfer, False Appearance, Keen Tracker, Liquid Form, Spider Climb, Watery Stealth"
+Angry Sorrowsworn,18,255,30,17,10,19,8,13,6,None,Perception,Darkvision 60,Common,"Two Heads, Rising Anger"
+Hungry Sorrowsworn,17,225,30,19,10,17,6,11,6,None,None,Darkvision 60,Common,Life Hunger
+Lonely Sorrowsworn,16,112,30,16,12,17,6,11,6,None,None,Darkvision 60,Common,"Psychic Leech, Thrives on Company"
+Lost Sorrowsworn,15,78,30,17,12,15,6,7,5,None,Athletics,Darkvision 60,Common,None
+Wretched Sorrowsworn,15,10,40,7,12,9,5,6,5,None,None,Darkvision 60,None,Wretched Pack Tactics
+Spawn of Kyuss,10,76,30,16,11,18,5,7,3,WIS,None,Darkvision 60,Any,"Regeneration, Worms"
+Specter,12,22,fly 50,1,14,11,10,10,11,None,None,Darkvision 60,Any,"Incorporeal Movement, Sunlight Sensitivity"
+Androsphinx,17,199,"40, fly 60",22,10,20,16,18,23,"DEX, CON, INT, WIS","Arcana, Perception, Religion",Truesight 120,"Common, Own","Inscrutable, Magic Weapons, Normal Spellcasting, Lair, Legendary"
+Gynosphinx,17,136,"40, fly 60",18,15,16,18,18,18,None,"Arcana, History, Perception, Religion",Truesight 120,"Common, Own","Inscrutable, Magic Weapons, Normal Spellcasting, Legendary, Lair"
+Sprite,15,2,"10, fly 40",3,18,10,14,13,11,None,"Perception, Stealth",Normal,"Common, Elvish, Sylvan",None
+Star Spawn Grue,11,17,30,6,13,10,9,11,6,None,None,Darkvision 60,Deep Speech,Aura of Madness
+Star Spawn Hulk,16,136,30,20,8,21,7,12,9,"DEX, WIS",Perception,Darkvision 60,Deep Speech,Psychic Mirror
+Star Spawn Larva Mage,16,168,30,17,12,23,18,12,16,"DEX, WIS, CHA",Perception,Darkvision 60,Deep Speech,"Innate Spellcasting, Return to Worms, Legendary"
+Star Spawn Mangler,14,71,"40, climb 40",8,18,12,11,12,7,"DEX, CON",Stealth,Darkvision 60,Deep Speech,"Ambusher, Shadow Stealth"
+Star Spawn Seer,17,153,30,14,12,18,22,19,16,"DEX, INT, WIS, CHA",Perception,Darkvision 60,"Common, Deep Speech, Undercommon",Out-of-Phase Movement
+Female Steeder,14,30,"30, climb 30",15,16,14,2,10,3,None,"Perception, Stealth",Darkvision 120,None,"Spider Climb, Extraordinary Leap"
+Male Steeder,12,13,"30, climb 30",15,12,14,2,10,3,None,"Stealth, Perception",Darkvision 120,None,"Spider Climb, Extraordinary Leap"
+Steel Predator,20,207,40,24,17,22,4,14,6,None,"Perception, Stealth, Survival","Blindsight 30, darkvision 60","Modron, Any","Innate Spellcasting, Magic Resistance, Magic Weapons"
+Stirge,14,2,"10, fly 40",4,16,11,2,8,6,None,None,Darkvision 60,None,None
+Stone Cursed,17,19,10,16,5,14,5,8,7,None,None,Normal,Any,"Cunning Opportunist, False Appearance"
+Stone Juggernaut,15,157,50,22,1,21,2,11,3,None,None,Blindsight 120,None,"Devastating Roll, Immutable Form, Regeneration, Siege Monster"
+Strahd's Animated Armor,21,112,30,17,13,16,9,10,9,None,Perception,Blindsight 60,Common,None
+Su-Monster,12,27,"30, climb 30",14,15,12,9,13,9,None,"Athletics, Perception",Normal,None,None
+Succubus/Incubus,15,66,"30, fly 60",8,17,13,15,12,20,None,"Deception, Insight, Perception, Persuasion, Stealth",Darkvision 60,"Abyssal, Common, Infernal, telepathy 60","Telepathic Bond, Shapechanger"
+Sword Wraith Commander,18,127,30,18,14,18,11,12,14,None,Perception,Darkvision 60,Any,"Martial Fury, Turning Defiance"
+Sword Wraith Warrior,16,45,30,18,12,17,6,9,10,None,None,Darkvision 60,Any,Martial Fury
+Tabaxi Hunter,14,40,"30, climb 20",10,17,11,13,14,15,None,"Athletics, Perception, Stealth, Survival",Darkvision 60,"Common, Any",Feline Agility
+Tabaxi Minstrel,12,22,"30, climb 20",10,15,11,14,12,16,None,"Perception, Performance, Persuasion, Stealth",Darkvision 60,"COmmon, Any","Feline Agility, Inspire"
+Tarrasque,25,676,40,30,11,30,3,11,11,"INT, WIS, CHA",None,Blindsight 120,None,"Legendary, Magic Resistance, Reflective Carapace, Siege Monster"
+Tecuziztecatl,13,102,"30, climb 30",17,10,16,15,16,13,None,"Deception, Stealth",Blindsight 30,"Olman, Primal","Amphibious, Glowing, Flexible, Spider Climb"
+Thayan Apprentice,12,27,30,10,14,12,15,13,11,None,Arcana,Normal,"Common, Thayan","Doomvault Devotion, Normal Spellcasting"
+Thayan Warrior,16,52,30,16,13,14,10,11,11,None,Perception,Normal,"Common, Thayan","Doomvault Devotion, Pack Tactics"
+Thorn Slinger,11,32,10,13,12,12,1,10,1,None,None,Blindsight 60,None,"Adhesive Blossoms, False Appearance"
+Thorny,14,27,30,13,12,13,2,10,6,None,"Perception, Stealth",Darkvision 60,Own,"Plant Camouflage, Regeneration"
+Thri-Kreen,15,33,40,12,15,13,8,12,7,None,"Perception, Stealth, Survival",Darkvision 60,Own,"Chameleon Carapace, Standing Leap"
+Tiamat,25,615,"60, fly 120",30,10,30,26,26,28,"STR, DEX, WIS","Arcana, Perception, Religion","Darkvision 240, truesight 120","Common, Draconic, Infernal","Discorporation, Innate Spellcasting, Legendary Resistance, Limited Magic immunity, Magic Weapons, Multiple Heads, Regeneration"
+Tiny Servant,15,10,"30, climb 30",4,16,10,2,10,1,None,None,Blindsight 60,None,None
+Tlincalli,15,85,40,16,13,16,8,12,8,None,"Perception, Stealth, Survival",Darkvision 60,Own,None
+Topi,13,13,30,7,15,12,6,10,5,None,None,Darkvision 60,Alive,"Turn Resistance, Undead Fortitude"
+Tortle,17,22,30,15,10,12,11,13,12,None,"Athletics, Survival",Normal,"Aquan, Common",Hold Breath
+Tortle Druid,17,33,30,14,10,12,11,15,12,None,"Animal Handling, Nature, Survival",Normal,"Aquan, Common","Hold Breath, Normal Spellcasting"
+Trapper,13,85,"10, climb 10",17,10,17,2,13,4,None,Stealth,"Blindsight 30, darkvision 60",None,"False Appearance, Spider Climb"
+Treant,16,138,30,23,8,21,12,16,12,None,None,Normal,"Common, Druidic, Elvish, Sylvan","False Appearance, Siege Monster"
+Tressym,12,5,"40, climb 30, fly 40",3,15,10,11,12,12,None,"Perception, Stealth",Darkvision 60,Common,"Detect Invisibility, Keen Smell, Poison Sense"
+Tri-Flower Frond,10,11,5,1,10,12,1,10,1,None,None,Blindsight 30,None,None
+Troglodyte,11,13,30,14,10,14,6,10,6,None,Stealth,Darkvision 60,Own,"Chameleon Skin, Stench, Sunlight Sensitivity"
+Troglodyte Champion of Laogzed,14,59,30,18,12,18,8,12,12,None,"Athletics, Intimidation, Stealth",Darkvision 60,Own,"Chameleon Skin, Stench, Sunlight Sensitivity"
+Troll,15,84,30,18,13,20,7,9,7,None,Perception,Darkvision 60,Giant,"Keen Smell, Regeneration"
+Dire Troll,15,172,40,22,15,21,9,11,5,"WIS, CHA",Perception,Darkvision 60,Giant,"Keen Smell, Keen Sight, Regeneration"
+Rot Troll,16,138,30,18,13,22,5,8,4,None,Perception,Darkvision 60,Giant,Rancid Degeneration
+Spirit Troll,17,97,30,1,17,13,8,9,16,None,Perception,Darkvision 60,Giant,"Incorporeal Movement, Regeneration"
+Venom Troll,15,94,30,18,13,20,7,9,7,None,Perception,Darkvision 60,Giant,"Keen Smell, Poison Splash, Regeneration"
+Umber Hulk,18,93,"30, burrow 20",20,13,16,9,10,10,None,None,Darkvision 120,Own,"Confusing Gaze, Tunneler"
+Unicorn,12,67,50,18,14,15,11,17,16,None,None,Darkvision 60,"Celestial, Elvish, Sylvan, telepathy 60","Legendary, Lair, Charge, Innate Spellcasting, Magic Resistance, Magic Weapons"
+Uthgardt Shaman,13,38,30,14,12,13,10,15,12,None,"Medicine, Nature, Perception, Survival",Normal,"Bothii, COmmon",Innate Spellcasting
+Vampire,16,144,30,18,18,18,17,15,18,"DEX, WIS, CHA","Perception, Stealth",Darkvision 120,Any,"Shapechanger, Legendary, Lair, Misty Escape, Regeneration, Spider Climb, Vampire Weaknesses, Forbiddance, Harmed by Running Water, Sunlight Hypersensitivity, Stake to the Heart"
+Vampire Spawn,15,82,30,16,16,16,11,10,12,"DEX, WIS","Perception, Stealth",Darkvision 60,Any,"Regeneration, Spider Climb, Vampire Weaknesses, Forbiddance, Harmed by Running Water, Stake to the Heart,  Sunlight Hypersensitivity"
+Vampiric Mist,13,30,fly 30,6,16,16,6,12,7,WIS,None,Darkvision 60,None,"Life Sense, Forbiddance, Misty Form, Sunlight Hypersensitivity"
+Vargouille,12,13,"5, fly 40",6,14,14,4,7,2,None,None,Darkvision 60,"Abyssal, Infernal, Any",None
+Vegepygmy,13,9,30,7,14,13,6,11,7,None,"Perception, Stealth",Darkvision 60,Own,"Plant Camouflage, Regeneration"
+Vegepygmy Chief,14,33,30,14,14,14,7,12,9,None,"Perception, Stealth",Darkvision 60,Own,"Plant Camouflage, Regeneration"
+Water Weird,13,58,swim 60,17,16,13,11,10,10,None,None,Blindsight 30,Aquan,"Invisible in Water, Water Bound"
+White Maw,5,217,10,18,1,20,12,10,3,None,None,Blindsight 60,Telepathy 50,"Amorphous Form, Corrode Metal, False Appearance, Killer Response"
+Wight,14,45,30,15,14,16,10,13,15,None,"Perception, Stealth",Darkvision 60,Any,Sunlight Sensitivity
+Will-O'-Wisp,19,22,fly 50,1,28,10,13,14,11,None,None,Darkvision 120,Any,"Consume Life, Ephemeral, Incorporeal Movement, Variable Illumination"
+Wood Woad,18,75,"30, climb 30",18,12,16,10,13,8,None,"Athletics, Perception, Stealth",Darkvision 60,Sylvan,"Magic Club, Plant Camouflage, Regeneration, Tree Stride"
+Wraith,13,67,fly 60,6,16,16,12,14,15,None,None,Darkvision 60,Any,"Incorporeal Movement, Sunlight Sensitivity"
+Wyvern,13,110,"20, fly 80",19,1,16,5,12,6,None,Perception,Darkvision 60,None,None
+Xorn,19,73,"20, burrow 20",17,10,22,11,10,11,None,"Perception, Stealth","Darkvision 60, tremorsense 60",Terran,"Earth Glide, Stone Camouflage, Treasure Sense"
+Xvart,13,7,30,8,14,10,8,7,7,None,Stealth,Darkvision 30,Abyssal,"Low Cunning, Overbearing Pack, Raxivort's Tongue"
+Xvart Speaker,13,7,30,8,14,10,13,7,7,None,Stealth,Darkvision 30,"Abyssal, Any","Low Cunning, Overbearing Pack, Raxivort's Tongue"
+Xvart Warlock of Raxivort,12,22,30,8,14,12,8,11,12,None,Stealth,Darkvision 30,Abyssal,"Innate Spellcasting, Normal Spellcasting, Low Cunning, Raxivort's Blessing, Raxivort's Tongue"
+Yakfolk Priest,12,52,30,16,11,15,14,18,14,None,"Deception, Medicine, Survival",Normal,"Common, Yikaria","Normal Spellcasting, Possession"
+Yakfolk Warrior,11,60,30,18,11,15,14,15,14,None,"Deception, Survival",Normal,"Common, Yikaria",Possession
+Yellow Musk Creeper,6,60,"5, climb 5",12,3,12,1,10,3,None,None,Blindsight 30,None,"False Appearance, Regeneration"
+Yellow Musk Zombie,9,33,20,13,9,12,1,6,3,None,None,Blindsight 30,None,Undead Fortitude
+Yeth Hound,14,51,"40, fly 40",18,17,16,5,12,7,None,None,Darkvision 60,"Common, Elvish, Sylvan","Keen Hearing, Keen Smell, Sunlight Banishment, Telepathic Bond"
+Yeti,12,51,"40, climb 40",18,13,16,8,12,7,None,"Perception, Stealth",Darkvision 60,Own,"Fear of Fire, Keen Smell, Snow Camouflage"
+"Yeti, Abominable",15,137,"40, 40 climb",24,10,22,9,13,9,None,"Perception, Stealth",Darkvision 60,Own,"Fear of Fire, Keen Smell, Snow Camouflage"
+Yuan-Ti Abomination,15,127,40,19,16,17,17,15,18,None,"Perception, Stealth",Darkvision 60,"Abyssal, Common, Draconic","Shapechanger, Innate Spellcasting, Magic Resistance"
+Yuan-Ti Anathema,16,189,"40, climb 30, swim 30",23,13,19,19,17,20,None,"Perception, Stealth","Blindsight 30, darkvision 60","Abyssal, Common, Draconic","Innate Spellcasting, Magic Resistance, Ophidiophobia Aura, Shapechanger, Six Heads"
+Yuan-Ti Broodguard,14,45,30,15,14,14,6,11,4,"STR, DEX, WIS",Perception,Darkvision 60,"Abyssal, Common, Draconic","Mental Resistance, Reckless"
+Yuan-Ti Malison,12,66,30,16,14,13,14,12,16,None,"Deception, Stealth",Darkvision 60,"Abyssal, Common, Draconic","Shapechanger, Innate Spellcasting, Magic Resistance, Malison Type"
+Yuan-Ti Mind Whisperer,14,71,30,16,14,13,14,12,16,"WIS, CHA","Deception, Stealth",Darkvision 120,"Abyssal, Common, Draconic","Shapechanger, Innate Spellcasting, Magic Resistance, Mind Fangs, Normal Spellcasting, Sseth's Blessing"
+Yuan-Ti Nightmare Speaker,14,71,30,16,14,13,14,12,16,"WIS, CHA","Deception, Stealth",Darkvision 120,"Abyssal, Common, Draconic","Shapechanger, Death Fangs, Innate Spellcasting, Magic Resistance, Normal Spellcasting"
+Yuan-Ti Pit Master,14,88,30,16,14,13,14,12,16,"WIS, CHA","Deception, Stealth",Darkvision 120,"Abyssal, Common, Draconic","Shapechanger, Innate Spellcasting, Magic Resistance, Poison's Disciple, Normal Spellcasting"
+Yuan-Ti Pureblood,11,40,30,11,12,11,13,12,14,None,"Deception, Perception, Stealth",Darkvision 60,"Abyssal, Common, Draconic","Innate Spellcasting, Magic Resistance"
+Arcanaloth,17,104,"30, fly 30",17,12,14,20,16,17,"DEX, INT, WIS, CHA","Arcana, Deception, Insight, Perception",Truesight 120,"All, telepathy 120","Innate Spellcasting, Magic Resistance, Magic Weapons, Normal Spellcasting"
+Canoloth,16,120,50,18,10,17,5,17,12,None,"Investigation, Perception","Darkvision 60, truesight 120","Abyssal, Infernal, telepathy 60","Dimensional Lock, Magic Resistance, Magic Weapons, Uncanny Senses"
+Dhergoloth,15,119,30,17,10,19,7,10,9,STR,None,"Blindsight 60, darkvision 60","Abyssal, Infernal, telepathy 60","Innate Spellcasting, Magic Resistance, Magic Weapons"
+Hydroloth,15,135,"20, swim 40",12,21,16,19,10,14,None,"Insight, Perception","Blindsight 60, darkvision 60","Abyssal, Infernal, telepathy 60","Amphibious, Innate Spellcasting, Magic Resistance, Magic Weapons, Secure Memory, Watery Advantage"
+Merrenoloth,13,40,"30, swim 40",8,17,10,17,14,11,"DEX, INT","History, Nature, Perception, Survival","Blindsight 60, darkvision 60","Abyssal, Infernal, telepathy 60","Innate Spellcasting, Magic Resistance, Magic Weapons, Teleport, Lair"
+Mezzoloth,18,75,40,18,11,16,7,10,11,None,Perception,"Blindsight 60, darkvision 60","Abyssal, Infernal, telepathy 60","Innate Spellcasting, Magic Resistance, Magic Weapons"
+Nycaloth,18,123,"40, fly 60",20,11,19,12,10,15,None,"Intimidation, Perception, Stealth","Blindsight 60, darkvision 60","Abyssal, Infernal, telepathy 60","Innate Spellcasting, Magic Resistance, Magic Weapons"
+Oinoloth,17,126,40,19,17,18,17,16,19,"CON, WIS","Deception, Intimidation, Perception","Blindsight 60, darkvision 60","Abyssal, Infernal, telepathy 60","Bringer of Plagues, Innate Spellcasting, Magic Resistance, Magic Weapons"
+Ultroloth,19,153,"30, fly 60",16,16,18,18,15,19,None,"Intimidation, Perception, Stealth",Truesight 120,"Abyssal, Infernal, telepathy 120","Innate Spellcasting, Magic Resistance, Magic Weapons"
+Yagnoloth,17,147,40,19,14,21,16,15,18,"DEX, INT, WIS, CHA","Deception, Insight, Perception, Persuasion","Blindsight 60, darkvision 60","Abyssal, Infernal telepathy 60","Innate Spellcasting, Magic Resistance, Magic Weapons"
+Zombie,8,22,20,13,6,16,3,6,5,WIS,None,Darkvision 60,Any,Undead Fortitude
+Ankylosaurus Zombie,14,68,20,19,9,15,2,6,3,None,None,Darkvision 60,None,Undead Fortitude
+Beholder Zombie,15,93,fly 20,10,8,16,3,8,5,WIS,None,Darkvision 60,"Deep Speech, Undercommon",Undead Fortitude
+Girallon Zombie,11,59,"30, climb 30",18,12,16,3,7,5,None,None,Darkvision 60,None,"Aggressive, Undead Fortitude"
+Greater Zombie,15,97,30,18,10,17,4,6,6,WIS,None,Darkvision 60,Any,"Turn Resistance, Undead Fortitude"
+Ogre Zombie,8,93,30,19,6,18,3,6,5,WIS,None,Darkvision 60,"Common, Giant",Undead Fortitude
+Strahd Zombie,8,30,20,13,6,16,3,6,5,WIS,None,Darkvision 60,Any,Loathsome Limbs
+Tyrannosaurus Zombie,11,136,40,25,6,19,1,3,5,None,None,Darkvision 60,None,"Disgorge Zombie, Undead Fortitude"
+Zorbo,10,27,"30, climb 30",13,11,13,3,12,7,None,Athletics,Normal,None,"Magic Resistance, Natural Armor"
