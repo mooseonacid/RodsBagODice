@@ -11,18 +11,6 @@ Public Class Index
         MagicItemsDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         CreatureDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
-        'loads csv for creature stat blocks
-
-        'release
-        'Dim filePath As String = Path.Combine(Application.StartupPath, "Resources\creatureFullStat.csv")
-
-        'debug
-        Dim startupDirectory As New DirectoryInfo(Application.StartupPath)
-        Dim projectDirectory As String = startupDirectory.Parent.Parent.Parent.FullName
-        Dim filePath As String = Path.Combine(projectDirectory, "Resources\creatureFullStat.csv")
-
-        fullStats = LoadFullStats(filePath)
-
         'Creature info column
         Dim infoButtonColumn As New DataGridViewButtonColumn()
         infoButtonColumn.Name = "Info"
@@ -55,12 +43,36 @@ Public Class Index
     'handle info button
     Private Sub CreatureDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles CreatureDataGridView.CellContentClick
         If CreatureDataGridView.Columns(e.ColumnIndex).Name = "Info" Then
+            'loads csv for creature stat blocks
+
+            'release
+            'Dim filePath As String = Path.Combine(Application.StartupPath, "Resources\creatureFullStat.csv")
+
+            'debug
+            Dim startupDirectory As New DirectoryInfo(Application.StartupPath)
+            Dim projectDirectory As String = startupDirectory.Parent.Parent.Parent.FullName
+            Dim filePath As String = Path.Combine(projectDirectory, "Resources\creatureFullStat.csv")
+
+            'check if csv file is present
+            If Not File.Exists(filePath) Then
+                MessageBox.Show("creatureFullStat.csv not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
+            fullStats = LoadFullStats(filePath)
+
             'get creature
             Dim selectedCreature As Creature = CType(CreatureDataGridView.Rows(e.RowIndex).DataBoundItem, Creature)
             'find full stats
             Dim selectedFullStats As CreatureFullStats = fullStats.Find(Function(fs) fs.Name = selectedCreature.Name)
-            Dim statBlock = GenerateStatBlock(selectedCreature, selectedFullStats)
-            MessageBox.Show(statBlock)
+
+            'check if stats exist for creature
+            If selectedFullStats Is Nothing Then
+                MessageBox.Show($"No full stats for {selectedCreature.Name}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
+            GenerateStatBlock(selectedCreature, selectedFullStats)
         End If
     End Sub
 
@@ -116,18 +128,35 @@ Public Class Index
         Return fullStats
     End Function
 
-    'create actual formatted stat block
-    Private Shared Function GenerateStatBlock(creature As Creature, fullStats As CreatureFullStats) As String
-        Return $"Name: {creature.Name}" & Environment.NewLine &
-            $"{creature.Size} {creature.Type}, {creature.Alignment}" & Environment.NewLine &
-            $"Armor Class: {fullStats.AC}" & Environment.NewLine &
-            $"Hit Points: {fullStats.HP}" & Environment.NewLine &
-            $"Speed: {fullStats.Speed}" & Environment.NewLine &
-            $"STR: {fullStats.STR} | DEX: {fullStats.DEX} | CON: {fullStats.CON} | INT: {fullStats.INT} | WIS: {fullStats.WIS} | CHA: {fullStats.CHA}" & Environment.NewLine &
-            $"Skills: {fullStats.Skills}" & Environment.NewLine &
-            $"Senses: {fullStats.Senses}" & Environment.NewLine &
-            $"Languages: {fullStats.Languages}" & Environment.NewLine &
-            $"Challenge: {creature.Challenge} ({creature.XP})" & Environment.NewLine &
-            $"Additional: {fullStats.Additional}"
-    End Function
+    'makes stat block from template
+    Public Sub GenerateStatBlock(creature As Creature, fullStats As CreatureFullStats)
+        Dim creatureStatBlock As New CreatureStatBlock()
+        creatureStatBlock.Text = creature.Name
+
+        Dim statPanel As Panel = TryCast(creatureStatBlock.Controls("StatPanel"), Panel)
+        If statPanel IsNot Nothing Then
+            statPanel.Controls("statNameLabel").Text = creature.Name
+            statPanel.Controls("StatSubNameLabel").Text = $"{creature.Size} {creature.Type}, {creature.Alignment} | {creature.Source}"
+            statPanel.Controls("StatACVar").Text = fullStats.AC.ToString()
+            statPanel.Controls("StatHPVar").Text = fullStats.HP.ToString()
+            statPanel.Controls("StatSpeedVar").Text = fullStats.Speed
+            statPanel.Controls("StatSTRVar").Text = fullStats.STR.ToString()
+            statPanel.Controls("StatDEXVar").Text = fullStats.DEX.ToString()
+            statPanel.Controls("StatCONVar").Text = fullStats.CON.ToString()
+            statPanel.Controls("StatINTVar").Text = fullStats.INT.ToString()
+            statPanel.Controls("StatWISVar").Text = fullStats.WIS.ToString()
+            statPanel.Controls("StatCHAVar").Text = fullStats.CHA.ToString()
+            statPanel.Controls("StatSensesVar").Text = fullStats.Senses
+            statPanel.Controls("StatLangVar").Text = fullStats.Languages
+            statPanel.Controls("StatCRVar").Text = $"{creature.Challenge} ({creature.XP} XP)"
+
+            Dim statAbilVar As TextBox = TryCast(statPanel.Controls("StatAbilVar"), TextBox)
+            If statAbilVar IsNot Nothing Then
+                statAbilVar.Text = fullStats.Additional
+            End If
+        End If
+
+        creatureStatBlock.Show()
+        creatureStatBlock.Controls("StatPanel").Focus()
+    End Sub
 End Class
