@@ -71,6 +71,16 @@ Partial Class Start
         MagicCRLabel = New Label()
         MagicCRSelect = New ComboBox()
         TabPage5 = New TabPage()
+        NPCEncounterGroup = New GroupBox()
+        EncounterEnvLabel = New Label()
+        EncounterEnvControl = New ComboBox()
+        EncounterGenButton = New Button()
+        EncounterDiffControl = New ComboBox()
+        EncounterDiffLabel = New Label()
+        EncounterLevelControl = New ComboBox()
+        EncounterPCLevelLabel = New Label()
+        EncounterPCNumControl = New ComboBox()
+        EncounterPCNumLabel = New Label()
         NPCNameGenGroup = New GroupBox()
         NameFemRadio = New RadioButton()
         NameMascRadio = New RadioButton()
@@ -112,6 +122,7 @@ Partial Class Start
         TabPage3.SuspendLayout()
         ItemGroup.SuspendLayout()
         TabPage5.SuspendLayout()
+        NPCEncounterGroup.SuspendLayout()
         NPCNameGenGroup.SuspendLayout()
         Panel.SuspendLayout()
         Panel1.SuspendLayout()
@@ -570,6 +581,7 @@ Partial Class Start
         ' 
         ' TabPage5
         ' 
+        TabPage5.Controls.Add(NPCEncounterGroup)
         TabPage5.Controls.Add(NPCNameGenGroup)
         TabPage5.Location = New Point(4, 24)
         TabPage5.Name = "TabPage5"
@@ -577,6 +589,109 @@ Partial Class Start
         TabPage5.TabIndex = 4
         TabPage5.Text = "NPC"
         TabPage5.UseVisualStyleBackColor = True
+        ' 
+        ' NPCEncounterGroup
+        ' 
+        NPCEncounterGroup.Controls.Add(EncounterEnvLabel)
+        NPCEncounterGroup.Controls.Add(EncounterEnvControl)
+        NPCEncounterGroup.Controls.Add(EncounterGenButton)
+        NPCEncounterGroup.Controls.Add(EncounterDiffControl)
+        NPCEncounterGroup.Controls.Add(EncounterDiffLabel)
+        NPCEncounterGroup.Controls.Add(EncounterLevelControl)
+        NPCEncounterGroup.Controls.Add(EncounterPCLevelLabel)
+        NPCEncounterGroup.Controls.Add(EncounterPCNumControl)
+        NPCEncounterGroup.Controls.Add(EncounterPCNumLabel)
+        NPCEncounterGroup.Location = New Point(3, 127)
+        NPCEncounterGroup.Name = "NPCEncounterGroup"
+        NPCEncounterGroup.Size = New Size(407, 118)
+        NPCEncounterGroup.TabIndex = 2
+        NPCEncounterGroup.TabStop = False
+        NPCEncounterGroup.Text = "Encounter Generator"
+        ' 
+        ' EncounterEnvLabel
+        ' 
+        EncounterEnvLabel.AutoSize = True
+        EncounterEnvLabel.Location = New Point(191, 48)
+        EncounterEnvLabel.Name = "EncounterEnvLabel"
+        EncounterEnvLabel.Size = New Size(81, 15)
+        EncounterEnvLabel.TabIndex = 13
+        EncounterEnvLabel.Text = "Environment: "
+        ' 
+        ' EncounterEnvControl
+        ' 
+        EncounterEnvControl.DropDownStyle = ComboBoxStyle.DropDownList
+        EncounterEnvControl.FormattingEnabled = True
+        EncounterEnvControl.Items.AddRange(New Object() {"Any", "Arctic", "Coastal", "Desert", "Forest", "Grassland", "Hill", "Jungle", "Mountain", "Swamp", "Underdark", "Underwater", "Urban", "fff"})
+        EncounterEnvControl.Location = New Point(278, 45)
+        EncounterEnvControl.Name = "EncounterEnvControl"
+        EncounterEnvControl.Size = New Size(121, 23)
+        EncounterEnvControl.TabIndex = 12
+        ' 
+        ' EncounterGenButton
+        ' 
+        EncounterGenButton.Location = New Point(314, 82)
+        EncounterGenButton.Name = "EncounterGenButton"
+        EncounterGenButton.Size = New Size(85, 30)
+        EncounterGenButton.TabIndex = 11
+        EncounterGenButton.Text = "Generate"
+        EncounterGenButton.UseVisualStyleBackColor = True
+        ' 
+        ' EncounterDiffControl
+        ' 
+        EncounterDiffControl.DropDownStyle = ComboBoxStyle.DropDownList
+        EncounterDiffControl.FormattingEnabled = True
+        EncounterDiffControl.Items.AddRange(New Object() {"Any", "Easy", "Medium", "Hard", "Deadly"})
+        EncounterDiffControl.Location = New Point(100, 45)
+        EncounterDiffControl.Name = "EncounterDiffControl"
+        EncounterDiffControl.Size = New Size(85, 23)
+        EncounterDiffControl.TabIndex = 5
+        ' 
+        ' EncounterDiffLabel
+        ' 
+        EncounterDiffLabel.AutoSize = True
+        EncounterDiffLabel.Location = New Point(33, 48)
+        EncounterDiffLabel.Name = "EncounterDiffLabel"
+        EncounterDiffLabel.Size = New Size(61, 15)
+        EncounterDiffLabel.TabIndex = 4
+        EncounterDiffLabel.Text = "Difficulty: "
+        ' 
+        ' EncounterLevelControl
+        ' 
+        EncounterLevelControl.DropDownStyle = ComboBoxStyle.DropDownList
+        EncounterLevelControl.FormattingEnabled = True
+        EncounterLevelControl.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"})
+        EncounterLevelControl.Location = New Point(225, 16)
+        EncounterLevelControl.Name = "EncounterLevelControl"
+        EncounterLevelControl.Size = New Size(39, 23)
+        EncounterLevelControl.TabIndex = 3
+        ' 
+        ' EncounterPCLevelLabel
+        ' 
+        EncounterPCLevelLabel.AutoSize = True
+        EncounterPCLevelLabel.Location = New Point(179, 19)
+        EncounterPCLevelLabel.Name = "EncounterPCLevelLabel"
+        EncounterPCLevelLabel.Size = New Size(40, 15)
+        EncounterPCLevelLabel.TabIndex = 2
+        EncounterPCLevelLabel.Text = "Level: "
+        ' 
+        ' EncounterPCNumControl
+        ' 
+        EncounterPCNumControl.DropDownStyle = ComboBoxStyle.DropDownList
+        EncounterPCNumControl.FormattingEnabled = True
+        EncounterPCNumControl.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"})
+        EncounterPCNumControl.Location = New Point(100, 16)
+        EncounterPCNumControl.Name = "EncounterPCNumControl"
+        EncounterPCNumControl.Size = New Size(73, 23)
+        EncounterPCNumControl.TabIndex = 1
+        ' 
+        ' EncounterPCNumLabel
+        ' 
+        EncounterPCNumLabel.AutoSize = True
+        EncounterPCNumLabel.Location = New Point(6, 19)
+        EncounterPCNumLabel.Name = "EncounterPCNumLabel"
+        EncounterPCNumLabel.Size = New Size(91, 15)
+        EncounterPCNumLabel.TabIndex = 0
+        EncounterPCNumLabel.Text = "Number of PCs:"
         ' 
         ' NPCNameGenGroup
         ' 
@@ -821,6 +936,8 @@ Partial Class Start
         ItemGroup.ResumeLayout(False)
         ItemGroup.PerformLayout()
         TabPage5.ResumeLayout(False)
+        NPCEncounterGroup.ResumeLayout(False)
+        NPCEncounterGroup.PerformLayout()
         NPCNameGenGroup.ResumeLayout(False)
         NPCNameGenGroup.PerformLayout()
         Panel.ResumeLayout(False)
@@ -899,5 +1016,15 @@ Partial Class Start
     Friend WithEvents NameRaceLabel As Label
     Friend WithEvents NameFemRadio As RadioButton
     Friend WithEvents NameMascRadio As RadioButton
+    Friend WithEvents NPCEncounterGroup As GroupBox
+    Friend WithEvents EncounterPCNumControl As ComboBox
+    Friend WithEvents EncounterPCNumLabel As Label
+    Friend WithEvents EncounterDiffControl As ComboBox
+    Friend WithEvents EncounterDiffLabel As Label
+    Friend WithEvents EncounterLevelControl As ComboBox
+    Friend WithEvents EncounterPCLevelLabel As Label
+    Friend WithEvents EncounterGenButton As Button
+    Friend WithEvents EncounterEnvLabel As Label
+    Friend WithEvents EncounterEnvControl As ComboBox
 
 End Class
